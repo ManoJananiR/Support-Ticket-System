@@ -1,0 +1,333 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tickets - Support Ticket System{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Tickets</h1>
+        <a href="{% url 'tickets:create' %}" class="btn btn-primary">
+            <i class="fas fa-plus-circle"></i> New Ticket
+        </a>
+    </div>
+    
+    <!-- Search and Filter Section -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5 class="card-title mb-0">
+                <a class="text-decoration-none" data-bs-toggle="collapse" href="#filterCollapse">
+                    <i class="fas fa-filter"></i> Filters
+                </a>
+            </h5>
+        </div>
+        <div class="collapse show" id="filterCollapse">
+            <div class="card-body">
+                <form method="get" class="form">
+                    {% load crispy_forms_tags %}
+                    {{ filter.form|crispy }}
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Apply Filters
+                        </button>
+                        <a href="{% url 'tickets:list' %}" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Clear Filters
+                        </a>
+                        {% if user.is_admin %}
+                            <a href="{% url 'tickets:export' %}?{{ request.GET.urlencode }}" class="btn btn-success float-end">
+                                <i class="fas fa-download"></i> Export
+                            </a>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Statistics Summary -->
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>{{ stats.total }}</h3>
+                    <p>Total Tickets</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>{{ stats.open }}</h3>
+                    <p>Open Tickets</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>{{ stats.resolved }}</h3>
+                    <p>Resolved</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>{{ stats.overdue }}</h3>
+                    <p>Overdue</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bulk Actions (for agents/admins) -->
+    {% if can_bulk_edit %}
+        <form method="post" action="{% url 'tickets:bulk_action' %}" id="bulkActionForm">
+            {% csrf_token %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-outline-secondary" onclick="selectAll()">
+                                Select All
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" onclick="deselectAll()">
+                                Deselect All
+                            </button>
+                        </div>
+                        <div class="col">
+                            {% load crispy_forms_tags %}
+                            {% with bulk_form=TicketBulkActionForm %}
+                                {{ bulk_form|crispy }}
+                            {% endwith %}
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary">
+                                Apply to Selected
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+    
+    <!-- Tickets Table -->
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            {% if can_bulk_edit %}
+                                <th width="30">
+                                    <input type="checkbox" id="selectAllCheckbox" onclick="toggleMainCheckbox()">
+                                </th>
+                            {% endif %}
+                            <th>Ticket ID</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Category</th>
+                            <th>Created By</th>
+                            <th>Assigned To</th>
+                            <th>Created</th>
+                            <th>Due</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in tickets %}
+                            <tr {% if ticket.is_overdue %}class="table-danger"{% endif %}>
+                                {% if can_bulk_edit %}
+                                    <td>
+                                        <input type="checkbox" name="selected_tickets" value="{{ ticket.id }}" class="ticket-checkbox" onchange="updateSelectAllCheckbox()">
+                                    </td>
+                                {% endif %}
+                                <td>
+                                    <a href="{% url 'tickets:detail' ticket.ticket_id %}">
+                                        {{ ticket.ticket_id }}
+                                    </a>
+                                </td>
+                                <td>{{ ticket.title|truncatechars:50 }}</td>
+                                <td>
+                                    <span class="badge {% if ticket.status == 'resolved' %}bg-success{% elif ticket.status == 'closed' %}bg-secondary{% elif ticket.status == 'open' %}bg-primary{% elif ticket.status == 'pending' %}bg-warning{% elif ticket.status == 'escalated' %}bg-danger{% else %}bg-info{% endif %}">
+                                        {{ ticket.get_status_display }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge {% if ticket.priority == 'critical' %}bg-danger{% elif ticket.priority == 'high' %}bg-warning{% elif ticket.priority == 'medium' %}bg-info{% else %}bg-secondary{% endif %}">
+                                        {{ ticket.get_priority_display }}
+                                    </span>
+                                </td>
+                                <td>{{ ticket.category.name|default:"-" }}</td>
+                                <td>{{ ticket.created_by.get_full_name|default:ticket.created_by.email }}</td>
+                                <td>
+                                    {% if ticket.assigned_to %}
+                                        {{ ticket.assigned_to.get_full_name|default:ticket.assigned_to.email }}
+                                    {% else %}
+                                        <span class="text-muted">Unassigned</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ ticket.created_at|date:"Y-m-d H:i" }}</td>
+                                <td>
+                                    {% if ticket.due_by %}
+                                        {% if ticket.is_overdue %}
+                                            <span class="text-danger">{{ ticket.due_by|date:"Y-m-d" }}</span>
+                                        {% else %}
+                                            {{ ticket.due_by|date:"Y-m-d" }}
+                                        {% endif %}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        <a href="{% url 'tickets:detail' ticket.ticket_id %}" class="btn btn-outline-primary" title="View">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        {% if ticket.assigned_to == user or user.is_admin %}
+                                            <a href="{% url 'tickets:edit' ticket.ticket_id %}" class="btn btn-outline-secondary" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="{% if can_bulk_edit %}11{% else %}10{% endif %}" class="text-center">
+                                    <div class="py-5">
+                                        <i class="fas fa-ticket-alt fa-3x text-muted mb-3"></i>
+                                        <h5>No tickets found</h5>
+                                        <p class="text-muted">Try adjusting your filters or create a new ticket.</p>
+                                        <a href="{% url 'tickets:create' %}" class="btn btn-primary">
+                                            <i class="fas fa-plus-circle"></i> Create Ticket
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Pagination -->
+            {% if is_paginated %}
+                <nav aria-label="Page navigation" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?{% if request.GET.urlencode %}{{ request.GET.urlencode }}&{% endif %}page=1">
+                                    &laquo; First
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?{% if request.GET.urlencode %}{{ request.GET.urlencode }}&{% endif %}page={{ page_obj.previous_page_number }}">
+                                    Previous
+                                </a>
+                            </li>
+                        {% endif %}
+                        
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <li class="page-item active">
+                                    <span class="page-link">{{ num }}</span>
+                                </li>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?{% if request.GET.urlencode %}{{ request.GET.urlencode }}&{% endif %}page={{ num }}">
+                                        {{ num }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?{% if request.GET.urlencode %}{{ request.GET.urlencode }}&{% endif %}page={{ page_obj.next_page_number }}">
+                                    Next
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?{% if request.GET.urlencode %}{{ request.GET.urlencode }}&{% endif %}page={{ page_obj.paginator.num_pages }}">
+                                    Last &raquo;
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+        </div>
+    </div>
+    
+    {% if can_bulk_edit %}
+        </form> <!-- Close bulk action form -->
+    {% endif %}
+</div>
+
+{% block extra_js %}
+<script>
+// Bulk actions functionality
+function selectAll() {
+    document.querySelectorAll('.ticket-checkbox').forEach(checkbox => {
+        checkbox.checked = true;
+    });
+    document.getElementById('selectAllCheckbox').checked = true;
+}
+
+function deselectAll() {
+    document.querySelectorAll('.ticket-checkbox').forEach(checkbox => {
+        checkbox.checked = false;
+    });
+    document.getElementById('selectAllCheckbox').checked = false;
+}
+
+function toggleMainCheckbox() {
+    const mainCheckbox = document.getElementById('selectAllCheckbox');
+    document.querySelectorAll('.ticket-checkbox').forEach(checkbox => {
+        checkbox.checked = mainCheckbox.checked;
+    });
+}
+
+function updateSelectAllCheckbox() {
+    const checkboxes = document.querySelectorAll('.ticket-checkbox');
+    const mainCheckbox = document.getElementById('selectAllCheckbox');
+    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+    const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+    
+    if (allChecked) {
+        mainCheckbox.checked = true;
+        mainCheckbox.indeterminate = false;
+    } else if (anyChecked) {
+        mainCheckbox.indeterminate = true;
+    } else {
+        mainCheckbox.checked = false;
+        mainCheckbox.indeterminate = false;
+    }
+}
+
+// Form validation for bulk actions
+document.getElementById('bulkActionForm')?.addEventListener('submit', function(e) {
+    const selected = document.querySelectorAll('.ticket-checkbox:checked');
+    if (selected.length === 0) {
+        e.preventDefault();
+        alert('Please select at least one ticket.');
+        return false;
+    }
+    
+    const action = document.getElementById('id_action').value;
+    if (action === 'assign' && !document.getElementById('id_assigned_to').value) {
+        e.preventDefault();
+        alert('Please select an agent to assign tickets to.');
+        return false;
+    }
+    
+    if (action === 'change_status' && !document.getElementById('id_status').value) {
+        e.preventDefault();
+        alert('Please select a status.');
+        return false;
+    }
+});
+</script>
+{% endblock %}
+{% endblock %}

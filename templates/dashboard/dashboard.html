@@ -1,0 +1,431 @@
+// filepath: c:\Support Ticket System\sts\templates\dashboard\dashboard.html
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard - Support Ticket System{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="h2 mb-0">Dashboard</h1>
+            <p class="text-muted">Welcome back, {{ user.get_full_name|default:user.email }}</p>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row g-4 mb-4">
+        <div class="col-sm-6 col-xl-3">
+            <div class="card bg-primary text-white h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-uppercase text-white-50">Open Tickets</h6>
+                            <h3 class="mb-0">{{ open_count }}</h3>
+                        </div>
+                        <i class="fas fa-ticket-alt fa-3x opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+            <div class="card bg-warning text-white h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-uppercase text-white-50">In Progress</h6>
+                            <h3 class="mb-0">{{ in_progress_count }}</h3>
+                        </div>
+                        <i class="fas fa-spinner fa-3x opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+            <div class="card bg-success text-white h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-uppercase text-white-50">Resolved</h6>
+                            <h3 class="mb-0">{{ resolved_count }}</h3>
+                        </div>
+                        <i class="fas fa-check-circle fa-3x opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+            <div class="card bg-danger text-white h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-uppercase text-white-50">Overdue</h6>
+                            <h3 class="mb-0">{{ overdue_count }}</h3>
+                        </div>
+                        <i class="fas fa-exclamation-triangle fa-3x opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="row g-4 mb-4">
+        <div class="col-xl-6">
+            <div class="card h-100">
+                <div class="card-header bg-transparent">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-chart-pie me-2 text-primary"></i>Tickets by Status
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="statusChart" height="300"></canvas>
+                    <div id="noStatusData" class="text-center text-muted py-4" style="display: none;">
+                        <i class="fas fa-chart-pie fa-3x mb-3 opacity-50"></i>
+                        <p>No data available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6">
+            <div class="card h-100">
+                <div class="card-header bg-transparent">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-chart-bar me-2 text-primary"></i>Tickets by Priority
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="priorityChart" height="300"></canvas>
+                    <div id="noPriorityData" class="text-center text-muted py-4" style="display: none;">
+                        <i class="fas fa-chart-bar fa-3x mb-3 opacity-50"></i>
+                        <p>No data available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLA Performance and Trend -->
+    <div class="row g-4 mb-4">
+        <div class="col-xl-4">
+            <div class="card h-100">
+                <div class="card-header bg-transparent">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-clock me-2 text-primary"></i>SLA Performance
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center g-3">
+                        <div class="col-4">
+                            <div class="p-3 bg-light rounded">
+                                <h6 class="text-muted">Met</h6>
+                                <h4>{{ sla_met_percentage }}%</h4>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-3 bg-light rounded">
+                                <h6 class="text-muted">At Risk</h6>
+                                <h4>{{ sla_at_risk_percentage }}%</h4>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-3 bg-light rounded">
+                                <h6 class="text-muted">Breached</h6>
+                                <h4>{{ sla_breached_percentage }}%</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-8">
+            <div class="card h-100">
+                <div class="card-header bg-transparent">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-chart-line me-2 text-primary"></i>Daily Trend (Last 7 Days)
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="trendChart" height="100"></canvas>
+                    <div id="noTrendData" class="text-center text-muted py-4" style="display: none;">
+                        <i class="fas fa-chart-line fa-3x mb-3 opacity-50"></i>
+                        <p>No data available for the last 7 days</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Tickets -->
+    <div class="row g-4 mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-transparent d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-history me-2 text-primary"></i>Recent Tickets
+                    </h5>
+                    <a href="{% url 'tickets:list' %}" class="btn btn-sm btn-outline-primary">
+                        View All <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Ticket ID</th>
+                                    <th>Subject</th>
+                                    <th>Status</th>
+                                    <th>Priority</th>
+                                    <th>Created By</th>
+                                    <th>Assigned To</th>
+                                    <th>Created</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for ticket in recent_tickets %}
+                                <tr>
+                                    <td><span class="badge bg-light text-dark">{{ ticket.ticket_id }}</span></td>
+                                    <td>{{ ticket.subject|truncatechars:50 }}</td>
+                                    <td>
+                                        {% if ticket.status == 'open' %}
+                                            <span class="badge bg-primary">{{ ticket.get_status_display }}</span>
+                                        {% elif ticket.status == 'in_progress' %}
+                                            <span class="badge bg-warning">{{ ticket.get_status_display }}</span>
+                                        {% elif ticket.status == 'resolved' %}
+                                            <span class="badge bg-success">{{ ticket.get_status_display }}</span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">{{ ticket.get_status_display }}</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if ticket.priority == 'critical' %}
+                                            <span class="badge bg-danger">{{ ticket.get_priority_display }}</span>
+                                        {% elif ticket.priority == 'high' %}
+                                            <span class="badge bg-warning">{{ ticket.get_priority_display }}</span>
+                                        {% elif ticket.priority == 'medium' %}
+                                            <span class="badge bg-info">{{ ticket.get_priority_display }}</span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">{{ ticket.get_priority_display }}</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ ticket.created_by.get_full_name|default:ticket.created_by.email|truncatechars:20 }}</td>
+                                    <td>
+                                        {% if ticket.assigned_to %}
+                                            {{ ticket.assigned_to.get_full_name|default:ticket.assigned_to.email|truncatechars:20 }}
+                                        {% else %}
+                                            <span class="text-muted">Unassigned</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ ticket.created_at|timesince }} ago</td>
+                                    <td>
+                                        <a href="{% url 'tickets:detail' ticket.ticket_id %}" class="btn btn-sm btn-outline-primary">
+                                            View
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="8" class="text-center py-5">
+                                        <i class="fas fa-ticket-alt fa-3x text-muted mb-3"></i>
+                                        <p class="text-muted">No recent tickets found</p>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+    'use strict';
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // ============ STATUS CHART ============
+        {% if tickets_by_status %}
+        try {
+            const statusData = [
+                {% for item in tickets_by_status %}
+                {
+                    label: "{{ item.get_status_display|escapejs }}",
+                    value: {{ item.count }}
+                }{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ];
+            
+            if (statusData.length > 0) {
+                const statusCtx = document.getElementById('statusChart').getContext('2d');
+                new Chart(statusCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: statusData.map(item => item.label),
+                        datasets: [{
+                            data: statusData.map(item => item.value),
+                            backgroundColor: ['#0d6efd', '#6c757d', '#198754', '#ffc107', '#dc3545', '#0dcaf0', '#6610f2'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            } else {
+                document.getElementById('statusChart').style.display = 'none';
+                document.getElementById('noStatusData').style.display = 'block';
+            }
+        } catch (e) {
+            console.error('Status Chart error:', e);
+            document.getElementById('statusChart').style.display = 'none';
+            document.getElementById('noStatusData').style.display = 'block';
+        }
+        {% else %}
+        document.getElementById('statusChart').style.display = 'none';
+        document.getElementById('noStatusData').style.display = 'block';
+        {% endif %}
+        
+        // ============ PRIORITY CHART ============
+        {% if tickets_by_priority %}
+        try {
+            const priorityData = [
+                {% for item in tickets_by_priority %}
+                {
+                    label: "{{ item.get_priority_display|escapejs }}",
+                    value: {{ item.count }}
+                }{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ];
+            
+            if (priorityData.length > 0) {
+                const priorityCtx = document.getElementById('priorityChart').getContext('2d');
+                new Chart(priorityCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: priorityData.map(item => item.label),
+                        datasets: [{
+                            data: priorityData.map(item => item.value),
+                            backgroundColor: ['#198754', '#ffc107', '#fd7e14', '#dc3545', '#6f42c1'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '60%',
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            } else {
+                document.getElementById('priorityChart').style.display = 'none';
+                document.getElementById('noPriorityData').style.display = 'block';
+            }
+        } catch (e) {
+            console.error('Priority Chart error:', e);
+            document.getElementById('priorityChart').style.display = 'none';
+            document.getElementById('noPriorityData').style.display = 'block';
+        }
+        {% else %}
+        document.getElementById('priorityChart').style.display = 'none';
+        document.getElementById('noPriorityData').style.display = 'block';
+        {% endif %}
+        
+        // ============ TREND CHART ============
+        {% if daily_trend %}
+        try {
+            const trendLabels = [
+                {% for item in daily_trend %}
+                "{{ item.date|date:'M d'|escapejs }}"{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ];
+            
+            const trendData = [
+                {% for item in daily_trend %}
+                {{ item.count }}{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            ];
+            
+            if (trendLabels.length > 0 && trendData.length > 0) {
+                const trendCtx = document.getElementById('trendChart').getContext('2d');
+                new Chart(trendCtx, {
+                    type: 'line',
+                    data: {
+                        labels: trendLabels,
+                        datasets: [{
+                            label: 'Tickets Created',
+                            data: trendData,
+                            borderColor: '#0d6efd',
+                            backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                            tension: 0.4,
+                            fill: true,
+                            pointBackgroundColor: '#0d6efd',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 2,
+                            pointRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                stepSize: 1,
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                });
+            } else {
+                document.getElementById('trendChart').style.display = 'none';
+                document.getElementById('noTrendData').style.display = 'block';
+            }
+        } catch (e) {
+            console.error('Trend Chart error:', e);
+            document.getElementById('trendChart').style.display = 'none';
+            document.getElementById('noTrendData').style.display = 'block';
+        }
+        {% else %}
+        document.getElementById('trendChart').style.display = 'none';
+        document.getElementById('noTrendData').style.display = 'block';
+        {% endif %}
+        
+    }); // End DOMContentLoaded
+})(); // End IIFE
+</script>
+{% endblock %}
