@@ -7,9 +7,9 @@ from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.utils import timezone
-from django.contrib import messages
 from django.urls import reverse
 from celery import shared_task
+from apps.accounts.models import User  # Add this import
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +31,6 @@ def send_ticket_notification(ticket, event_type, comment=None):
         if ticket.assigned_to and ticket.assigned_to.email_notifications:
             recipients.append(ticket.assigned_to.email)
         # Also notify admins
-        from apps.accounts.models import User
         admins = User.objects.filter(user_type='admin', email_notifications=True)
         recipients.extend([admin.email for admin in admins])
         
@@ -64,19 +63,23 @@ def send_ticket_notification(ticket, event_type, comment=None):
     recipients = list(set(recipients))
     
     if recipients:
-        # Send emails asynchronously
-        send_notification_email.delay(
-            ticket.id,
-            event_type,
-            comment.id if comment else None,
-            recipients
-        )
+        try:
+            # Send emails asynchronously
+            send_notification_email.delay(
+                ticket.id,
+                event_type,
+                comment.id if comment else None,
+                recipients
+            )
+            logger.info(f"Notification queued for ticket {ticket.ticket_id} - {event_type} to {len(recipients)} recipients")
+        except Exception as e:
+            logger.error(f"Failed to queue notification: {str(e)}")
     
-    logger.info(f"Notification sent for ticket {ticket.ticket_id} - {event_type} to {len(recipients)} recipients")
+    return len(recipients)
 
 
-@shared_task
-def send_notification_email(ticket_id, event_type, comment_id=None, recipients=None):
+@shared_task(bind=True, max_retries=3)
+def send_notification_email(self, ticket_id, event_type, comment_id=None, recipients=None):
     """
     Celery task to send notification emails.
     """
@@ -94,17 +97,28 @@ def send_notification_email(ticket_id, event_type, comment_id=None, recipients=N
         # Prepare email content
         subject = f"[{ticket.ticket_id}] {ticket.title}"
         
+        # Generate ticket URL safely
+        try:
+            ticket_url = f"{settings.SITE_URL}{reverse('tickets:detail', args=[ticket.ticket_id])}"
+        except:
+            ticket_url = f"{settings.SITE_URL}/tickets/{ticket.ticket_id}/"
+        
         context = {
             'ticket': ticket,
             'event_type': event_type,
             'comment': comment,
             'site_url': settings.SITE_URL,
-            'ticket_url': f"{settings.SITE_URL}{reverse('tickets:detail', args=[ticket.ticket_id])}",
+            'ticket_url': ticket_url,
         }
         
-        # Render email templates
-        text_content = render_to_string(f'emails/ticket_{event_type}.txt', context)
-        html_content = render_to_string(f'emails/ticket_{event_type}.html', context)
+        # Render email templates with fallback
+        try:
+            text_content = render_to_string(f'emails/ticket_{event_type}.txt', context)
+            html_content = render_to_string(f'emails/ticket_{event_type}.html', context)
+        except:
+            # Fallback content if templates don't exist
+            text_content = f"Ticket {ticket.ticket_id} - {event_type}\n\nView at: {ticket_url}"
+            html_content = f"<h1>Ticket {ticket.ticket_id}</h1><p>{event_type}</p><p><a href='{ticket_url}'>View Ticket</a></p>"
         
         # Send email
         email = EmailMultiAlternatives(
@@ -120,6 +134,8 @@ def send_notification_email(ticket_id, event_type, comment_id=None, recipients=N
         
     except Exception as e:
         logger.error(f"Failed to send notification email: {str(e)}")
+        # Retry the task
+        raise self.retry(exc=e, countdown=60)
 
 
 @shared_task
@@ -206,6 +222,17 @@ def generate_ticket_stats(user):
     now = timezone.now()
     last_week = now - timedelta(days=7)
     
+    # Safe way to get daily trend without using extra()
+    from django.db.models.functions import TruncDate
+    
+    trend = tickets.filter(
+        created_at__gte=last_week
+    ).annotate(
+        date=TruncDate('created_at')
+    ).values('date').annotate(
+        count=Count('id')
+    ).order_by('date')
+    
     stats = {
         'total': tickets.count(),
         'open': tickets.filter(status__in=['new', 'open', 'in_progress']).count(),
@@ -213,21 +240,15 @@ def generate_ticket_stats(user):
         'resolved': tickets.filter(status='resolved').count(),
         'closed': tickets.filter(status='closed').count(),
         
-        'by_priority': tickets.values('priority').annotate(
+        'by_priority': list(tickets.values('priority').annotate(
             count=Count('id')
-        ).order_by('priority'),
+        ).order_by('priority')),
         
-        'by_status': tickets.values('status').annotate(
+        'by_status': list(tickets.values('status').annotate(
             count=Count('id')
-        ).order_by('status'),
+        ).order_by('status')),
         
-        'trend': tickets.filter(
-            created_at__gte=last_week
-        ).extra(
-            {'date': "date(created_at)"}
-        ).values('date').annotate(
-            count=Count('id')
-        ).order_by('date'),
+        'trend': list(trend),
     }
     
     return stats

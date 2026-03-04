@@ -29,7 +29,6 @@ class CustomUserManager(BaseUserManager):
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
-        logger.info(f"User created: {email}")
         return user
     
     def create_superuser(self, email, password=None, **extra_fields):
@@ -67,8 +66,7 @@ class User(AbstractUser):
     user_type = models.CharField(
         max_length=20, 
         choices=USER_TYPE_CHOICES, 
-        default='customer',
-        help_text=_('User role in the system')
+        default='customer'
     )
     phone_number = models.CharField(max_length=20, blank=True, null=True)
     profile_picture = models.ImageField(
@@ -79,7 +77,6 @@ class User(AbstractUser):
     email_verified = models.BooleanField(default=False)
     email_verification_token = models.UUIDField(default=uuid.uuid4, editable=False)
     two_factor_enabled = models.BooleanField(default=False)
-    two_factor_secret = models.CharField(max_length=32, blank=True, null=True)
     department = models.CharField(max_length=100, blank=True, null=True)
     job_title = models.CharField(max_length=100, blank=True, null=True)
     company = models.CharField(max_length=200, blank=True, null=True)
@@ -119,54 +116,21 @@ class User(AbstractUser):
         return self.get_full_name() or self.email
     
     def get_full_name(self):
-        """
-        Return the full name of the user.
-        """
         if self.first_name and self.last_name:
             return f"{self.first_name} {self.last_name}".strip()
         return self.email
     
-    def get_short_name(self):
-        """Return the short name of the user."""
-        return self.first_name or self.email.split('@')[0]
-    
     def is_customer(self):
-        """Check if user is a customer."""
         return self.user_type == 'customer'
     
     def is_agent(self):
-        """Check if user is an agent."""
         return self.user_type == 'agent'
     
     def is_admin(self):
-        """Check if user is an admin."""
         return self.user_type == 'admin' or self.is_superuser
     
     def can_manage_tickets(self):
-        """Check if user can manage tickets (agent or admin)."""
         return self.is_agent() or self.is_admin()
-    
-    def lock_account(self):
-        """Lock the user account."""
-        self.account_locked = True
-        self.save(update_fields=['account_locked'])
-        logger.warning(f"Account locked for user: {self.email}")
-    
-    def unlock_account(self):
-        """Unlock the user account."""
-        self.account_locked = False
-        self.failed_login_attempts = 0
-        self.save(update_fields=['account_locked', 'failed_login_attempts'])
-        logger.info(f"Account unlocked for user: {self.email}")
-    
-    def update_last_activity(self):
-        """Update user's last activity timestamp."""
-        self.last_activity = timezone.now()
-        self.save(update_fields=['last_activity'])
-    
-    def email_user(self, subject, message, from_email=None, **kwargs):
-        """Send an email to this user."""
-        send_mail(subject, message, from_email, [self.email], **kwargs)
 
 
 class LoginHistory(models.Model):
@@ -178,18 +142,10 @@ class LoginHistory(models.Model):
     user_agent = models.TextField()
     login_time = models.DateTimeField(auto_now_add=True)
     login_successful = models.BooleanField(default=True)
-    session_key = models.CharField(max_length=40, blank=True, null=True)
     
     class Meta:
         verbose_name_plural = 'Login histories'
         ordering = ['-login_time']
-        indexes = [
-            models.Index(fields=['user', '-login_time']),
-            models.Index(fields=['ip_address']),
-        ]
-    
-    def __str__(self):
-        return f"{self.user.email} - {self.login_time}"
 
 
 class PasswordReset(models.Model):
@@ -202,14 +158,6 @@ class PasswordReset(models.Model):
     expires_at = models.DateTimeField()
     used = models.BooleanField(default=False)
     ip_address = models.GenericIPAddressField()
-    user_agent = models.TextField()
-    
-    class Meta:
-        ordering = ['-created_at']
-    
-    def __str__(self):
-        return f"{self.user.email} - {self.created_at}"
     
     def is_valid(self):
-        """Check if the reset token is still valid."""
         return not self.used and self.expires_at > timezone.now()

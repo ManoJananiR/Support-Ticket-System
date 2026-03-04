@@ -1,0 +1,156 @@
+{% extends 'base_public.html' %}
+{% load static %}
+
+{% block title %}STS - Support Ticket System{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center min-vh-50 py-5">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Streamline Your Support with STS</h1>
+                <p class="lead mb-4">A comprehensive support ticket system that helps you manage, track, and resolve customer issues efficiently.</p>
+                <div class="d-flex gap-3">
+                    <a href="{% url 'accounts:register' %}" class="btn btn-light btn-lg px-4">Get Started</a>
+                    <a href="#features" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://via.placeholder.com/600x400?text=Support+Ticket+System" alt="Dashboard Preview" class="img-fluid rounded-3 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Why Choose STS?</h2>
+            <p class="lead text-muted">Everything you need to manage customer support effectively</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-ticket-alt fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold">Ticket Management</h4>
+                        <p class="text-muted">Create, track, and manage support tickets with ease. Never lose track of customer issues.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-success bg-opacity-10 text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-clock fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold">SLA Monitoring</h4>
+                        <p class="text-muted">Track response and resolution times with automated SLA breach detection and alerts.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-warning bg-opacity-10 text-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-chart-line fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold">Analytics Dashboard</h4>
+                        <p class="text-muted">Get insights into your support operations with detailed statistics and performance metrics.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-info bg-opacity-10 text-info rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-users fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold">Team Collaboration</h4>
+                        <p class="text-muted">Internal notes and team assignments for seamless collaboration between agents.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-danger bg-opacity-10 text-danger rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-bell fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold">Email Notifications</h4>
+                        <p class="text-muted">Automated email alerts for ticket updates, assignments, and SLA breaches.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-secondary bg-opacity-10 text-secondary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-shield-alt fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold">Role-Based Access</h4>
+                        <p class="text-muted">Different interfaces for customers, agents, and administrators with appropriate permissions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">How It Works</h2>
+            <p class="lead text-muted">Simple三步 process to get your issues resolved</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 24px; font-weight: bold;">1</div>
+                    <h4 class="fw-bold">Create Ticket</h4>
+                    <p class="text-muted">Submit your issue with detailed description and attachments</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 24px; font-weight: bold;">2</div>
+                    <h4 class="fw-bold">Get Assigned</h4>
+                    <p class="text-muted">Our support team reviews and assigns your ticket to the right agent</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 24px; font-weight: bold;">3</div>
+                    <h4 class="fw-bold">Get Resolution</h4>
+                    <p class="text-muted">Agent works on your issue and provides solution</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h3 class="display-6 fw-bold mb-4">Ready to streamline your support?</h3>
+                <p class="lead mb-4">Join thousands of businesses using STS to manage customer support</p>
+                <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-lg px-5">Get Started Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

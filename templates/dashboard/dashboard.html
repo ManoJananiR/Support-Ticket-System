@@ -1,4 +1,3 @@
-// filepath: c:\Support Ticket System\sts\templates\dashboard\dashboard.html
 {% extends 'base.html' %}
 {% load static %}
 
@@ -20,8 +19,8 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="text-uppercase text-white-50">Open Tickets</h6>
-                            <h3 class="mb-0">{{ open_count }}</h3>
+                            <h6 class="card-title mb-1">Total Tickets</h6>
+                            <h2 class="mb-0 display-6">{{ total_tickets|default:"0" }}</h2>
                         </div>
                         <i class="fas fa-ticket-alt fa-3x opacity-50"></i>
                     </div>
@@ -34,10 +33,10 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="text-uppercase text-white-50">In Progress</h6>
-                            <h3 class="mb-0">{{ in_progress_count }}</h3>
+                            <h6 class="card-title mb-1">Open Tickets</h6>
+                            <h2 class="mb-0 display-6">{{ open_tickets|default:"0" }}</h2>
                         </div>
-                        <i class="fas fa-spinner fa-3x opacity-50"></i>
+                        <i class="fas fa-folder-open fa-3x opacity-50"></i>
                     </div>
                 </div>
             </div>
@@ -48,8 +47,8 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="text-uppercase text-white-50">Resolved</h6>
-                            <h3 class="mb-0">{{ resolved_count }}</h3>
+                            <h6 class="card-title mb-1">Resolved</h6>
+                            <h2 class="mb-0 display-6">{{ resolved_tickets|default:"0" }}</h2>
                         </div>
                         <i class="fas fa-check-circle fa-3x opacity-50"></i>
                     </div>
@@ -62,8 +61,8 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="text-uppercase text-white-50">Overdue</h6>
-                            <h3 class="mb-0">{{ overdue_count }}</h3>
+                            <h6 class="card-title mb-1">Overdue</h6>
+                            <h2 class="mb-0 display-6">{{ overdue_tickets|default:"0" }}</h2>
                         </div>
                         <i class="fas fa-exclamation-triangle fa-3x opacity-50"></i>
                     </div>
@@ -72,46 +71,92 @@
         </div>
     </div>
 
-    <!-- Charts Row -->
+    <!-- Statistics Display with Progress Bars -->
     <div class="row g-4 mb-4">
-        <div class="col-xl-6">
+        <div class="col-md-6">
             <div class="card h-100">
                 <div class="card-header bg-transparent">
                     <h5 class="card-title mb-0">
-                        <i class="fas fa-chart-pie me-2 text-primary"></i>Tickets by Status
+                        <i class="fas fa-tag me-2 text-primary"></i>Tickets by Status
                     </h5>
                 </div>
                 <div class="card-body">
-                    <canvas id="statusChart" height="300"></canvas>
-                    <div id="noStatusData" class="text-center text-muted py-4" style="display: none;">
-                        <i class="fas fa-chart-pie fa-3x mb-3 opacity-50"></i>
-                        <p>No data available</p>
-                    </div>
+                    <table class="table table-sm">
+                        {% for item in tickets_by_status %}
+                        <tr>
+                            <td width="30%">{{ item.get_status_display }}</td>
+                            <td width="70%">
+                                <div class="progress">
+                                    {% if total_tickets and total_tickets > 0 %}
+                                    <div class="progress-bar" role="progressbar" 
+                                         style="width: {% widthratio item.count total_tickets 100 %}%"
+                                         aria-valuenow="{{ item.count }}" 
+                                         aria-valuemin="0" 
+                                         aria-valuemax="{{ total_tickets }}">
+                                        {{ item.count }}
+                                    </div>
+                                    {% else %}
+                                    <div class="progress-bar" role="progressbar" style="width: 0%">
+                                        0
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="2" class="text-center text-muted">No data available</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
                 </div>
             </div>
         </div>
 
-        <div class="col-xl-6">
+        <div class="col-md-6">
             <div class="card h-100">
                 <div class="card-header bg-transparent">
                     <h5 class="card-title mb-0">
-                        <i class="fas fa-chart-bar me-2 text-primary"></i>Tickets by Priority
+                        <i class="fas fa-exclamation-circle me-2 text-primary"></i>Tickets by Priority
                     </h5>
                 </div>
                 <div class="card-body">
-                    <canvas id="priorityChart" height="300"></canvas>
-                    <div id="noPriorityData" class="text-center text-muted py-4" style="display: none;">
-                        <i class="fas fa-chart-bar fa-3x mb-3 opacity-50"></i>
-                        <p>No data available</p>
-                    </div>
+                    <table class="table table-sm">
+                        {% for item in tickets_by_priority %}
+                        <tr>
+                            <td width="30%">{{ item.get_priority_display }}</td>
+                            <td width="70%">
+                                <div class="progress">
+                                    {% if total_tickets and total_tickets > 0 %}
+                                    <div class="progress-bar bg-warning" role="progressbar" 
+                                         style="width: {% widthratio item.count total_tickets 100 %}%"
+                                         aria-valuenow="{{ item.count }}" 
+                                         aria-valuemin="0" 
+                                         aria-valuemax="{{ total_tickets }}">
+                                        {{ item.count }}
+                                    </div>
+                                    {% else %}
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 0%">
+                                        0
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="2" class="text-center text-muted">No data available</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SLA Performance and Trend -->
+    <!-- SLA Performance and Daily Trend -->
     <div class="row g-4 mb-4">
-        <div class="col-xl-4">
+        <div class="col-md-4">
             <div class="card h-100">
                 <div class="card-header bg-transparent">
                     <h5 class="card-title mb-0">
@@ -122,20 +167,20 @@
                     <div class="row text-center g-3">
                         <div class="col-4">
                             <div class="p-3 bg-light rounded">
-                                <h6 class="text-muted">Met</h6>
-                                <h4>{{ sla_met_percentage }}%</h4>
+                                <h3 class="text-success mb-1">{{ sla_performance.on_track|default:"0" }}</h3>
+                                <small class="text-muted">On Track</small>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="p-3 bg-light rounded">
-                                <h6 class="text-muted">At Risk</h6>
-                                <h4>{{ sla_at_risk_percentage }}%</h4>
+                                <h3 class="text-warning mb-1">{{ sla_performance.response_breached|default:"0" }}</h3>
+                                <small class="text-muted">Response Breached</small>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="p-3 bg-light rounded">
-                                <h6 class="text-muted">Breached</h6>
-                                <h4>{{ sla_breached_percentage }}%</h4>
+                                <h3 class="text-danger mb-1">{{ sla_performance.resolution_breached|default:"0" }}</h3>
+                                <small class="text-muted">Resolution Breached</small>
                             </div>
                         </div>
                     </div>
@@ -143,19 +188,44 @@
             </div>
         </div>
 
-        <div class="col-xl-8">
+        <div class="col-md-8">
             <div class="card h-100">
                 <div class="card-header bg-transparent">
                     <h5 class="card-title mb-0">
-                        <i class="fas fa-chart-line me-2 text-primary"></i>Daily Trend (Last 7 Days)
+                        <i class="fas fa-calendar me-2 text-primary"></i>Daily Trend (Last 7 Days)
                     </h5>
                 </div>
                 <div class="card-body">
-                    <canvas id="trendChart" height="100"></canvas>
-                    <div id="noTrendData" class="text-center text-muted py-4" style="display: none;">
-                        <i class="fas fa-chart-line fa-3x mb-3 opacity-50"></i>
-                        <p>No data available for the last 7 days</p>
-                    </div>
+                    <table class="table table-sm">
+                        {% for item in daily_trend %}
+                        <tr>
+                            <td width="20%">{{ item.date|date:"M d" }}</td>
+                            <td width="80%">
+                                <div class="progress">
+                                    {% with max_value=10 %}
+                                    {% if max_value > 0 %}
+                                    <div class="progress-bar bg-info" role="progressbar" 
+                                         style="width: {% widthratio item.count max_value 100 %}%"
+                                         aria-valuenow="{{ item.count }}" 
+                                         aria-valuemin="0" 
+                                         aria-valuemax="{{ max_value }}">
+                                        {{ item.count }} tickets
+                                    </div>
+                                    {% else %}
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 0%">
+                                        0
+                                    </div>
+                                    {% endif %}
+                                    {% endwith %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="2" class="text-center text-muted">No data available for the last 7 days</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
                 </div>
             </div>
         </div>
@@ -179,38 +249,50 @@
                             <thead class="table-light">
                                 <tr>
                                     <th>Ticket ID</th>
-                                    <th>Subject</th>
+                                    <th>Title</th>
                                     <th>Status</th>
                                     <th>Priority</th>
                                     <th>Created By</th>
                                     <th>Assigned To</th>
                                     <th>Created</th>
-                                    <th>Action</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for ticket in recent_tickets %}
                                 <tr>
                                     <td><span class="badge bg-light text-dark">{{ ticket.ticket_id }}</span></td>
-                                    <td>{{ ticket.subject|truncatechars:50 }}</td>
                                     <td>
-                                        {% if ticket.status == 'open' %}
-                                            <span class="badge bg-primary">{{ ticket.get_status_display }}</span>
+                                        <a href="{% url 'tickets:detail' ticket.ticket_id %}" class="text-decoration-none">
+                                            {{ ticket.title|truncatechars:50 }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        {% if ticket.status == 'resolved' %}
+                                            <span class="badge bg-success">Resolved</span>
+                                        {% elif ticket.status == 'closed' %}
+                                            <span class="badge bg-secondary">Closed</span>
+                                        {% elif ticket.status == 'open' %}
+                                            <span class="badge bg-primary">Open</span>
+                                        {% elif ticket.status == 'pending' %}
+                                            <span class="badge bg-warning text-dark">Pending</span>
                                         {% elif ticket.status == 'in_progress' %}
-                                            <span class="badge bg-warning">{{ ticket.get_status_display }}</span>
-                                        {% elif ticket.status == 'resolved' %}
-                                            <span class="badge bg-success">{{ ticket.get_status_display }}</span>
+                                            <span class="badge bg-info">In Progress</span>
+                                        {% elif ticket.status == 'escalated' %}
+                                            <span class="badge bg-danger">Escalated</span>
                                         {% else %}
                                             <span class="badge bg-secondary">{{ ticket.get_status_display }}</span>
                                         {% endif %}
                                     </td>
                                     <td>
                                         {% if ticket.priority == 'critical' %}
-                                            <span class="badge bg-danger">{{ ticket.get_priority_display }}</span>
+                                            <span class="badge bg-danger">Critical</span>
                                         {% elif ticket.priority == 'high' %}
-                                            <span class="badge bg-warning">{{ ticket.get_priority_display }}</span>
+                                            <span class="badge bg-warning text-dark">High</span>
                                         {% elif ticket.priority == 'medium' %}
-                                            <span class="badge bg-info">{{ ticket.get_priority_display }}</span>
+                                            <span class="badge bg-info">Medium</span>
+                                        {% elif ticket.priority == 'low' %}
+                                            <span class="badge bg-secondary">Low</span>
                                         {% else %}
                                             <span class="badge bg-secondary">{{ ticket.get_priority_display }}</span>
                                         {% endif %}
@@ -225,9 +307,16 @@
                                     </td>
                                     <td>{{ ticket.created_at|timesince }} ago</td>
                                     <td>
-                                        <a href="{% url 'tickets:detail' ticket.ticket_id %}" class="btn btn-sm btn-outline-primary">
-                                            View
-                                        </a>
+                                        <div class="btn-group btn-group-sm">
+                                            <a href="{% url 'tickets:detail' ticket.ticket_id %}" class="btn btn-outline-primary" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            {% if user.is_admin or user == ticket.assigned_to %}
+                                            <a href="{% url 'tickets:edit' ticket.ticket_id %}" class="btn btn-outline-secondary" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            {% endif %}
+                                        </div>
                                     </td>
                                 </tr>
                                 {% empty %}
@@ -235,6 +324,9 @@
                                     <td colspan="8" class="text-center py-5">
                                         <i class="fas fa-ticket-alt fa-3x text-muted mb-3"></i>
                                         <p class="text-muted">No recent tickets found</p>
+                                        <a href="{% url 'tickets:create' %}" class="btn btn-primary btn-sm">
+                                            <i class="fas fa-plus-circle"></i> Create Ticket
+                                        </a>
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -245,187 +337,89 @@
             </div>
         </div>
     </div>
+
+    <!-- Agent Performance (for admins only) -->
+    {% if agent_stats %}
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-transparent">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-users me-2 text-primary"></i>Agent Performance
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Agent</th>
+                                    <th>Assigned Tickets</th>
+                                    <th>Resolved</th>
+                                    <th>Resolution Rate</th>
+                                    <th>Avg Response Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for agent in agent_stats %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-user-circle fa-2x me-2 text-muted"></i>
+                                            <div>
+                                                <strong>{{ agent.get_full_name|default:agent.email }}</strong>
+                                                <br>
+                                                <small class="text-muted">{{ agent.email }}</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge bg-info">{{ agent.assigned_tickets }}</span></td>
+                                    <td><span class="badge bg-success">{{ agent.resolved_tickets }}</span></td>
+                                    <td>
+                                        {% if agent.assigned_tickets > 0 %}
+                                            <div class="progress" style="height: 20px;">
+                                                <div class="progress-bar bg-success" role="progressbar" 
+                                                     style="width:{% widthratio agent.resolved_tickets agent.assigned_tickets 100 %}"
+                                                     aria-valuenow="{% widthratio agent.resolved_tickets agent.assigned_tickets 100 %}" 
+                                                     aria-valuemin="0" 
+                                                     aria-valuemax="100">
+                                                    {% widthratio agent.resolved_tickets agent.assigned_tickets 100 %}%
+                                                </div>
+                                            </div>
+                                        {% else %}
+                                            <span class="text-muted">N/A</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if agent.avg_response_time %}
+                                            {{ agent.avg_response_time|floatformat:1 }} hours
+                                        {% else %}
+                                            <span class="text-muted">N/A</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}
 
 {% block extra_js %}
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
-(function() {
-    'use strict';
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        
-        // ============ STATUS CHART ============
-        {% if tickets_by_status %}
-        try {
-            const statusData = [
-                {% for item in tickets_by_status %}
-                {
-                    label: "{{ item.get_status_display|escapejs }}",
-                    value: {{ item.count }}
-                }{% if not forloop.last %},{% endif %}
-                {% endfor %}
-            ];
-            
-            if (statusData.length > 0) {
-                const statusCtx = document.getElementById('statusChart').getContext('2d');
-                new Chart(statusCtx, {
-                    type: 'pie',
-                    data: {
-                        labels: statusData.map(item => item.label),
-                        datasets: [{
-                            data: statusData.map(item => item.value),
-                            backgroundColor: ['#0d6efd', '#6c757d', '#198754', '#ffc107', '#dc3545', '#0dcaf0', '#6610f2'],
-                            borderWidth: 0
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: 'bottom'
-                            }
-                        }
-                    }
-                });
-            } else {
-                document.getElementById('statusChart').style.display = 'none';
-                document.getElementById('noStatusData').style.display = 'block';
-            }
-        } catch (e) {
-            console.error('Status Chart error:', e);
-            document.getElementById('statusChart').style.display = 'none';
-            document.getElementById('noStatusData').style.display = 'block';
-        }
-        {% else %}
-        document.getElementById('statusChart').style.display = 'none';
-        document.getElementById('noStatusData').style.display = 'block';
-        {% endif %}
-        
-        // ============ PRIORITY CHART ============
-        {% if tickets_by_priority %}
-        try {
-            const priorityData = [
-                {% for item in tickets_by_priority %}
-                {
-                    label: "{{ item.get_priority_display|escapejs }}",
-                    value: {{ item.count }}
-                }{% if not forloop.last %},{% endif %}
-                {% endfor %}
-            ];
-            
-            if (priorityData.length > 0) {
-                const priorityCtx = document.getElementById('priorityChart').getContext('2d');
-                new Chart(priorityCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: priorityData.map(item => item.label),
-                        datasets: [{
-                            data: priorityData.map(item => item.value),
-                            backgroundColor: ['#198754', '#ffc107', '#fd7e14', '#dc3545', '#6f42c1'],
-                            borderWidth: 0
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        cutout: '60%',
-                        plugins: {
-                            legend: {
-                                position: 'bottom'
-                            }
-                        }
-                    }
-                });
-            } else {
-                document.getElementById('priorityChart').style.display = 'none';
-                document.getElementById('noPriorityData').style.display = 'block';
-            }
-        } catch (e) {
-            console.error('Priority Chart error:', e);
-            document.getElementById('priorityChart').style.display = 'none';
-            document.getElementById('noPriorityData').style.display = 'block';
-        }
-        {% else %}
-        document.getElementById('priorityChart').style.display = 'none';
-        document.getElementById('noPriorityData').style.display = 'block';
-        {% endif %}
-        
-        // ============ TREND CHART ============
-        {% if daily_trend %}
-        try {
-            const trendLabels = [
-                {% for item in daily_trend %}
-                "{{ item.date|date:'M d'|escapejs }}"{% if not forloop.last %},{% endif %}
-                {% endfor %}
-            ];
-            
-            const trendData = [
-                {% for item in daily_trend %}
-                {{ item.count }}{% if not forloop.last %},{% endif %}
-                {% endfor %}
-            ];
-            
-            if (trendLabels.length > 0 && trendData.length > 0) {
-                const trendCtx = document.getElementById('trendChart').getContext('2d');
-                new Chart(trendCtx, {
-                    type: 'line',
-                    data: {
-                        labels: trendLabels,
-                        datasets: [{
-                            label: 'Tickets Created',
-                            data: trendData,
-                            borderColor: '#0d6efd',
-                            backgroundColor: 'rgba(13, 110, 253, 0.1)',
-                            tension: 0.4,
-                            fill: true,
-                            pointBackgroundColor: '#0d6efd',
-                            pointBorderColor: '#fff',
-                            pointBorderWidth: 2,
-                            pointRadius: 4
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                display: false
-                            }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                stepSize: 1,
-                                grid: {
-                                    color: 'rgba(0, 0, 0, 0.05)'
-                                }
-                            },
-                            x: {
-                                grid: {
-                                    display: false
-                                }
-                            }
-                        }
-                    }
-                });
-            } else {
-                document.getElementById('trendChart').style.display = 'none';
-                document.getElementById('noTrendData').style.display = 'block';
-            }
-        } catch (e) {
-            console.error('Trend Chart error:', e);
-            document.getElementById('trendChart').style.display = 'none';
-            document.getElementById('noTrendData').style.display = 'block';
-        }
-        {% else %}
-        document.getElementById('trendChart').style.display = 'none';
-        document.getElementById('noTrendData').style.display = 'block';
-        {% endif %}
-        
-    }); // End DOMContentLoaded
-})(); // End IIFE
+// Initialize tooltips if Bootstrap is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof bootstrap !== 'undefined') {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    }
+});
 </script>
 {% endblock %}

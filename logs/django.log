@@ -1,0 +1,1286 @@
+INFO 2026-03-04 12:08:17,711 autoreload 12744 7140 Watching for file changes with StatReloader
+INFO 2026-03-04 12:08:24,320 basehttp 12744 10180 "GET / HTTP/1.1" 301 0
+INFO 2026-03-04 12:08:24,369 basehttp 12744 10180 "GET /tickets/dashboard/ HTTP/1.1" 302 0
+ERROR 2026-03-04 12:08:24,494 log 12744 10180 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/login.html
+ERROR 2026-03-04 12:08:24,543 basehttp 12744 10180 "GET /accounts/login/?next=/tickets/dashboard/ HTTP/1.1" 500 106644
+INFO 2026-03-04 12:08:24,610 basehttp 12744 10180 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2026-03-04 12:08:24,610 basehttp 12744 2156 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13404
+INFO 2026-03-04 12:08:25,100 basehttp 12744 2156 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2026-03-04 12:08:25,251 basehttp 12744 2156 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+WARNING 2026-03-04 12:08:25,841 log 12744 2156 Not Found: /favicon.ico
+WARNING 2026-03-04 12:08:25,849 basehttp 12744 2156 "GET /favicon.ico HTTP/1.1" 404 11844
+INFO 2026-03-04 12:25:30,792 autoreload 15856 8424 Watching for file changes with StatReloader
+INFO 2026-03-04 12:25:37,920 basehttp 15856 16092 "GET /tickets/dashboard/ HTTP/1.1" 302 0
+INFO 2026-03-04 12:25:38,100 basehttp 15856 16092 "GET /accounts/login/?next=/tickets/dashboard/ HTTP/1.1" 200 14065
+WARNING 2026-03-04 12:25:38,198 basehttp 15856 16092 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 12:25:38,198 basehttp 15856 10076 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 12:25:49,289 basehttp 15856 19816 "GET /accounts/register/ HTTP/1.1" 200 14618
+WARNING 2026-03-04 12:25:49,349 basehttp 15856 3888 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 12:25:49,349 basehttp 15856 19816 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 12:26:25,670 basehttp 15856 19264 "POST /accounts/register/ HTTP/1.1" 200 14954
+WARNING 2026-03-04 12:26:25,753 basehttp 15856 19264 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 12:26:25,753 basehttp 15856 13412 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 12:26:48,161 basehttp 15856 21176 "POST /accounts/register/ HTTP/1.1" 200 14848
+WARNING 2026-03-04 12:26:48,234 basehttp 15856 21176 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 12:26:48,242 basehttp 15856 7420 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 12:27:55,636 signals 15856 924 New user created: manojananir@gmail.com
+INFO 2026-03-04 12:27:55,730 basehttp 15856 924 "POST /accounts/register/ HTTP/1.1" 302 0
+INFO 2026-03-04 12:27:55,788 basehttp 15856 924 "GET /accounts/login/ HTTP/1.1" 200 14375
+WARNING 2026-03-04 12:27:55,855 basehttp 15856 23364 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 12:27:55,855 basehttp 15856 924 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 12:28:24,980 signals 15856 15704 User updated: manojananir@gmail.com
+INFO 2026-03-04 12:28:25,074 basehttp 15856 15704 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2026-03-04 12:28:25,222 log 15856 15704 Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\accounts\views.py", line 25, in profile
+    return render(request, 'accounts/profile.html', {'user': request.user})
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'settings' not found. 'settings' is not a valid view function or pattern name.
+ERROR 2026-03-04 12:28:25,296 basehttp 15856 15704 "GET /accounts/profile/ HTTP/1.1" 500 197739
+INFO 2026-03-04 13:01:21,462 autoreload 21548 22396 Watching for file changes with StatReloader
+INFO 2026-03-04 13:01:27,475 basehttp 21548 896 "GET /tickets/dashboard/ HTTP/1.1" 200 22210
+WARNING 2026-03-04 13:01:27,571 basehttp 21548 896 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 13:01:27,577 basehttp 21548 8272 "GET /static/js/main.js HTTP/1.1" 404 1890
+ERROR 2026-03-04 13:01:44,736 log 21548 8508 Internal Server Error: /tickets/create/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tickets/ticket_form.html
+ERROR 2026-03-04 13:01:44,783 basehttp 21548 8508 "GET /tickets/create/ HTTP/1.1" 500 107237
+INFO 2026-03-04 13:01:58,924 basehttp 21548 8508 "GET /tickets/dashboard/ HTTP/1.1" 200 22209
+WARNING 2026-03-04 13:01:58,989 basehttp 21548 8508 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 13:01:58,997 basehttp 21548 19224 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 13:02:01,972 basehttp 21548 10644 "GET /tickets/ HTTP/1.1" 200 27829
+WARNING 2026-03-04 13:02:02,039 basehttp 21548 10644 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 13:02:02,039 basehttp 21548 19396 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 13:03:36,196 basehttp 21548 18768 "GET /tickets/?search=issue+on+product&status=new&priority=medium&category=&assigned_to=&created_by=&created_after=2026-03-04T13%3A02&created_before=2026-03-02T13%3A03&unassigned=on&tags= HTTP/1.1" 200 28137
+WARNING 2026-03-04 13:03:36,284 basehttp 21548 18768 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 13:03:36,284 basehttp 21548 2020 "GET /static/js/main.js HTTP/1.1" 404 1890
+ERROR 2026-03-04 13:03:41,835 log 21548 15864 Internal Server Error: /tickets/create/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tickets/ticket_form.html
+ERROR 2026-03-04 13:03:41,885 basehttp 21548 15864 "GET /tickets/create/ HTTP/1.1" 500 107436
+INFO 2026-03-04 13:03:58,815 basehttp 21548 15864 "GET /accounts/profile/ HTTP/1.1" 200 15622
+WARNING 2026-03-04 13:03:58,921 basehttp 21548 21972 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 13:03:58,925 basehttp 21548 15864 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 13:04:07,085 basehttp 21548 16752 "GET /accounts/profile/edit/ HTTP/1.1" 200 16622
+WARNING 2026-03-04 13:04:07,151 basehttp 21548 16752 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 13:04:07,151 basehttp 21548 22576 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 13:04:10,565 basehttp 21548 20684 "POST /accounts/profile/edit/ HTTP/1.1" 200 16839
+WARNING 2026-03-04 13:04:10,631 basehttp 21548 20684 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 13:04:10,631 basehttp 21548 4300 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 13:04:25,455 basehttp 21548 19568 "GET /accounts/profile/ HTTP/1.1" 200 15622
+WARNING 2026-03-04 13:04:25,525 basehttp 21548 7412 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 13:04:25,525 basehttp 21548 19568 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 13:19:30,332 basehttp 21548 8952 "GET /accounts/profile/edit/ HTTP/1.1" 200 16621
+WARNING 2026-03-04 13:19:41,797 log 21548 8952 Not Found: /accounts/
+WARNING 2026-03-04 13:19:41,802 basehttp 21548 8952 "GET /accounts/ HTTP/1.1" 404 13860
+WARNING 2026-03-04 13:19:48,835 log 21548 8952 Not Found: /accounts
+WARNING 2026-03-04 13:19:48,835 basehttp 21548 8952 "GET /accounts HTTP/1.1" 404 11832
+INFO 2026-03-04 13:20:06,791 basehttp 21548 8952 "GET /api HTTP/1.1" 301 0
+INFO 2026-03-04 13:20:06,971 basehttp 21548 14588 "GET /api/ HTTP/1.1" 200 14590
+INFO 2026-03-04 13:20:07,027 basehttp 21548 10244 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+INFO 2026-03-04 13:20:07,031 basehttp 21548 21896 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2026-03-04 13:20:07,031 basehttp 21548 3692 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2026-03-04 13:20:07,035 basehttp 21548 9196 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2026-03-04 13:20:07,047 basehttp 21548 3692 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2026-03-04 13:20:07,052 basehttp 21548 10244 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2026-03-04 13:20:07,054 basehttp 21548 14588 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2026-03-04 13:20:07,054 basehttp 21548 21896 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2026-03-04 13:20:07,058 basehttp 21548 9196 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2026-03-04 13:20:07,058 basehttp 21548 11728 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2026-03-04 13:20:07,110 basehttp 21548 9196 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2026-03-04 13:20:17,116 basehttp 21548 9196 "OPTIONS /api/ HTTP/1.1" 200 14579
+INFO 2026-03-04 13:20:17,342 basehttp 21548 9196 "GET /__debug__/history_sidebar/?store_id=93ba66aabc3b4f0a9d4383db8f288f9a HTTP/1.1" 200 9070
+INFO 2026-03-04 13:20:24,581 basehttp 21548 9196 "GET /api/?format=json HTTP/1.1" 200 180
+INFO 2026-03-04 13:20:36,239 basehttp 21548 9196 "GET /api/?format=api HTTP/1.1" 200 14710
+ERROR 2026-03-04 13:21:59,165 log 21548 9196 Internal Server Error: /tickets/create/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tickets/ticket_form.html
+ERROR 2026-03-04 13:21:59,214 basehttp 21548 9196 "GET /tickets/create/ HTTP/1.1" 500 107237
+INFO 2026-03-04 13:22:52,948 basehttp 21548 9196 "GET /tickets/admin HTTP/1.1" 301 0
+WARNING 2026-03-04 13:22:53,078 log 21548 11728 Not Found: /tickets/admin/
+WARNING 2026-03-04 13:22:53,078 basehttp 21548 11728 "GET /tickets/admin/ HTTP/1.1" 404 12062
+INFO 2026-03-04 13:23:19,213 basehttp 21548 11728 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-03-04 13:23:19,396 basehttp 21548 11728 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 12716
+INFO 2026-03-04 13:23:19,449 basehttp 21548 10244 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2026-03-04 13:23:19,449 basehttp 21548 11728 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2026-03-04 13:23:19,449 basehttp 21548 21896 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2026-03-04 13:23:19,457 basehttp 21548 14588 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2026-03-04 13:23:19,457 basehttp 21548 3692 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2026-03-04 13:23:19,740 basehttp 21548 3692 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2026-03-04 13:23:19,776 basehttp 21548 14588 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-03-04 13:34:46,966 autoreload 11400 15628 Watching for file changes with StatReloader
+INFO 2026-03-04 13:34:51,878 basehttp 11400 100 "GET /tickets/dashboard/ HTTP/1.1" 200 22209
+WARNING 2026-03-04 13:34:51,987 basehttp 11400 100 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 13:34:51,987 basehttp 11400 11604 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 13:34:57,135 basehttp 11400 7396 "GET /tickets/create/ HTTP/1.1" 200 19845
+WARNING 2026-03-04 13:34:57,204 basehttp 11400 17072 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 13:34:57,204 basehttp 11400 7396 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 13:36:13,018 basehttp 11400 18532 "POST /tickets/create/ HTTP/1.1" 200 20022
+WARNING 2026-03-04 13:36:13,116 basehttp 11400 11392 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 13:36:13,123 basehttp 11400 18532 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 14:20:35,743 signals 12812 12544 New user created: janwork2003@gmail.com
+INFO 2026-03-04 16:32:29,190 autoreload 13404 19432 Watching for file changes with StatReloader
+INFO 2026-03-04 16:32:39,970 basehttp 13404 18500 "GET /tickets/dashboard/ HTTP/1.1" 200 22210
+INFO 2026-03-04 16:32:40,057 basehttp 13404 9976 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2026-03-04 16:32:40,062 basehttp 13404 10780 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+WARNING 2026-03-04 16:32:40,073 basehttp 13404 18500 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 16:32:40,077 basehttp 13404 18516 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 16:32:40,527 basehttp 13404 10780 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2026-03-04 16:32:40,568 basehttp 13404 10780 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2026-03-04 16:32:41,121 log 13404 10780 Not Found: /favicon.ico
+WARNING 2026-03-04 16:32:41,123 basehttp 13404 10780 "GET /favicon.ico HTTP/1.1" 404 11845
+INFO 2026-03-04 16:32:47,572 basehttp 13404 10780 "GET /tickets/create/ HTTP/1.1" 200 19846
+WARNING 2026-03-04 16:32:47,650 basehttp 13404 10780 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 16:32:47,650 basehttp 13404 9976 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 16:32:57,681 basehttp 13404 9640 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2026-03-04 16:32:57,774 basehttp 13404 9640 "GET /accounts/login/ HTTP/1.1" 200 14021
+WARNING 2026-03-04 16:32:57,847 basehttp 13404 9640 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 16:32:57,851 basehttp 13404 10568 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 16:33:28,345 signals 13404 15176 User updated: janwork2003@gmail.com
+INFO 2026-03-04 16:33:28,451 basehttp 13404 15176 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2026-03-04 16:33:28,598 basehttp 13404 15176 "GET /accounts/profile/ HTTP/1.1" 200 15888
+WARNING 2026-03-04 16:33:28,705 basehttp 13404 15176 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 16:33:28,707 basehttp 13404 4088 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 16:33:37,643 basehttp 13404 3740 "GET /tickets/create/ HTTP/1.1" 200 20091
+WARNING 2026-03-04 16:33:37,722 basehttp 13404 16468 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 16:33:37,726 basehttp 13404 3740 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 16:33:41,376 basehttp 13404 6620 "GET /tickets/ HTTP/1.1" 200 24893
+WARNING 2026-03-04 16:33:41,440 basehttp 13404 2684 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 16:33:41,441 basehttp 13404 6620 "GET /static/css/style.css HTTP/1.1" 404 1899
+ERROR 2026-03-04 16:33:44,377 log 13404 12496 Internal Server Error: /tickets/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 606, in dashboard
+    context['agent_stats'] = User.objects.filter(
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 1631, in _annotate
+    raise ValueError(
+ValueError: The annotation 'assigned_tickets' conflicts with a field on the model.
+ERROR 2026-03-04 16:33:44,593 basehttp 13404 12496 "GET /tickets/dashboard/ HTTP/1.1" 500 111745
+INFO 2026-03-04 16:34:57,528 basehttp 13404 12496 "GET /tickets/create/ HTTP/1.1" 200 20091
+WARNING 2026-03-04 16:34:57,685 basehttp 13404 12496 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 16:34:57,686 basehttp 13404 9792 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 16:35:53,870 basehttp 13404 16636 "GET /admin/ HTTP/1.1" 200 19347
+INFO 2026-03-04 16:35:53,938 basehttp 13404 19628 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2026-03-04 16:35:53,938 basehttp 13404 10392 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-03-04 16:35:53,940 basehttp 13404 16636 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2026-03-04 16:35:53,944 basehttp 13404 14216 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2026-03-04 16:35:53,947 basehttp 13404 6932 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2026-03-04 16:35:54,024 basehttp 13404 14216 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-03-04 16:35:54,025 basehttp 13404 6932 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2026-03-04 16:35:54,035 basehttp 13404 14216 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2026-03-04 16:35:54,035 basehttp 13404 6932 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+ERROR 2026-03-04 16:36:18,885 log 13404 14216 Internal Server Error: /tickets/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 606, in dashboard
+    context['agent_stats'] = User.objects.filter(
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 1631, in _annotate
+    raise ValueError(
+ValueError: The annotation 'assigned_tickets' conflicts with a field on the model.
+ERROR 2026-03-04 16:36:18,989 basehttp 13404 14216 "GET /tickets/dashboard/ HTTP/1.1" 500 111743
+INFO 2026-03-04 16:36:35,588 basehttp 13404 14216 "GET /admin/ HTTP/1.1" 200 19346
+INFO 2026-03-04 16:36:42,281 basehttp 13404 14216 "GET /admin/accounts/user/ HTTP/1.1" 200 23980
+INFO 2026-03-04 16:36:42,358 basehttp 13404 16636 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-03-04 16:36:42,360 basehttp 13404 14216 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2026-03-04 16:36:42,365 basehttp 13404 19628 "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2026-03-04 16:36:42,368 basehttp 13404 12956 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2026-03-04 16:36:42,380 basehttp 13404 16636 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2026-03-04 16:36:42,387 basehttp 13404 14216 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-03-04 16:36:42,389 basehttp 13404 19628 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-03-04 16:36:42,402 basehttp 13404 16636 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2026-03-04 16:36:42,408 basehttp 13404 14216 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2026-03-04 16:36:42,422 basehttp 13404 10392 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2026-03-04 16:36:42,441 basehttp 13404 12956 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2026-03-04 16:36:42,460 basehttp 13404 12956 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-03-04 16:36:42,506 basehttp 13404 6932 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-03-04 16:36:42,550 basehttp 13404 6932 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2026-03-04 16:36:42,556 basehttp 13404 12956 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2026-03-04 16:36:52,007 basehttp 13404 12956 "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 19761
+INFO 2026-03-04 16:36:52,132 basehttp 13404 12956 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-03-04 16:36:54,892 basehttp 13404 12956 "GET /admin/accounts/loginhistory/ HTTP/1.1" 200 21260
+INFO 2026-03-04 16:36:55,029 basehttp 13404 12956 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-03-04 16:36:56,088 basehttp 13404 12956 "GET /admin/accounts/loginhistory/ HTTP/1.1" 200 21259
+INFO 2026-03-04 16:36:56,209 basehttp 13404 12956 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-03-04 16:37:01,912 basehttp 13404 12956 "GET /admin/sites/site/ HTTP/1.1" 200 21525
+INFO 2026-03-04 16:37:02,043 basehttp 13404 12956 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-03-04 16:37:07,374 basehttp 13404 12956 "GET /admin/sites/site/1/change/ HTTP/1.1" 200 21297
+INFO 2026-03-04 16:37:07,434 basehttp 13404 12956 "GET /static/admin/css/forms.css HTTP/1.1" 200 9047
+INFO 2026-03-04 16:37:07,435 basehttp 13404 10392 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-03-04 16:37:07,505 basehttp 13404 10392 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11900
+INFO 2026-03-04 16:37:07,527 basehttp 13404 10392 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-03-04 16:37:07,529 basehttp 13404 6932 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-03-04 16:38:34,210 basehttp 13404 6932 "GET /admin/ HTTP/1.1" 200 19346
+INFO 2026-03-04 16:39:23,496 basehttp 13404 6932 "GET /admin/auth/group/ HTTP/1.1" 200 19976
+INFO 2026-03-04 16:39:23,634 basehttp 13404 6932 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-03-04 16:39:26,703 basehttp 13404 6932 "GET /admin/accounts/user/ HTTP/1.1" 200 23980
+INFO 2026-03-04 16:39:26,837 basehttp 13404 6932 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-03-04 16:39:32,730 basehttp 13404 6932 "GET /admin/accounts/user/? HTTP/1.1" 200 23979
+INFO 2026-03-04 16:39:32,864 basehttp 13404 6932 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2026-03-04 16:47:23,540 log 13404 16512 Internal Server Error: /tickets/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 606, in dashboard
+    context['agent_stats'] = User.objects.filter(
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 1631, in _annotate
+    raise ValueError(
+ValueError: The annotation 'assigned_tickets' conflicts with a field on the model.
+ERROR 2026-03-04 16:47:23,643 basehttp 13404 16512 "GET /tickets/dashboard/ HTTP/1.1" 500 111759
+INFO 2026-03-04 16:51:00,783 autoreload 13404 19432 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:51:03,296 autoreload 18948 8364 Watching for file changes with StatReloader
+INFO 2026-03-04 16:54:39,336 autoreload 18948 8364 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:54:41,119 autoreload 10392 11752 Watching for file changes with StatReloader
+INFO 2026-03-04 16:54:44,447 autoreload 10392 11752 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:54:46,065 autoreload 10320 19808 Watching for file changes with StatReloader
+INFO 2026-03-04 16:55:00,041 autoreload 10320 19808 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:55:01,662 autoreload 10740 10352 Watching for file changes with StatReloader
+INFO 2026-03-04 16:57:33,431 autoreload 10740 10352 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:57:35,059 autoreload 20004 3216 Watching for file changes with StatReloader
+INFO 2026-03-04 16:57:50,991 autoreload 20004 3216 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:57:53,649 autoreload 10824 9428 Watching for file changes with StatReloader
+INFO 2026-03-04 16:58:37,721 autoreload 10824 9428 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:58:39,350 autoreload 4108 2868 Watching for file changes with StatReloader
+INFO 2026-03-04 16:58:43,487 autoreload 4108 2868 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:58:45,194 autoreload 17092 7152 Watching for file changes with StatReloader
+INFO 2026-03-04 16:58:48,898 autoreload 17092 7152 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:58:50,436 autoreload 11084 12224 Watching for file changes with StatReloader
+INFO 2026-03-04 16:58:54,117 autoreload 11084 12224 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:58:55,967 autoreload 20356 11252 Watching for file changes with StatReloader
+INFO 2026-03-04 16:59:36,574 autoreload 20356 11252 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:59:38,337 autoreload 17496 20076 Watching for file changes with StatReloader
+INFO 2026-03-04 16:59:52,717 autoreload 17496 20076 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:59:54,328 autoreload 13988 15288 Watching for file changes with StatReloader
+INFO 2026-03-04 16:59:57,901 autoreload 13988 15288 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 16:59:59,507 autoreload 13468 3744 Watching for file changes with StatReloader
+INFO 2026-03-04 17:00:12,647 autoreload 13468 3744 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:00:14,230 autoreload 19548 336 Watching for file changes with StatReloader
+INFO 2026-03-04 17:01:07,017 autoreload 19548 336 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:01:08,863 autoreload 5180 14364 Watching for file changes with StatReloader
+INFO 2026-03-04 17:01:25,873 autoreload 5180 14364 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:01:27,438 autoreload 1804 12672 Watching for file changes with StatReloader
+INFO 2026-03-04 17:01:50,212 autoreload 1804 12672 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:01:51,865 autoreload 17508 19764 Watching for file changes with StatReloader
+INFO 2026-03-04 17:02:13,636 autoreload 17508 19764 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:02:15,615 autoreload 19956 4340 Watching for file changes with StatReloader
+INFO 2026-03-04 17:02:40,798 autoreload 19956 4340 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:02:42,659 autoreload 14568 13532 Watching for file changes with StatReloader
+INFO 2026-03-04 17:02:54,814 autoreload 14568 13532 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:02:56,537 autoreload 15576 19448 Watching for file changes with StatReloader
+INFO 2026-03-04 17:03:03,654 autoreload 15576 19448 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:03:04,947 autoreload 5324 11824 Watching for file changes with StatReloader
+INFO 2026-03-04 17:05:59,255 autoreload 5324 11824 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:06:01,042 autoreload 4952 11736 Watching for file changes with StatReloader
+INFO 2026-03-04 17:06:14,254 autoreload 4952 11736 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:06:15,987 autoreload 15612 20252 Watching for file changes with StatReloader
+INFO 2026-03-04 17:06:22,188 autoreload 15612 20252 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:06:23,617 autoreload 10792 4260 Watching for file changes with StatReloader
+INFO 2026-03-04 17:06:27,944 autoreload 10792 4260 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:06:29,277 autoreload 4596 7324 Watching for file changes with StatReloader
+INFO 2026-03-04 17:06:35,968 autoreload 4596 7324 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:06:37,740 autoreload 9892 9064 Watching for file changes with StatReloader
+INFO 2026-03-04 17:06:41,244 autoreload 9892 9064 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:06:42,784 autoreload 4268 20440 Watching for file changes with StatReloader
+INFO 2026-03-04 17:06:51,053 autoreload 4268 20440 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:06:52,594 autoreload 7048 3292 Watching for file changes with StatReloader
+INFO 2026-03-04 17:06:55,760 autoreload 7048 3292 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:06:57,446 autoreload 10764 3136 Watching for file changes with StatReloader
+INFO 2026-03-04 17:07:04,120 autoreload 10764 3136 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:07:05,733 autoreload 3316 14212 Watching for file changes with StatReloader
+INFO 2026-03-04 17:07:44,543 autoreload 3316 14212 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:07:46,235 autoreload 3176 11652 Watching for file changes with StatReloader
+INFO 2026-03-04 17:07:55,192 autoreload 3176 11652 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:07:56,717 autoreload 7340 13664 Watching for file changes with StatReloader
+INFO 2026-03-04 17:08:02,289 autoreload 7340 13664 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:08:03,779 autoreload 6928 16636 Watching for file changes with StatReloader
+INFO 2026-03-04 17:08:07,454 autoreload 6928 16636 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:08:08,984 autoreload 12792 3932 Watching for file changes with StatReloader
+INFO 2026-03-04 17:08:11,465 autoreload 12792 3932 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:08:13,119 autoreload 6956 17928 Watching for file changes with StatReloader
+INFO 2026-03-04 17:08:19,134 autoreload 6956 17928 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:08:20,613 autoreload 11960 8896 Watching for file changes with StatReloader
+INFO 2026-03-04 17:08:38,171 autoreload 11960 8896 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:08:39,863 autoreload 5548 20352 Watching for file changes with StatReloader
+INFO 2026-03-04 17:08:44,560 autoreload 5548 20352 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:08:46,343 autoreload 11220 9912 Watching for file changes with StatReloader
+ERROR 2026-03-04 17:09:00,557 log 11220 20304 Internal Server Error: /tickets/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 563, in dashboard
+    status_counts = tickets.values('status').annotate(count=Count('id')).order_by('status')
+UnboundLocalError: local variable 'Count' referenced before assignment
+ERROR 2026-03-04 17:09:00,681 basehttp 11220 20304 "GET /tickets/dashboard/ HTTP/1.1" 500 100537
+INFO 2026-03-04 17:09:53,504 autoreload 11220 9912 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:09:55,138 autoreload 20024 19616 Watching for file changes with StatReloader
+INFO 2026-03-04 17:09:58,620 autoreload 20024 19616 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:10:00,299 autoreload 10684 19660 Watching for file changes with StatReloader
+INFO 2026-03-04 17:10:12,396 autoreload 11272 1388 Watching for file changes with StatReloader
+ERROR 2026-03-04 17:10:17,586 log 11272 12944 Internal Server Error: /tickets/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 565, in dashboard
+    status_counts = tickets.values('status').annotate(count=Count('id')).order_by('status')
+UnboundLocalError: local variable 'Count' referenced before assignment
+ERROR 2026-03-04 17:10:17,740 basehttp 11272 12944 "GET /tickets/dashboard/ HTTP/1.1" 500 100231
+INFO 2026-03-04 17:11:25,341 autoreload 11272 1388 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:11:27,347 autoreload 20052 19932 Watching for file changes with StatReloader
+INFO 2026-03-04 17:11:31,150 autoreload 20052 19932 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:11:32,771 autoreload 1360 18364 Watching for file changes with StatReloader
+INFO 2026-03-04 17:19:24,671 autoreload 1448 4164 Watching for file changes with StatReloader
+ERROR 2026-03-04 17:19:30,413 log 1448 11992 Internal Server Error: /tickets/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 630, in dashboard
+    agent_stats = User.objects.filter(
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 1631, in _annotate
+    raise ValueError(
+ValueError: The annotation 'assigned_tickets' conflicts with a field on the model.
+ERROR 2026-03-04 17:19:30,725 basehttp 1448 11992 "GET /tickets/dashboard/ HTTP/1.1" 500 114499
+INFO 2026-03-04 17:23:10,866 autoreload 1448 4164 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:23:13,482 autoreload 9952 8972 Watching for file changes with StatReloader
+ERROR 2026-03-04 17:23:28,589 log 9952 13316 Internal Server Error: /tickets/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 554, in dashboard
+    status_counts = tickets.values('status').annotate(count=Count('id')).order_by('status')
+UnboundLocalError: local variable 'Count' referenced before assignment
+ERROR 2026-03-04 17:23:28,728 basehttp 9952 13316 "GET /tickets/dashboard/ HTTP/1.1" 500 100366
+ERROR 2026-03-04 17:23:32,390 log 9952 13316 Internal Server Error: /tickets/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 554, in dashboard
+    status_counts = tickets.values('status').annotate(count=Count('id')).order_by('status')
+UnboundLocalError: local variable 'Count' referenced before assignment
+ERROR 2026-03-04 17:23:32,462 basehttp 9952 13316 "GET /tickets/dashboard/ HTTP/1.1" 500 100366
+INFO 2026-03-04 17:26:51,985 autoreload 9952 8972 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:26:54,465 autoreload 12480 19672 Watching for file changes with StatReloader
+INFO 2026-03-04 17:27:02,180 autoreload 12480 19672 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:27:04,340 autoreload 8020 12944 Watching for file changes with StatReloader
+INFO 2026-03-04 17:27:09,474 autoreload 8020 12944 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 17:27:11,385 autoreload 18716 5648 Watching for file changes with StatReloader
+INFO 2026-03-04 17:28:55,245 autoreload 19260 11980 Watching for file changes with StatReloader
+INFO 2026-03-04 17:29:00,485 basehttp 19260 10448 "GET /tickets/dashboard/ HTTP/1.1" 200 22468
+WARNING 2026-03-04 17:29:00,600 basehttp 19260 8016 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 17:29:00,600 basehttp 19260 10448 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 17:29:15,566 basehttp 19260 2224 "GET /admin/ HTTP/1.1" 200 19347
+INFO 2026-03-04 17:29:19,814 basehttp 19260 2224 "GET /tickets/dashboard/ HTTP/1.1" 200 22467
+WARNING 2026-03-04 17:29:19,904 basehttp 19260 2224 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 17:29:19,907 basehttp 19260 14400 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 17:29:23,108 basehttp 19260 13500 "GET /admin/ HTTP/1.1" 200 19347
+INFO 2026-03-04 17:40:29,888 signals 13456 14692 New user created: agent1@example.com
+INFO 2026-03-04 17:40:30,338 signals 13456 14692 New user created: agent2@example.com
+INFO 2026-03-04 17:40:30,823 signals 13456 14692 New user created: agent3@example.com
+INFO 2026-03-04 17:49:30,997 autoreload 11764 4016 Watching for file changes with StatReloader
+INFO 2026-03-04 17:49:36,490 basehttp 11764 5024 "GET /tickets/dashboard/ HTTP/1.1" 200 28723
+WARNING 2026-03-04 17:49:36,627 basehttp 11764 10364 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 17:49:36,633 basehttp 11764 5024 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 17:49:44,695 basehttp 11764 7296 "GET /admin/ HTTP/1.1" 200 19347
+INFO 2026-03-04 17:50:19,312 basehttp 11764 7296 "GET /tickets/dashboard/ HTTP/1.1" 200 28731
+WARNING 2026-03-04 17:50:19,418 basehttp 11764 1828 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 17:50:19,419 basehttp 11764 7296 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 17:50:28,000 basehttp 11764 18268 "GET /accounts/profile/ HTTP/1.1" 200 16757
+WARNING 2026-03-04 17:50:28,074 basehttp 11764 18268 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 17:50:28,074 basehttp 11764 9792 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 17:50:34,600 basehttp 11764 17480 "GET /admin/ HTTP/1.1" 200 19347
+INFO 2026-03-04 17:54:00,832 autoreload 3616 3960 Watching for file changes with StatReloader
+INFO 2026-03-04 17:54:07,693 basehttp 3616 13684 "GET /tickets/dashboard/ HTTP/1.1" 200 35318
+WARNING 2026-03-04 17:54:07,815 basehttp 3616 19676 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 17:54:07,815 basehttp 3616 13684 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 17:54:25,938 log 3616 2984 Not Found: /tickets/agents/
+WARNING 2026-03-04 17:54:25,938 basehttp 3616 2984 "GET /tickets/agents/ HTTP/1.1" 404 12067
+WARNING 2026-03-04 17:54:32,554 log 3616 2984 Not Found: /tickets/categories/
+WARNING 2026-03-04 17:54:32,554 basehttp 3616 2984 "GET /tickets/categories/ HTTP/1.1" 404 12081
+INFO 2026-03-04 17:54:49,485 basehttp 3616 2984 "GET /tickets/create/ HTTP/1.1" 200 27545
+WARNING 2026-03-04 17:54:49,558 basehttp 3616 2984 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 17:54:49,566 basehttp 3616 2196 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 17:55:37,159 basehttp 3616 11072 "GET /tickets/ HTTP/1.1" 200 25923
+WARNING 2026-03-04 17:55:37,253 basehttp 3616 11072 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 17:55:37,261 basehttp 3616 13532 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 17:55:50,207 log 3616 20224 Not Found: /tickets/agents/
+WARNING 2026-03-04 17:55:50,209 basehttp 3616 20224 "GET /tickets/agents/ HTTP/1.1" 404 12067
+WARNING 2026-03-04 17:57:05,612 log 3616 20224 Not Found: /tickets/categories/
+WARNING 2026-03-04 17:57:05,614 basehttp 3616 20224 "GET /tickets/categories/ HTTP/1.1" 404 12082
+INFO 2026-03-04 18:02:55,003 autoreload 3616 3960 C:\Support Ticket System\sts\apps\tickets\urls.py changed, reloading.
+INFO 2026-03-04 18:02:57,312 autoreload 20344 16524 Watching for file changes with StatReloader
+INFO 2026-03-04 18:03:24,592 autoreload 20344 16524 C:\Support Ticket System\sts\apps\tickets\urls.py changed, reloading.
+INFO 2026-03-04 18:03:27,071 autoreload 19488 2940 Watching for file changes with StatReloader
+WARNING 2026-03-04 18:03:34,722 log 19488 17320 Not Found: /tickets/categories/
+WARNING 2026-03-04 18:03:34,731 basehttp 19488 17320 "GET /tickets/categories/ HTTP/1.1" 404 13055
+ERROR 2026-03-04 18:03:38,897 log 19488 17320 Internal Server Error: /tickets/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 568, in dashboard
+    return render(request, 'dashboard/dashboard.html', context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_list' not found. 'category_list' is not a valid view function or pattern name.
+ERROR 2026-03-04 18:03:39,128 basehttp 19488 17320 "GET /tickets/dashboard/ HTTP/1.1" 500 260000
+INFO 2026-03-04 18:05:08,025 autoreload 19488 2940 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 18:05:10,317 autoreload 3528 10404 Watching for file changes with StatReloader
+INFO 2026-03-04 18:05:25,449 autoreload 3528 10404 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 18:05:27,818 autoreload 9224 20412 Watching for file changes with StatReloader
+INFO 2026-03-04 18:05:38,006 autoreload 9224 20412 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 18:05:40,101 autoreload 20200 20408 Watching for file changes with StatReloader
+INFO 2026-03-04 18:05:44,171 autoreload 20200 20408 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 18:05:46,197 autoreload 1244 2740 Watching for file changes with StatReloader
+INFO 2026-03-04 18:05:55,351 autoreload 1244 2740 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 18:05:57,566 autoreload 12080 19960 Watching for file changes with StatReloader
+INFO 2026-03-04 18:06:07,830 autoreload 12080 19960 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 18:06:09,850 autoreload 11464 18272 Watching for file changes with StatReloader
+INFO 2026-03-04 18:06:31,254 autoreload 11464 18272 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 18:06:33,424 autoreload 2932 2028 Watching for file changes with StatReloader
+INFO 2026-03-04 18:06:42,196 autoreload 2932 2028 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 18:06:44,653 autoreload 16696 20436 Watching for file changes with StatReloader
+INFO 2026-03-04 18:07:39,991 autoreload 16696 20436 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 18:07:41,937 autoreload 7340 11968 Watching for file changes with StatReloader
+INFO 2026-03-04 18:11:21,702 autoreload 19484 11100 Watching for file changes with StatReloader
+ERROR 2026-03-04 18:11:27,144 log 19484 2500 Internal Server Error: /tickets/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 568, in dashboard
+    return render(request, 'dashboard/dashboard.html', context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_list' not found. 'category_list' is not a valid view function or pattern name.
+ERROR 2026-03-04 18:11:27,428 basehttp 19484 2500 "GET /tickets/dashboard/ HTTP/1.1" 500 258842
+INFO 2026-03-04 18:12:48,678 basehttp 19484 2500 "GET /tickets HTTP/1.1" 301 0
+ERROR 2026-03-04 18:12:49,106 log 19484 10816 Internal Server Error: /tickets/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_list' not found. 'category_list' is not a valid view function or pattern name.
+ERROR 2026-03-04 18:12:49,169 basehttp 19484 10816 "GET /tickets/ HTTP/1.1" 500 210045
+ERROR 2026-03-04 18:12:54,519 log 19484 10816 Internal Server Error: /tickets/create/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\test\utils.py", line 112, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_list' not found. 'category_list' is not a valid view function or pattern name.
+ERROR 2026-03-04 18:12:54,600 basehttp 19484 10816 "GET /tickets/create/ HTTP/1.1" 500 206032
+WARNING 2026-03-04 18:13:00,476 log 19484 10816 Not Found: /ticket/create/
+WARNING 2026-03-04 18:13:00,476 basehttp 19484 10816 "GET /ticket/create/ HTTP/1.1" 404 11856
+INFO 2026-03-04 18:16:52,640 basehttp 19484 10816 "GET /tickets/dashboard/ HTTP/1.1" 200 34446
+WARNING 2026-03-04 18:16:52,735 basehttp 19484 4404 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 18:16:52,740 basehttp 19484 10816 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 18:16:58,035 basehttp 19484 324 "GET /tickets/ HTTP/1.1" 200 25052
+WARNING 2026-03-04 18:16:58,126 basehttp 19484 18580 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 18:16:58,130 basehttp 19484 324 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 18:17:02,104 basehttp 19484 6928 "GET /tickets/create/ HTTP/1.1" 200 26674
+WARNING 2026-03-04 18:17:02,176 basehttp 19484 6928 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 18:17:02,176 basehttp 19484 5432 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 18:22:35,124 autoreload 14068 13120 Watching for file changes with StatReloader
+INFO 2026-03-04 18:22:40,844 basehttp 14068 19236 "GET /tickets/dashboard/ HTTP/1.1" 200 34447
+WARNING 2026-03-04 18:22:40,968 basehttp 14068 14436 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 18:22:40,976 basehttp 14068 19236 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 18:22:45,298 basehttp 14068 5396 "GET /tickets/create/ HTTP/1.1" 200 26800
+WARNING 2026-03-04 18:22:45,381 basehttp 14068 5396 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 18:22:45,381 basehttp 14068 4568 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 18:23:49,694 signals 14068 19676 Ticket created: TKT-20260304-00001
+INFO 2026-03-04 18:23:49,761 forms 14068 19676 Ticket created via form: TKT-20260304-00001
+ERROR 2026-03-04 18:23:58,303 redis 14068 19676 Connection to Redis lost: Retry (0/20) now.
+ERROR 2026-03-04 18:24:02,374 redis 14068 19676 Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR 2026-03-04 18:24:07,429 redis 14068 19676 Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR 2026-03-04 18:24:12,520 redis 14068 19676 Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR 2026-03-04 18:24:17,598 redis 14068 19676 Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR 2026-03-04 18:24:22,655 redis 14068 19676 Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR 2026-03-04 18:24:27,771 redis 14068 19676 Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR 2026-03-04 18:24:32,832 redis 14068 19676 Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR 2026-03-04 18:24:37,922 redis 14068 19676 Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR 2026-03-04 18:24:43,002 redis 14068 19676 Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR 2026-03-04 18:24:48,083 redis 14068 19676 Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR 2026-03-04 18:24:53,182 redis 14068 19676 Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR 2026-03-04 18:24:58,298 redis 14068 19676 Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR 2026-03-04 18:25:03,369 redis 14068 19676 Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR 2026-03-04 18:25:08,466 redis 14068 19676 Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR 2026-03-04 18:25:13,566 redis 14068 19676 Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR 2026-03-04 18:25:18,658 redis 14068 19676 Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR 2026-03-04 18:25:23,725 redis 14068 19676 Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR 2026-03-04 18:25:28,806 redis 14068 19676 Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR 2026-03-04 18:25:33,926 redis 14068 19676 Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL 2026-03-04 18:25:39,008 redis 14068 19676 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR 2026-03-04 18:25:39,008 utils 14068 19676 Failed to queue notification: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+INFO 2026-03-04 18:25:39,176 basehttp 14068 19676 "POST /tickets/create/ HTTP/1.1" 302 0
+ERROR 2026-03-04 18:25:39,464 log 14068 19676 Internal Server Error: /tickets/TKT-20260304-00001/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\defaulttags.py", line 839, in do_for
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'for' statements should use the format 'for x in y': for agent in user.objects.filter(user_type__in=['agent', 'admin'])
+ERROR 2026-03-04 18:25:39,528 basehttp 14068 19676 "GET /tickets/TKT-20260304-00001/ HTTP/1.1" 500 291141
+INFO 2026-03-04 18:45:27,034 autoreload 20228 20324 Watching for file changes with StatReloader
+INFO 2026-03-04 18:54:28,446 autoreload 20228 20324 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 18:54:30,611 autoreload 18236 7148 Watching for file changes with StatReloader
+INFO 2026-03-04 18:55:24,948 autoreload 18236 7148 C:\Support Ticket System\sts\apps\accounts\forms.py changed, reloading.
+INFO 2026-03-04 18:55:27,054 autoreload 16720 20460 Watching for file changes with StatReloader
+INFO 2026-03-04 18:56:39,447 autoreload 16720 20460 C:\Support Ticket System\sts\apps\accounts\forms.py changed, reloading.
+INFO 2026-03-04 18:56:41,675 autoreload 180 12740 Watching for file changes with StatReloader
+INFO 2026-03-04 18:57:09,332 autoreload 180 12740 C:\Support Ticket System\sts\apps\tickets\urls.py changed, reloading.
+INFO 2026-03-04 18:57:11,749 autoreload 4088 10760 Watching for file changes with StatReloader
+INFO 2026-03-04 18:57:39,408 autoreload 20316 12824 Watching for file changes with StatReloader
+INFO 2026-03-04 18:57:44,719 basehttp 20316 8848 "GET /tickets/dashboard/ HTTP/1.1" 200 38540
+INFO 2026-03-04 18:57:44,817 basehttp 20316 20180 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2026-03-04 18:57:44,817 basehttp 20316 11224 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+WARNING 2026-03-04 18:57:44,827 basehttp 20316 8848 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 18:57:44,829 basehttp 20316 11652 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 18:57:45,309 basehttp 20316 11224 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2026-03-04 18:57:45,354 basehttp 20316 11224 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+ERROR 2026-03-04 18:58:08,158 log 20316 11224 Internal Server Error: /tickets/agents/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 717, in agent_list
+    agent.assigned_tickets = Ticket.objects.filter(assigned_to=agent).count()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\fields\related_descriptors.py", line 626, in __set__
+    raise TypeError(
+TypeError: Direct assignment to the reverse side of a related set is prohibited. Use assigned_tickets.set() instead.
+ERROR 2026-03-04 18:58:08,212 basehttp 20316 11224 "GET /tickets/agents/ HTTP/1.1" 500 104115
+INFO 2026-03-04 18:58:16,302 basehttp 20316 11224 "GET /tickets/ HTTP/1.1" 200 26497
+WARNING 2026-03-04 18:58:16,375 basehttp 20316 20180 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 18:58:16,384 basehttp 20316 11224 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 18:58:22,561 basehttp 20316 20392 "GET /tickets/TKT-20260304-00001/ HTTP/1.1" 200 30055
+WARNING 2026-03-04 18:58:22,642 basehttp 20316 3384 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 18:58:22,642 basehttp 20316 20392 "GET /static/css/style.css HTTP/1.1" 404 1899
+ERROR 2026-03-04 18:58:40,128 redis 20316 20284 Connection to Redis lost: Retry (0/20) now.
+ERROR 2026-03-04 18:58:44,221 redis 20316 20284 Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR 2026-03-04 18:58:49,314 redis 20316 20284 Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR 2026-03-04 18:58:54,397 redis 20316 20284 Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR 2026-03-04 18:58:59,470 redis 20316 20284 Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR 2026-03-04 18:59:04,547 redis 20316 20284 Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR 2026-03-04 18:59:09,602 redis 20316 20284 Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR 2026-03-04 18:59:14,661 redis 20316 20284 Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR 2026-03-04 18:59:19,731 redis 20316 20284 Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR 2026-03-04 18:59:24,807 redis 20316 20284 Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR 2026-03-04 18:59:29,889 redis 20316 20284 Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR 2026-03-04 18:59:34,093 log 20316 5672 Internal Server Error: /tickets/agents/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 717, in agent_list
+    agent.assigned_tickets = Ticket.objects.filter(assigned_to=agent).count()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\fields\related_descriptors.py", line 626, in __set__
+    raise TypeError(
+TypeError: Direct assignment to the reverse side of a related set is prohibited. Use assigned_tickets.set() instead.
+ERROR 2026-03-04 18:59:34,147 basehttp 20316 5672 "GET /tickets/agents/ HTTP/1.1" 500 104124
+ERROR 2026-03-04 18:59:34,948 redis 20316 20284 Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR 2026-03-04 18:59:40,004 redis 20316 20284 Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR 2026-03-04 18:59:45,067 redis 20316 20284 Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR 2026-03-04 18:59:50,164 redis 20316 20284 Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR 2026-03-04 18:59:52,336 log 20316 18300 Internal Server Error: /tickets/TKT-20260304-00001/status/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\connections.py", line 826, in _read_query_result
+    result.read()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1205, 'Lock wait timeout exceeded; try restarting transaction')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\views\decorators\http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 402, in ticket_status_change
+    ticket.save()
+  File "C:\Support Ticket System\sts\apps\tickets\models.py", line 155, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\base.py", line 990, in _save_table
+    updated = self._do_update(
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\sql\compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\debug_toolbar\panels\sql\tracking.py", line 252, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\debug_toolbar\panels\sql\tracking.py", line 177, in _record
+    return method(sql, params)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\connections.py", line 575, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\connections.py", line 826, in _read_query_result
+    result.read()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\connections.py", line 1203, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1205, 'Lock wait timeout exceeded; try restarting transaction')
+INFO 2026-03-04 18:59:52,442 basehttp 20316 18300 - Broken pipe from ('127.0.0.1', 62193)
+ERROR 2026-03-04 18:59:55,241 redis 20316 20284 Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR 2026-03-04 19:00:00,363 redis 20316 20284 Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR 2026-03-04 19:00:05,433 redis 20316 20284 Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR 2026-03-04 19:00:10,522 redis 20316 20284 Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR 2026-03-04 19:00:15,606 redis 20316 20284 Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL 2026-03-04 19:00:20,691 redis 20316 20284 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR 2026-03-04 19:00:20,693 utils 20316 20284 Failed to queue notification: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+INFO 2026-03-04 19:00:20,825 basehttp 20316 20284 - Broken pipe from ('127.0.0.1', 56089)
+INFO 2026-03-04 20:11:55,412 basehttp 20316 10852 "GET /tickets/ HTTP/1.1" 200 26507
+WARNING 2026-03-04 20:11:55,496 basehttp 20316 10852 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 20:11:55,496 basehttp 20316 19044 "GET /static/js/main.js HTTP/1.1" 404 1890
+ERROR 2026-03-04 20:12:04,373 log 20316 8908 Internal Server Error: /tickets/agents/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 717, in agent_list
+    agent.assigned_tickets = Ticket.objects.filter(assigned_to=agent).count()
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\db\models\fields\related_descriptors.py", line 626, in __set__
+    raise TypeError(
+TypeError: Direct assignment to the reverse side of a related set is prohibited. Use assigned_tickets.set() instead.
+ERROR 2026-03-04 20:12:04,425 basehttp 20316 8908 "GET /tickets/agents/ HTTP/1.1" 500 104105
+INFO 2026-03-04 20:15:39,923 autoreload 20316 12824 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 20:15:43,314 autoreload 2872 19548 Watching for file changes with StatReloader
+INFO 2026-03-04 20:15:49,131 basehttp 2872 7316 "GET /tickets/agents/ HTTP/1.1" 200 30554
+WARNING 2026-03-04 20:15:49,212 basehttp 2872 16512 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:15:49,221 basehttp 2872 7316 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 20:17:32,295 basehttp 2872 10784 "GET /tickets/agents/ HTTP/1.1" 200 30499
+WARNING 2026-03-04 20:17:32,381 basehttp 2872 10784 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 20:17:32,381 basehttp 2872 4316 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 20:17:40,276 basehttp 2872 19736 "POST /tickets/agents/bulk-assign/ HTTP/1.1" 302 0
+INFO 2026-03-04 20:17:40,398 basehttp 2872 19736 "GET /tickets/agents/ HTTP/1.1" 200 31005
+WARNING 2026-03-04 20:17:40,491 basehttp 2872 5820 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:17:40,491 basehttp 2872 19736 "GET /static/css/style.css HTTP/1.1" 404 1899
+ERROR 2026-03-04 20:19:21,650 log 2872 19484 Internal Server Error: /tickets/agents/4/tickets/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 790, in agent_tickets
+    return render(request, 'tickets/agent_tickets.html', {
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tickets/agent_tickets.html
+ERROR 2026-03-04 20:19:21,730 basehttp 2872 19484 "GET /tickets/agents/4/tickets/ HTTP/1.1" 500 117501
+ERROR 2026-03-04 20:19:27,148 log 2872 19484 Internal Server Error: /tickets/agents/5/tickets/
+Traceback (most recent call last):
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files\Python38\lib\contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Support Ticket System\sts\apps\tickets\views.py", line 790, in agent_tickets
+    return render(request, 'tickets/agent_tickets.html', {
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\manoj\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tickets/agent_tickets.html
+ERROR 2026-03-04 20:19:27,221 basehttp 2872 19484 "GET /tickets/agents/5/tickets/ HTTP/1.1" 500 117632
+INFO 2026-03-04 20:28:21,716 autoreload 2872 19548 C:\Support Ticket System\sts\apps\tickets\views.py changed, reloading.
+INFO 2026-03-04 20:28:24,068 autoreload 17020 11684 Watching for file changes with StatReloader
+INFO 2026-03-04 20:28:43,699 basehttp 17020 18916 "GET /tickets/agents/5/tickets/ HTTP/1.1" 200 25601
+WARNING 2026-03-04 20:28:43,788 basehttp 17020 8664 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:28:43,788 basehttp 17020 18916 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 20:28:56,917 basehttp 17020 12744 "GET /tickets/agents/4/tickets/ HTTP/1.1" 200 24370
+WARNING 2026-03-04 20:28:56,987 basehttp 17020 4040 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:28:56,991 basehttp 17020 12744 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 20:29:47,284 basehttp 17020 17672 "GET /tickets/dashboard/ HTTP/1.1" 200 38453
+WARNING 2026-03-04 20:29:47,391 basehttp 17020 10076 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:29:47,426 basehttp 17020 17672 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 20:49:33,476 basehttp 17020 18288 "GET /tickets/create/ HTTP/1.1" 200 26800
+WARNING 2026-03-04 20:49:33,585 basehttp 17020 18288 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 20:49:33,585 basehttp 17020 1388 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 20:50:26,108 signals 17020 20572 Ticket created: TKT-20260304-00002
+INFO 2026-03-04 20:50:26,195 forms 17020 20572 Ticket created via form: TKT-20260304-00002
+ERROR 2026-03-04 20:50:34,737 redis 17020 20572 Connection to Redis lost: Retry (0/20) now.
+ERROR 2026-03-04 20:50:38,797 redis 17020 20572 Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR 2026-03-04 20:50:43,886 redis 17020 20572 Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR 2026-03-04 20:50:48,987 redis 17020 20572 Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR 2026-03-04 20:50:54,088 redis 17020 20572 Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR 2026-03-04 20:50:59,156 redis 17020 20572 Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR 2026-03-04 20:51:04,217 redis 17020 20572 Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR 2026-03-04 20:51:09,274 redis 17020 20572 Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR 2026-03-04 20:51:14,373 redis 17020 20572 Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR 2026-03-04 20:51:19,491 redis 17020 20572 Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR 2026-03-04 20:51:24,584 redis 17020 20572 Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR 2026-03-04 20:51:29,708 redis 17020 20572 Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR 2026-03-04 20:51:34,785 redis 17020 20572 Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR 2026-03-04 20:51:39,892 redis 17020 20572 Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR 2026-03-04 20:51:44,993 redis 17020 20572 Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR 2026-03-04 20:51:50,110 redis 17020 20572 Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR 2026-03-04 20:51:55,177 redis 17020 20572 Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR 2026-03-04 20:52:00,270 redis 17020 20572 Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR 2026-03-04 20:52:05,405 redis 17020 20572 Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR 2026-03-04 20:52:10,511 redis 17020 20572 Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL 2026-03-04 20:52:15,627 redis 17020 20572 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR 2026-03-04 20:52:15,628 utils 17020 20572 Failed to queue notification: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+INFO 2026-03-04 20:52:15,845 basehttp 17020 20572 "POST /tickets/create/ HTTP/1.1" 302 0
+INFO 2026-03-04 20:52:16,144 basehttp 17020 20572 "GET /tickets/TKT-20260304-00002/ HTTP/1.1" 200 30929
+WARNING 2026-03-04 20:52:16,323 basehttp 17020 20572 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 20:52:16,326 basehttp 17020 10356 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 20:55:23,551 signals 17020 4164 Comment added to ticket TKT-20260304-00002
+INFO 2026-03-04 20:55:23,566 forms 17020 4164 Comment added to ticket TKT-20260304-00002 by janwork2003@gmail.com
+INFO 2026-03-04 20:55:23,685 basehttp 17020 4164 "POST /tickets/TKT-20260304-00002/ HTTP/1.1" 302 0
+INFO 2026-03-04 20:55:23,922 basehttp 17020 4164 "GET /tickets/TKT-20260304-00002/ HTTP/1.1" 200 31996
+WARNING 2026-03-04 20:55:24,009 basehttp 17020 21272 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:55:24,011 basehttp 17020 4164 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 20:55:33,407 basehttp 17020 14536 "GET /tickets/TKT-20260304-00002/edit/ HTTP/1.1" 200 28131
+WARNING 2026-03-04 20:55:33,587 basehttp 17020 14536 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 20:55:33,591 basehttp 17020 5776 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 20:56:21,826 basehttp 17020 19800 "POST /tickets/TKT-20260304-00002/edit/ HTTP/1.1" 302 0
+INFO 2026-03-04 20:56:22,022 basehttp 17020 19800 "GET /tickets/TKT-20260304-00002/ HTTP/1.1" 200 32011
+WARNING 2026-03-04 20:56:22,170 basehttp 17020 19148 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:56:22,180 basehttp 17020 19800 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 20:56:33,009 basehttp 17020 6900 "POST /tickets/TKT-20260304-00002/assign/ HTTP/1.1" 302 0
+INFO 2026-03-04 20:56:33,206 basehttp 17020 6900 "GET /tickets/TKT-20260304-00002/ HTTP/1.1" 200 31994
+WARNING 2026-03-04 20:56:33,301 basehttp 17020 6900 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 20:56:33,302 basehttp 17020 12136 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 20:56:51,911 basehttp 17020 3408 "GET /tickets/ HTTP/1.1" 200 28495
+WARNING 2026-03-04 20:56:51,991 basehttp 17020 3408 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 20:56:51,997 basehttp 17020 8464 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 20:57:02,043 basehttp 17020 17340 "GET /tickets/TKT-20260304-00002/ HTTP/1.1" 200 31398
+WARNING 2026-03-04 20:57:02,121 basehttp 17020 17340 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 20:57:02,129 basehttp 17020 20972 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 20:57:15,034 basehttp 17020 1556 "GET /tickets/agents/ HTTP/1.1" 200 30499
+WARNING 2026-03-04 20:57:15,206 basehttp 17020 2164 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:57:15,206 basehttp 17020 1556 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 20:57:18,738 basehttp 17020 19972 "GET /tickets/agents/4/edit/ HTTP/1.1" 200 24395
+WARNING 2026-03-04 20:57:18,862 basehttp 17020 18148 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:57:18,866 basehttp 17020 19972 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 20:57:25,827 signals 17020 11672 User updated: agent2@example.com
+INFO 2026-03-04 20:57:25,924 basehttp 17020 11672 "POST /tickets/agents/4/edit/ HTTP/1.1" 302 0
+INFO 2026-03-04 20:57:26,104 basehttp 17020 11672 "GET /tickets/agents/ HTTP/1.1" 200 31095
+WARNING 2026-03-04 20:57:26,223 basehttp 17020 2972 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:57:26,225 basehttp 17020 11672 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 20:57:34,458 basehttp 17020 14056 "POST /tickets/agents/bulk-assign/ HTTP/1.1" 302 0
+INFO 2026-03-04 20:57:34,612 basehttp 17020 14056 "GET /tickets/agents/ HTTP/1.1" 200 31005
+WARNING 2026-03-04 20:57:34,720 basehttp 17020 14056 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 20:57:34,720 basehttp 17020 19600 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 20:57:40,414 basehttp 17020 9804 "GET /tickets/agents/create/ HTTP/1.1" 200 24138
+WARNING 2026-03-04 20:57:40,542 basehttp 17020 19872 "GET /static/js/main.js HTTP/1.1" 404 1890
+WARNING 2026-03-04 20:57:40,546 basehttp 17020 9804 "GET /static/css/style.css HTTP/1.1" 404 1899
+INFO 2026-03-04 22:22:20,814 autoreload 20560 6956 Watching for file changes with StatReloader
+INFO 2026-03-04 22:22:29,403 basehttp 20560 14800 "GET /tickets/dashboard/ HTTP/1.1" 200 42008
+INFO 2026-03-04 22:22:29,510 basehttp 20560 3136 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:29,510 basehttp 20560 1408 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+WARNING 2026-03-04 22:22:29,528 basehttp 20560 14800 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 22:22:29,529 basehttp 20560 13328 "GET /static/js/main.js HTTP/1.1" 404 1890
+INFO 2026-03-04 22:22:30,060 basehttp 20560 1408 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:30,115 basehttp 20560 1408 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2026-03-04 22:22:30,769 log 20560 1408 Not Found: /favicon.ico
+WARNING 2026-03-04 22:22:30,769 basehttp 20560 1408 "GET /favicon.ico HTTP/1.1" 404 11844
+INFO 2026-03-04 22:22:35,084 basehttp 20560 1408 "GET /admin/ HTTP/1.1" 200 19347
+INFO 2026-03-04 22:22:35,170 basehttp 20560 1408 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:35,173 basehttp 20560 3136 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:35,177 basehttp 20560 15628 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:35,180 basehttp 20560 15896 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:35,182 basehttp 20560 20504 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:35,619 basehttp 20560 20504 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:35,640 basehttp 20560 15896 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:35,677 basehttp 20560 20504 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:35,677 basehttp 20560 15896 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-03-04 22:22:42,222 basehttp 20560 15896 "GET /admin/account/emailaddress/ HTTP/1.1" 200 20731
+INFO 2026-03-04 22:22:42,293 basehttp 20560 15896 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2026-03-04 22:22:42,293 basehttp 20560 15628 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-03-04 22:22:42,295 basehttp 20560 1408 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2026-03-04 22:22:42,299 basehttp 20560 3136 "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2026-03-04 22:22:42,303 basehttp 20560 17456 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2026-03-04 22:22:42,303 basehttp 20560 15896 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-03-04 22:22:42,318 basehttp 20560 1408 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-03-04 22:22:42,329 basehttp 20560 17456 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2026-03-04 22:22:42,335 basehttp 20560 20504 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2026-03-04 22:22:42,344 basehttp 20560 15628 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2026-03-04 22:22:42,381 basehttp 20560 15628 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-03-04 22:22:42,488 basehttp 20560 3136 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-03-04 22:22:42,526 basehttp 20560 3136 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2026-03-04 22:27:27,470 basehttp 20560 3136 "GET /tickets/dashboard/ HTTP/1.1" 200 42006
+WARNING 2026-03-04 22:27:27,535 basehttp 20560 3136 "GET /static/css/style.css HTTP/1.1" 404 1899
+WARNING 2026-03-04 22:27:27,537 basehttp 20560 15628 "GET /static/js/main.js HTTP/1.1" 404 1890

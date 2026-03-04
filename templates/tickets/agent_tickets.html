@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tickets Assigned to {{ agent.get_full_name|default:agent.email }} - Support Ticket System{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'tickets:dashboard' %}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'tickets:agent_list' %}">Manage Agents</a></li>
+                    <li class="breadcrumb-item active">Agent Tickets</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Agent Info Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        {% if agent.profile_picture %}
+                            <img src="{{ agent.profile_picture.url }}" class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;" alt="{{ agent.get_full_name }}">
+                        {% else %}
+                            <div class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 80px; height: 80px; font-size: 32px;">
+                                {{ agent.first_name|first|upper }}{{ agent.last_name|first|upper }}
+                            </div>
+                        {% endif %}
+                        <div>
+                            <h2 class="h3 mb-1">{{ agent.get_full_name|default:agent.email }}</h2>
+                            <p class="mb-0 opacity-75">{{ agent.email }} • Agent since {{ agent.date_joined|date:"F Y" }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <h6 class="card-title">Total Assigned</h6>
+                    <h3 class="mb-0">{{ tickets.count }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-warning text-white">
+                <div class="card-body">
+                    <h6 class="card-title">Open</h6>
+                    <h3 class="mb-0">{{ tickets_open }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <h6 class="card-title">Resolved</h6>
+                    <h3 class="mb-0">{{ tickets_resolved }}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-secondary text-white">
+                <div class="card-body">
+                    <h6 class="card-title">Closed</h6>
+                    <h3 class="mb-0">{{ tickets_closed }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tickets Table -->
+    <div class="card">
+        <div class="card-header bg-light d-flex justify-content-between align-items-center">
+            <h5 class="card-title mb-0">
+                <i class="fas fa-ticket-alt me-2"></i>Tickets Assigned to {{ agent.first_name|default:agent.email }}
+            </h5>
+            <a href="{% url 'tickets:agent_list' %}" class="btn btn-sm btn-outline-secondary">
+                <i class="fas fa-arrow-left me-2"></i>Back to Agents
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Ticket ID</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Category</th>
+                            <th>Created By</th>
+                            <th>Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in tickets %}
+                        <tr class="{% if ticket.is_overdue %}table-danger{% endif %}">
+                            <td>
+                                <span class="badge bg-light text-dark">{{ ticket.ticket_id }}</span>
+                            </td>
+                            <td>
+                                <a href="{% url 'tickets:detail' ticket.ticket_id %}" class="text-decoration-none">
+                                    {{ ticket.title|truncatechars:50 }}
+                                </a>
+                            </td>
+                            <td>
+                                {% if ticket.status == 'resolved' %}
+                                    <span class="badge bg-success">Resolved</span>
+                                {% elif ticket.status == 'closed' %}
+                                    <span class="badge bg-secondary">Closed</span>
+                                {% elif ticket.status == 'open' %}
+                                    <span class="badge bg-primary">Open</span>
+                                {% elif ticket.status == 'pending' %}
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                {% elif ticket.status == 'in_progress' %}
+                                    <span class="badge bg-info">In Progress</span>
+                                {% elif ticket.status == 'escalated' %}
+                                    <span class="badge bg-danger">Escalated</span>
+                                {% else %}
+                                    <span class="badge bg-secondary">{{ ticket.get_status_display }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if ticket.priority == 'critical' %}
+                                    <span class="badge bg-danger">Critical</span>
+                                {% elif ticket.priority == 'high' %}
+                                    <span class="badge bg-warning text-dark">High</span>
+                                {% elif ticket.priority == 'medium' %}
+                                    <span class="badge bg-info">Medium</span>
+                                {% elif ticket.priority == 'low' %}
+                                    <span class="badge bg-secondary">Low</span>
+                                {% else %}
+                                    <span class="badge bg-secondary">{{ ticket.get_priority_display }}</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ ticket.category.name|default:"-" }}</td>
+                            <td>{{ ticket.created_by.get_full_name|default:ticket.created_by.email|truncatechars:20 }}</td>
+                            <td>{{ ticket.created_at|timesince }} ago</td>
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <a href="{% url 'tickets:detail' ticket.ticket_id %}" class="btn btn-outline-primary" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    {% if user.is_admin %}
+                                    <a href="{% url 'tickets:edit' ticket.ticket_id %}" class="btn btn-outline-secondary" title="Edit">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="8" class="text-center py-5">
+                                <i class="fas fa-ticket-alt fa-3x text-muted mb-3"></i>
+                                <p class="text-muted">No tickets assigned to this agent yet.</p>
+                                <a href="{% url 'tickets:agent_list' %}" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-arrow-left me-2"></i>Back to Agents
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

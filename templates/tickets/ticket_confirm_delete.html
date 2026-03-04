@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Ticket {{ ticket.ticket_id }} - Support Ticket System{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="card-title mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Confirm Deletion</h5>
+                </div>
+                <div class="card-body">
+                    <p class="lead">Are you sure you want to delete ticket <strong>{{ ticket.ticket_id }}</strong>?</p>
+                    <p class="text-muted">{{ ticket.title }}</p>
+                    
+                    <div class="alert alert-warning">
+                        <i class="fas fa-info-circle me-2"></i>
+                        This action cannot be undone. All comments and attachments will also be deleted.
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash me-2"></i>Yes, Delete Ticket
+                            </button>
+                            <a href="{% url 'tickets:detail' ticket.ticket_id %}" class="btn btn-secondary">
+                                <i class="fas fa-times me-2"></i>Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

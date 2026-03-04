@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Manage Categories - Support Ticket System{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col">
+            <h1 class="h2">Manage Categories</h1>
+            <p class="text-muted">Create and manage ticket categories</p>
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                <i class="fas fa-plus-circle me-2"></i>Add Category
+            </button>
+        </div>
+    </div>
+
+    <!-- Categories Table -->
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Order</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>SLA Response</th>
+                            <th>SLA Resolution</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for category in categories %}
+                        <tr>
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <a href="{% url 'tickets:category_move_up' category.id %}" class="btn btn-outline-secondary" title="Move Up">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </a>
+                                    <span class="btn btn-outline-secondary disabled">{{ category.order }}</span>
+                                    <a href="{% url 'tickets:category_move_down' category.id %}" class="btn btn-outline-secondary" title="Move Down">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td><strong>{{ category.name }}</strong></td>
+                            <td>{{ category.description|truncatechars:50 }}</td>
+                            <td>{{ category.sla_response_time }}</td>
+                            <td>{{ category.sla_resolution_time }}</td>
+                            <td>
+                                {% if category.is_active %}
+                                    <span class="badge bg-success">Active</span>
+                                {% else %}
+                                    <span class="badge bg-secondary">Inactive</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-outline-primary" onclick="editCategory({{ category.id }})">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteCategory({{ category.id }})">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7" class="text-center py-4">
+                                <i class="fas fa-folder-open fa-3x text-muted mb-3"></i>
+                                <p class="text-muted">No categories found. Create your first category!</p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Category Modal -->
+<div class="modal fade" id="categoryModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="categoryModalTitle">Add Category</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form method="post" action="{% url 'tickets:category_create' %}" id="categoryForm">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name *</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="sla_response" class="form-label">SLA Response Time (hours)</label>
+                            <input type="number" class="form-control" id="sla_response" name="sla_response" value="4" min="1">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="sla_resolution" class="form-label">SLA Resolution Time (hours)</label>
+                            <input type="number" class="form-control" id="sla_resolution" name="sla_resolution" value="48" min="1">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="is_active" name="is_active" checked>
+                            <label class="form-check-label" for="is_active">Active</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+function editCategory(categoryId) {
+    // Fetch category details via AJAX and populate modal
+    fetch(`/tickets/api/categories/${categoryId}/`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('categoryModalTitle').textContent = 'Edit Category';
+            document.getElementById('name').value = data.name;
+            document.getElementById('description').value = data.description;
+            document.getElementById('sla_response').value = data.sla_response_hours;
+            document.getElementById('sla_resolution').value = data.sla_resolution_hours;
+            document.getElementById('is_active').checked = data.is_active;
+            
+            // Update form action
+            document.getElementById('categoryForm').action = `/tickets/categories/${categoryId}/edit/`;
+            
+            var modal = new bootstrap.Modal(document.getElementById('categoryModal'));
+            modal.show();
+        });
+}
+
+function deleteCategory(categoryId) {
+    if (confirm('Are you sure you want to delete this category? This action cannot be undone.')) {
+        window.location.href = `/tickets/categories/${categoryId}/delete/`;
+    }
+}
+</script>
+{% endblock %}

@@ -6,36 +6,29 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.paginator import Paginator
-from django.db.models import Q, Count, Avg, F, Value
-from django.db.models.functions import TruncDate, TruncHour
+from django.db.models import Q, Count, Avg, F, OuterRef, Subquery, IntegerField
+from django.db.models.functions import TruncDate
 from django.utils import timezone
 from django.http import JsonResponse, HttpResponseForbidden, HttpResponse, FileResponse
 from django.views.decorators.http import require_POST
-from django.views.decorators.cache import never_cache
-from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import PermissionDenied
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.conf import settings
-from django.template.loader import render_to_string
-from django.core.mail import send_mail
 from django.db import transaction
+from datetime import timedelta
+import csv
+import logging
 
 from .models import Ticket, TicketComment, TicketAttachment, Category, TicketHistory, TicketTemplate
 from .forms import (
     TicketCreateForm, TicketUpdateForm, TicketCommentForm, 
-    TicketSearchForm, TicketBulkActionForm, TicketTemplateForm
+    TicketBulkActionForm, TicketTemplateForm
 )
-from .filters import TicketFilter
-from apps.accounts.decorators import role_required
-from apps.core.utils import send_ticket_notification, log_activity
+from apps.accounts.forms import AgentCreateForm, AgentEditForm
 from apps.accounts.models import User
-
-import logging
-import csv
-import io
-from datetime import timedelta, datetime
+from apps.core.utils import send_ticket_notification, log_activity
 
 logger = logging.getLogger(__name__)
 
@@ -69,17 +62,13 @@ class TicketListView(LoginRequiredMixin, ListView):
             )
         # Admins see all tickets
         
-        # Apply filters from TicketFilter
-        self.filterset = TicketFilter(self.request.GET, queryset=queryset, request=self.request)
-        return self.filterset.qs.distinct()
+        return queryset
     
     def get_context_data(self, **kwargs):
         """
         Add additional context data.
         """
         context = super().get_context_data(**kwargs)
-        context['filter'] = self.filterset
-        context['search_form'] = TicketSearchForm(self.request.GET or None, user=self.request.user)
         
         # Add statistics
         tickets = self.get_queryset()
@@ -94,6 +83,12 @@ class TicketListView(LoginRequiredMixin, ListView):
         
         # Add available actions based on user role
         context['can_bulk_edit'] = self.request.user.can_manage_tickets()
+        
+        from apps.accounts.models import User
+        context['agents'] = User.objects.filter(
+            user_type__in=['agent', 'admin'], 
+            is_active=True
+        ).order_by('first_name', 'last_name')
         
         return context
 
@@ -118,10 +113,6 @@ class TicketDetailView(LoginRequiredMixin, DetailView):
         # Check if user has permission to view this ticket
         if user.is_customer() and ticket.created_by != user:
             raise PermissionDenied("You don't have permission to view this ticket.")
-        
-        if user.is_agent() and ticket.assigned_to and ticket.assigned_to != user:
-            # Agents can view tickets assigned to others but with warning
-            messages.warning(self.request, "You are viewing a ticket assigned to another agent.")
         
         return ticket
     
@@ -148,14 +139,8 @@ class TicketDetailView(LoginRequiredMixin, DetailView):
             (self.request.user.is_agent() and not ticket.assigned_to)
         )
         
-        # Check if user can add internal notes
-        context['can_add_internal'] = self.request.user.can_manage_tickets()
-        
         # Get ticket history
         context['history'] = ticket.history.select_related('user').order_by('-timestamp')[:10]
-        
-        # Check SLA status
-        context['sla_breached'] = ticket.check_sla_breaches()
         
         return context
     
@@ -213,6 +198,7 @@ class TicketCreateView(LoginRequiredMixin, CreateView):
         """
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user
+        kwargs['request'] = self.request
         return kwargs
     
     def get_context_data(self, **kwargs):
@@ -244,9 +230,6 @@ class TicketCreateView(LoginRequiredMixin, CreateView):
             send_ticket_notification(ticket, 'created')
             
             messages.success(self.request, f'Ticket {ticket.ticket_id} has been created successfully.')
-            
-            # Log activity
-            log_activity(self.request.user, f'Created ticket {ticket.ticket_id}')
             
         return redirect('tickets:detail', ticket_id=ticket.ticket_id)
     
@@ -444,8 +427,7 @@ def ticket_export(request):
     
     # Get filtered tickets
     queryset = Ticket.objects.select_related('created_by', 'assigned_to', 'category')
-    filterset = TicketFilter(request.GET, queryset=queryset)
-    tickets = filterset.qs
+    tickets = queryset.all()
     
     # Create CSV response
     response = HttpResponse(content_type='text/csv')
@@ -478,74 +460,8 @@ def ticket_export(request):
 
 
 @login_required
-@require_POST
-def ticket_bulk_action(request):
-    """
-    Handle bulk actions on tickets.
-    """
-    if not request.user.can_manage_tickets():
-        return HttpResponseForbidden("You don't have permission to perform bulk actions.")
-    
-    form = TicketBulkActionForm(request.POST)
-    if not form.is_valid():
-        messages.error(request, "Invalid form data.")
-        return redirect('tickets:list')
-    
-    ticket_ids = request.POST.getlist('selected_tickets')
-    if not ticket_ids:
-        messages.error(request, "Please select at least one ticket.")
-        return redirect('tickets:list')
-    
-    tickets = Ticket.objects.filter(id__in=ticket_ids)
-    action = form.cleaned_data['action']
-    
-    with transaction.atomic():
-        if action == 'assign':
-            agent = form.cleaned_data['assigned_to']
-            tickets.update(assigned_to=agent)
-            message = f"Assigned {tickets.count()} tickets to {agent.get_full_name()}"
-            
-        elif action == 'change_status':
-            status = form.cleaned_data['status']
-            tickets.update(status=status)
-            message = f"Changed status of {tickets.count()} tickets to {dict(Ticket.STATUS_CHOICES)[status]}"
-            
-        elif action == 'change_priority':
-            priority = form.cleaned_data['priority']
-            tickets.update(priority=priority)
-            message = f"Changed priority of {tickets.count()} tickets"
-            
-        elif action == 'change_category':
-            category = form.cleaned_data['category']
-            tickets.update(category=category)
-            message = f"Changed category of {tickets.count()} tickets"
-            
-        elif action == 'add_tags':
-            tags = form.cleaned_data['tags'].split(',')
-            for ticket in tickets:
-                ticket.tags.add(*tags)
-            message = f"Added tags to {tickets.count()} tickets"
-            
-        elif action == 'delete':
-            if request.user.is_admin():
-                tickets.delete()
-                message = f"Deleted {len(ticket_ids)} tickets"
-            else:
-                messages.error(request, "Only admins can delete tickets.")
-                return redirect('tickets:list')
-    
-    # Log the bulk action
-    logger.info(f"Bulk action '{action}' performed on {len(ticket_ids)} tickets by {request.user.email}")
-    
-    messages.success(request, message)
-    return redirect('tickets:list')
-
-
-@login_required
 def dashboard(request):
-    """
-    Main dashboard view with statistics and charts.
-    """
+    """Main dashboard view with statistics and charts."""
     user = request.user
     now = timezone.now()
     
@@ -559,60 +475,27 @@ def dashboard(request):
     else:
         tickets = Ticket.objects.filter(created_by=user)
     
-    # Basic statistics
-    context = {
-        'total_tickets': tickets.count(),
-        'open_tickets': tickets.filter(status__in=['new', 'open', 'in_progress', 'pending']).count(),
-        'resolved_tickets': tickets.filter(status='resolved').count(),
-        'closed_tickets': tickets.filter(status='closed').count(),
-        'overdue_tickets': tickets.filter(
-            due_by__lt=now
-        ).exclude(status__in=['resolved', 'closed']).count(),
-    }
-    
-    # Tickets by status
-    context['tickets_by_status'] = tickets.values('status').annotate(
-        count=Count('id')
-    ).order_by('status')
+    # Get tickets by status
+    tickets_by_status = []
+    status_counts = tickets.values('status').annotate(count=Count('id')).order_by('status')
+    status_dict = dict(Ticket.STATUS_CHOICES)
+    for item in status_counts:
+        tickets_by_status.append({
+            'status': item['status'],
+            'get_status_display': status_dict.get(item['status'], item['status']),
+            'count': item['count']
+        })
     
     # Tickets by priority
-    context['tickets_by_priority'] = tickets.values('priority').annotate(
-        count=Count('id')
-    ).order_by('priority')
-    
-    # Tickets by category
-    context['tickets_by_category'] = tickets.values('category__name').annotate(
-        count=Count('id')
-    ).exclude(category__name__isnull=True).order_by('-count')[:10]
-    
-    # Recent tickets
-    context['recent_tickets'] = tickets.select_related(
-        'created_by', 'assigned_to'
-    ).order_by('-created_at')[:10]
-    
-    # SLA performance
-    context['sla_performance'] = {
-        'response_breached': tickets.filter(sla_response_breached=True).count(),
-        'resolution_breached': tickets.filter(sla_resolution_breached=True).count(),
-        'on_track': tickets.exclude(
-            Q(sla_response_breached=True) | Q(sla_resolution_breached=True)
-        ).filter(
-            status__in=['new', 'open', 'in_progress']
-        ).count(),
-    }
-    
-    # Agent performance (for admins)
-    if user.is_admin():
-        context['agent_stats'] = User.objects.filter(
-            user_type='agent', is_active=True
-        ).annotate(
-            assigned_tickets=Count('assigned_tickets'),
-            resolved_tickets=Count(
-                'assigned_tickets', 
-                filter=Q(assigned_tickets__status='resolved')
-            ),
-            avg_response_time=Avg('assigned_tickets__response_time')
-        ).order_by('-resolved_tickets')
+    tickets_by_priority = []
+    priority_counts = tickets.values('priority').annotate(count=Count('id')).order_by('priority')
+    priority_dict = dict(Ticket.PRIORITY_CHOICES)
+    for item in priority_counts:
+        tickets_by_priority.append({
+            'priority': item['priority'],
+            'get_priority_display': priority_dict.get(item['priority'], item['priority']),
+            'count': item['count']
+        })
     
     # Daily trend (last 7 days)
     last_week = now - timedelta(days=7)
@@ -624,10 +507,72 @@ def dashboard(request):
         count=Count('id')
     ).order_by('date')
     
-    context['daily_trend'] = list(daily_trend)
+    context = {
+        'total_tickets': tickets.count(),
+        'open_tickets': tickets.filter(status__in=['new', 'open', 'in_progress', 'pending']).count(),
+        'resolved_tickets': tickets.filter(status='resolved').count(),
+        'closed_tickets': tickets.filter(status='closed').count(),
+        'overdue_tickets': tickets.filter(
+            due_by__lt=now
+        ).exclude(status__in=['resolved', 'closed']).count(),
+        'tickets_by_status': tickets_by_status,
+        'tickets_by_priority': tickets_by_priority,
+        'daily_trend': daily_trend,
+        'recent_tickets': tickets.select_related(
+            'created_by', 'assigned_to'
+        ).order_by('-created_at')[:10],
+        'sla_performance': {
+            'response_breached': tickets.filter(sla_response_breached=True).count(),
+            'resolution_breached': tickets.filter(sla_resolution_breached=True).count(),
+            'on_track': tickets.exclude(
+                Q(sla_response_breached=True) | Q(sla_resolution_breached=True)
+            ).filter(
+                status__in=['new', 'open', 'in_progress']
+            ).count(),
+        }
+    }
+    
+    # Add agent stats if admin - USING MANUAL COUNTING TO AVOID ANNOTATION CONFLICTS
+    if user.is_admin():
+        # Get all active agents
+        agents = User.objects.filter(user_type='agent', is_active=True)
+        
+        # Manual calculation to avoid annotation conflicts
+        agent_stats_list = []
+        for agent in agents:
+            # Count assigned tickets manually
+            assigned_count = Ticket.objects.filter(assigned_to=agent).count()
+            
+            # Count resolved tickets manually
+            resolved_count = Ticket.objects.filter(
+                assigned_to=agent, 
+                status='resolved'
+            ).count()
+            
+            # Calculate average response time
+            avg_response = Ticket.objects.filter(
+                assigned_to=agent,
+                response_time__isnull=False
+            ).aggregate(avg=Avg('response_time'))['avg']
+            
+            agent_stats_list.append({
+                'id': agent.id,
+                'email': agent.email,
+                'first_name': agent.first_name,
+                'last_name': agent.last_name,
+                'get_full_name': agent.get_full_name(),
+                'profile_picture': agent.profile_picture,
+                'is_active': agent.is_active,
+                'assigned_tickets': assigned_count,
+                'resolved_tickets': resolved_count,
+                'avg_response_time': avg_response,
+            })
+        
+        # Sort by resolved tickets (most resolved first)
+        agent_stats_list.sort(key=lambda x: x['resolved_tickets'], reverse=True)
+        context['agent_stats'] = agent_stats_list
     
     return render(request, 'dashboard/dashboard.html', context)
-
 
 @login_required
 def template_list(request):
@@ -705,20 +650,6 @@ def template_delete(request, pk):
     
     return render(request, 'tickets/template_confirm_delete.html', {'template': template})
 
-
-@login_required
-def category_list(request):
-    """
-    List all ticket categories.
-    """
-    if not request.user.can_manage_tickets():
-        return HttpResponseForbidden("You don't have permission to view categories.")
-    
-    categories = Category.objects.all().order_by('order', 'name')
-    
-    return render(request, 'tickets/category_list.html', {'categories': categories})
-
-
 @login_required
 def download_attachment(request, attachment_id):
     """
@@ -772,3 +703,141 @@ def search_tickets_api(request):
     ]
     
     return JsonResponse({'results': results})
+
+@login_required
+def agent_list(request):
+    """List all agents with their statistics."""
+    if not request.user.is_admin():
+        raise PermissionDenied("Only admins can view agent list.")
+    
+    agents = User.objects.filter(user_type='agent', is_active=True)
+    
+    # Create a list of agent stats dictionaries instead of modifying the User objects
+    agent_stats = []
+    for agent in agents:
+        # Calculate statistics without modifying the User object
+        assigned_count = Ticket.objects.filter(assigned_to=agent).count()
+        resolved_count = Ticket.objects.filter(assigned_to=agent, status='resolved').count()
+        
+        agent_stats.append({
+            'agent': agent,  # Pass the actual agent object
+            'assigned_tickets': assigned_count,
+            'resolved_tickets': resolved_count,
+            'full_name': agent.get_full_name() or agent.email,
+        })
+    
+    # Get unassigned tickets for quick assignment
+    unassigned_tickets = Ticket.objects.filter(assigned_to__isnull=True).exclude(
+        status__in=['resolved', 'closed']
+    )[:10]
+    
+    return render(request, 'tickets/agent_list.html', {
+        'agent_stats': agent_stats,  # Pass the stats list instead of agents
+        'agents': agents,  # Keep this if needed elsewhere
+        'unassigned_tickets': unassigned_tickets
+    })
+
+@login_required
+def agent_create(request):
+    """Create a new agent."""
+    if not request.user.is_admin():
+        raise PermissionDenied("Only admins can create agents.")
+    
+    if request.method == 'POST':
+        form = AgentCreateForm(request.POST, request.FILES)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.user_type = 'agent'
+            user.is_staff = True
+            user.save()
+            messages.success(request, f'Agent {user.get_full_name()} created successfully.')
+            return redirect('tickets:agent_list')
+    else:
+        form = AgentCreateForm()
+    
+    return render(request, 'tickets/agent_form.html', {'form': form})
+
+
+@login_required
+def agent_edit(request, pk):
+    """Edit an existing agent."""
+    if not request.user.is_admin():
+        raise PermissionDenied("Only admins can edit agents.")
+    
+    agent = get_object_or_404(User, pk=pk, user_type='agent')
+    
+    if request.method == 'POST':
+        form = AgentEditForm(request.POST, request.FILES, instance=agent)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Agent updated successfully.')
+            return redirect('tickets:agent_list')
+    else:
+        form = AgentEditForm(instance=agent)
+    
+    return render(request, 'tickets/agent_form.html', {'form': form})
+
+
+@login_required
+def agent_tickets(request, pk):
+    """View tickets assigned to a specific agent."""
+    if not request.user.is_admin():
+        raise PermissionDenied("Only admins can view agent tickets.")
+    
+    agent = get_object_or_404(User, pk=pk, user_type='agent')
+    tickets = Ticket.objects.filter(assigned_to=agent).order_by('-created_at')
+    
+    return render(request, 'tickets/agent_tickets.html', {
+        'agent': agent,
+        'tickets': tickets
+    })
+
+
+@login_required
+@require_POST
+def bulk_assign(request):
+    """Assign a ticket to an agent."""
+    if not request.user.is_admin():
+        return HttpResponseForbidden("Only admins can assign tickets.")
+    
+    ticket_id = request.POST.get('ticket_id')
+    agent_id = request.POST.get('agent_id')
+    
+    if not ticket_id or not agent_id:
+        messages.error(request, "Please select both a ticket and an agent.")
+        return redirect('tickets:agent_list')
+    
+    try:
+        ticket = Ticket.objects.get(id=ticket_id)
+        agent = User.objects.get(id=agent_id, user_type='agent')
+        
+        ticket.assigned_to = agent
+        ticket.save()
+        
+        messages.success(request, f'Ticket {ticket.ticket_id} assigned to {agent.get_full_name()}')
+    except (Ticket.DoesNotExist, User.DoesNotExist):
+        messages.error(request, "Invalid ticket or agent.")
+    
+    return redirect('tickets:agent_list')
+
+@login_required
+def agent_tickets(request, pk):
+    """View tickets assigned to a specific agent."""
+    if not request.user.is_admin():
+        raise PermissionDenied("Only admins can view agent tickets.")
+    
+    agent = get_object_or_404(User, pk=pk, user_type='agent')
+    tickets = Ticket.objects.filter(assigned_to=agent).order_by('-created_at')
+    
+    # Calculate statistics
+    tickets_open = tickets.filter(status__in=['new', 'open', 'in_progress', 'pending']).count()
+    tickets_resolved = tickets.filter(status='resolved').count()
+    tickets_closed = tickets.filter(status='closed').count()
+    
+    return render(request, 'tickets/agent_tickets.html', {
+        'agent': agent,
+        'tickets': tickets,
+        'tickets_open': tickets_open,
+        'tickets_resolved': tickets_resolved,
+        'tickets_closed': tickets_closed,
+    })
