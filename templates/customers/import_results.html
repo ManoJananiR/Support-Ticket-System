@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Import Results - STS Support Ticket System{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'tickets:dashboard' %}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'customers:customer_list' %}">Customers</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'customers:customer_import' %}">Import</a></li>
+                    <li class="breadcrumb-item active">Results</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header {% if results.errors %}bg-warning{% else %}bg-success{% endif %} text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-chart-pie me-2"></i>Import Results
+                    </h5>
+                </div>
+                <div class="card-body">
+                    
+                    <!-- Summary Statistics -->
+                    <div class="row text-center mb-4">
+                        <div class="col-md-3">
+                            <div class="card bg-success text-white">
+                                <div class="card-body">
+                                    <h3>{{ results.created|default:0 }}</h3>
+                                    <p class="mb-0">Created</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-info text-white">
+                                <div class="card-body">
+                                    <h3>{{ results.updated|default:0 }}</h3>
+                                    <p class="mb-0">Updated</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-secondary text-white">
+                                <div class="card-body">
+                                    <h3>{{ results.skipped|default:0 }}</h3>
+                                    <p class="mb-0">Skipped</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-danger text-white">
+                                <div class="card-body">
+                                    <h3>{{ results.errors|default:0 }}</h3>
+                                    <p class="mb-0">Errors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Error Details -->
+                    {% if results.error_details %}
+                    <div class="alert alert-danger">
+                        <h6><i class="fas fa-exclamation-triangle me-2"></i>Error Details</h6>
+                        <ul class="mb-0">
+                            {% for error in results.error_details %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Success Message -->
+                    {% if results.created > 0 or results.updated > 0 %}
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i>
+                        Successfully imported {{ results.created }} new customers and updated {{ results.updated }} existing customers.
+                    </div>
+                    {% endif %}
+                    
+                    <hr>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'customers:customer_list' %}" class="btn btn-primary">
+                            <i class="fas fa-users me-2"></i>View All Customers
+                        </a>
+                        <a href="{% url 'customers:customer_import' %}" class="btn btn-secondary">
+                            <i class="fas fa-file-import me-2"></i>Import More
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
 
@@ -241,8 +241,8 @@ class DashboardStatsView(generics.GenericAPIView):
         
         stats = {
             'total': tickets.count(),
-            'by_status': tickets.values('status').annotate(count=models.Count('id')),
-            'by_priority': tickets.values('priority').annotate(count=models.Count('id')),
+            'by_status': tickets.values('status').annotate(count=Count('id')),
+            'by_priority': tickets.values('priority').annotate(count=Count('id')),
             'overdue': tickets.filter(
                 due_by__lt=now
             ).exclude(status__in=['resolved', 'closed']).count(),

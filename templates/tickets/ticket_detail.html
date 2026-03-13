@@ -2,10 +2,10 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block title %}Ticket {{ ticket.ticket_id }} - Support Ticket System{% endblock %}
+{% block title %}Ticket {{ ticket.ticket_id }} - STS Support Ticket System{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid py-4">
     <!-- Header -->
     <div class="row mb-4">
         <div class="col">
@@ -18,16 +18,32 @@
             </nav>
         </div>
         <div class="col-auto">
-            {% if can_edit %}
-            <a href="{% url 'tickets:edit' ticket.ticket_id %}" class="btn btn-primary">
-                <i class="fas fa-edit me-2"></i>Edit Ticket
-            </a>
-            {% endif %}
+            <div class="btn-group">
+                {% if can_edit %}
+                    {% if user.is_admin %}
+                        <!-- Admin sees full edit and delete -->
+                        <a href="{% url 'tickets:edit' ticket.ticket_id %}" class="btn btn-primary">
+                            <i class="fas fa-edit me-2"></i>Edit Ticket
+                        </a>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            <i class="fas fa-trash me-2"></i>Delete
+                        </button>
+                    {% elif user.is_agent %}
+                        <!-- Agent sees limited edit (status/due date only) -->
+                        <a href="{% url 'tickets:edit' ticket.ticket_id %}" class="btn btn-warning">
+                            <i class="fas fa-clock me-2"></i>Update Status/Due Date
+                        </a>
+                    {% endif %}
+                {% endif %}
+                <a href="{% url 'tickets:list' %}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Back
+                </a>
+            </div>
         </div>
     </div>
 
     <!-- Ticket Header Card -->
-    <div class="card mb-4">
+    <div class="card mb-4 shadow-sm">
         <div class="card-header bg-primary text-white">
             <div class="d-flex justify-content-between align-items-center">
                 <h5 class="card-title mb-0">
@@ -94,10 +110,7 @@
                                     <th>Category:</th>
                                     <td>{{ ticket.category.name|default:"Uncategorized" }}</td>
                                 </tr>
-                                <tr>
-                                    <th>Created By:</th>
-                                    <td>{{ ticket.created_by.get_full_name|default:ticket.created_by.email }}</td>
-                                </tr>
+                                
                                 <tr>
                                     <th>Assigned To:</th>
                                     <td>
@@ -128,55 +141,13 @@
         </div>
     </div>
 
-    <!-- Quick Actions (for agents/admins) -->
-{% if can_edit %}
-<div class="row mb-4">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header bg-light">
-                <h6 class="card-title mb-0"><i class="fas fa-bolt me-2"></i>Quick Actions</h6>
-            </div>
-            <div class="card-body">
-                <div class="row g-2">
-                    <div class="col-md-3">
-                        <form method="post" action="{% url 'tickets:status_change' ticket.ticket_id %}" class="d-flex">
-                            {% csrf_token %}
-                            <select name="status" class="form-select form-select-sm me-2">
-                                {% for status_code, status_name in ticket.STATUS_CHOICES %}
-                                <option value="{{ status_code }}" {% if ticket.status == status_code %}selected{% endif %}>
-                                    {{ status_name }}
-                                </option>
-                                {% endfor %}
-                            </select>
-                            <button type="submit" class="btn btn-sm btn-primary">Update</button>
-                        </form>
-                    </div>
-                    <div class="col-md-4">
-                        <form method="post" action="{% url 'tickets:assign' ticket.ticket_id %}" class="d-flex">
-                            {% csrf_token %}
-                            <select name="agent_id" class="form-select form-select-sm me-2">
-                                <option value="">Assign to...</option>
-                                {% for agent in agents %}
-                                <option value="{{ agent.id }}" {% if ticket.assigned_to_id == agent.id %}selected{% endif %}>
-                                    {{ agent.get_full_name|default:agent.email }}
-                                </option>
-                                {% endfor %}
-                            </select>
-                            <button type="submit" class="btn btn-sm btn-primary">Assign</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endif %}
-
-    <!-- Comments Section -->
+    <!-- Main Content Row -->
     <div class="row">
+        <!-- Left Column - Comments -->
         <div class="col-md-8">
-            <div class="card mb-4">
-                <div class="card-header">
+            <!-- Comments Section -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-light">
                     <h6 class="card-title mb-0"><i class="fas fa-comments me-2"></i>Comments & Activity</h6>
                 </div>
                 <div class="card-body">
@@ -216,8 +187,8 @@
             </div>
 
             <!-- Add Comment Form -->
-            <div class="card">
-                <div class="card-header">
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
                     <h6 class="card-title mb-0"><i class="fas fa-plus-circle me-2"></i>Add Comment</h6>
                 </div>
                 <div class="card-body">
@@ -228,6 +199,7 @@
                         <div class="mb-3">
                             <label for="attachments" class="form-label">Attachments</label>
                             <input type="file" class="form-control" id="attachments" name="attachments" multiple>
+                            <small class="text-muted">Allowed: PDF, DOC, DOCX, JPG, PNG, TXT, ZIP (Max 10MB each)</small>
                         </div>
                         
                         <button type="submit" class="btn btn-primary">
@@ -238,48 +210,214 @@
             </div>
         </div>
 
-        <div class="col-md-4">
-            <!-- Attachments -->
-            {% if attachments %}
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h6 class="card-title mb-0"><i class="fas fa-paperclip me-2"></i>Attachments</h6>
-                </div>
-                <div class="card-body">
-                    <div class="list-group">
-                        {% for attachment in attachments %}
-                        <a href="{% url 'tickets:download_attachment' attachment.id %}" class="list-group-item list-group-item-action">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span><i class="fas fa-file me-2"></i>{{ attachment.filename }}</span>
-                                <small class="text-muted">{{ attachment.file_size|filesizeformat }}</small>
-                            </div>
-                            <small class="text-muted">Uploaded by {{ attachment.uploaded_by.get_full_name|default:attachment.uploaded_by.email }}</small>
-                        </a>
-                        {% endfor %}
+    <!-- Right Column - Sidebar -->
+<div class="col-md-4">
+    <!-- Contact Information Card - From ticket metadata -->
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-info text-white">
+            <h6 class="card-title mb-0"><i class="fas fa-address-card me-2"></i>Customer Information</h6>
+        </div>
+        <div class="card-body">
+            <!-- Show information from ticket metadata -->
+            {% if ticket.metadata %}
+                <div class="mb-3">
+                    <div class="p-3 bg-light rounded">
+                        <h6 class="fw-bold mb-3">Contact Details</h6>
+                        
+                        {% if ticket.metadata.name %}
+                        <p class="mb-3">
+                            <i class="fas fa-user me-2 text-primary"></i>
+                            <strong>Name:</strong> {{ ticket.metadata.name }}
+                        </p>
+                        {% endif %}
+                        
+                        {% if ticket.metadata.email %}
+                        <p class="mb-3">
+                            <i class="fas fa-envelope me-2 text-primary"></i>
+                            <strong>Email:</strong> 
+                            <a href="mailto:{{ ticket.metadata.email }}" class="text-decoration-none">{{ ticket.metadata.email }}</a>
+                        </p>
+                        {% endif %}
+                        
+                        {% if ticket.metadata.phone %}
+                        <p class="mb-0">
+                            <i class="fas fa-phone me-2 text-primary"></i>
+                            <strong>Phone:</strong> 
+                            <a href="tel:{{ ticket.metadata.phone }}" class="text-decoration-none">{{ ticket.metadata.phone }}</a>
+                        </p>
+                        {% else %}
+                        <p class="mb-0 text-muted">
+                            <i class="fas fa-phone me-2"></i>
+                            <strong>Phone:</strong> <em>Not provided</em>
+                        </p>
+                        {% endif %}
+                    </div>
+                    <div class="d-flex justify-content-end mt-2">
+                        <small class="text-muted">
+                            <i class="fas fa-info-circle me-1"></i> From ticket form
+                        </small>
                     </div>
                 </div>
+            {% else %}
+            <div class="text-center py-3">
+                <i class="fas fa-exclamation-circle fa-2x text-warning mb-2"></i>
+                <p class="mb-2 text-muted">No customer contact information available.</p>
+                {% if user.is_admin %}
+                <a href="{% url 'tickets:edit' ticket.ticket_id %}" class="btn btn-sm btn-primary">
+                    <i class="fas fa-plus-circle me-1"></i>Add Contact Info
+                </a>
+                {% endif %}
             </div>
             {% endif %}
-
-            <!-- History -->
-            {% if history %}
-            <div class="card">
-                <div class="card-header">
-                    <h6 class="card-title mb-0"><i class="fas fa-history me-2"></i>Recent History</h6>
-                </div>
-                <div class="card-body">
-                    <div class="list-group">
-                        {% for entry in history %}
-                        <div class="list-group-item">
-                            <small class="text-muted">{{ entry.timestamp|timesince }} ago</small>
-                            <p class="mb-0"><strong>{{ entry.user.get_full_name|default:entry.user.email }}</strong> {{ entry.get_action_display }}</p>
-                        </div>
-                        {% endfor %}
-                    </div>
+            
+            <!-- Assigned Agent Information -->
+            {% if ticket.assigned_to %}
+            <div class="border-top pt-3 mt-2">
+                <h6 class="fw-bold mb-3">Assigned Agent</h6>
+                <div class="p-3 bg-light rounded">
+                    <p class="mb-2">
+                        <i class="fas fa-user-tie me-2 text-success"></i>
+                        <strong>{{ ticket.assigned_to.get_full_name|default:ticket.assigned_to.email }}</strong>
+                    </p>
+                    <p class="mb-2">
+                        <i class="fas fa-envelope me-2 text-success"></i>
+                        <a href="mailto:{{ ticket.assigned_to.email }}" class="text-decoration-none">{{ ticket.assigned_to.email }}</a>
+                    </p>
+                    {% if ticket.assigned_to.phone_number %}
+                    <p class="mb-0">
+                        <i class="fas fa-phone me-2 text-success"></i>
+                        <a href="tel:{{ ticket.assigned_to.phone_number }}" class="text-decoration-none">{{ ticket.assigned_to.phone_number }}</a>
+                    </p>
+                    {% endif %}
                 </div>
             </div>
             {% endif %}
         </div>
     </div>
+
+    <!-- Attachments Card -->
+    {% if attachments %}
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-light">
+            <h6 class="card-title mb-0"><i class="fas fa-paperclip me-2"></i>Attachments ({{ attachments|length }})</h6>
+        </div>
+        <div class="card-body">
+            <div class="list-group">
+                {% for attachment in attachments %}
+                <a href="{% url 'tickets:download_attachment' attachment.id %}" class="list-group-item list-group-item-action">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-file me-2"></i>{{ attachment.filename|truncatechars:25 }}</span>
+                        <small class="text-muted">{{ attachment.file_size|filesizeformat }}</small>
+                    </div>
+                    <small class="text-muted">by {{ attachment.uploaded_by.get_full_name|default:attachment.uploaded_by.email }}</small>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- History Card -->
+    {% if history %}
+    <div class="card shadow-sm">
+        <div class="card-header bg-light">
+            <h6 class="card-title mb-0"><i class="fas fa-history me-2"></i>Recent Activity</h6>
+        </div>
+        <div class="card-body">
+            <div class="list-group">
+                {% for entry in history %}
+                <div class="list-group-item">
+                    <small class="text-muted">{{ entry.timestamp|timesince }} ago</small>
+                    <p class="mb-0"><strong>{{ entry.user.get_full_name|default:entry.user.email }}</strong> {{ entry.get_action_display }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
 </div>
+
+<!-- Delete Confirmation Modal -->
+{% if user.is_admin %}
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-exclamation-triangle me-2"></i>Confirm Delete
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete ticket <strong>{{ ticket.ticket_id }}</strong>?</p>
+                <p class="mb-2"><strong>{{ ticket.title }}</strong></p>
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    This action cannot be undone. All comments and attachments will also be permanently deleted.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-times me-2"></i>Cancel
+                </button>
+                <form method="post" action="{% url 'tickets:delete' ticket.ticket_id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash me-2"></i>Delete Permanently
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Initialize tooltips
+    document.addEventListener('DOMContentLoaded', function() {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    });
+
+    // File size validation for attachments
+    document.getElementById('attachments')?.addEventListener('change', function(e) {
+        const files = e.target.files;
+        const maxSize = 10 * 1024 * 1024; // 10MB
+        
+        for (let i = 0; i < files.length; i++) {
+            if (files[i].size > maxSize) {
+                alert(`File ${files[i].name} is too large. Maximum size is 10MB.`);
+                e.target.value = '';
+                return;
+            }
+        }
+    });
+
+    // Confirm before status change (optional)
+    document.querySelectorAll('form[action*="status_change"]').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            if (!confirm('Are you sure you want to change the ticket status?')) {
+                e.preventDefault();
+            }
+        });
+    });
+
+    // Confirm before assignment (optional)
+    document.querySelectorAll('form[action*="assign"]').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            const agentSelect = this.querySelector('select[name="agent_id"]');
+            if (agentSelect && agentSelect.value) {
+                const agentName = agentSelect.options[agentSelect.selectedIndex].text;
+                if (!confirm(`Assign this ticket to ${agentName}?`)) {
+                    e.preventDefault();
+                }
+            }
+        });
+    });
+</script>
 {% endblock %}

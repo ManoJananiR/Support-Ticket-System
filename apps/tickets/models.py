@@ -83,6 +83,7 @@ class Ticket(models.Model):
     ticket_id = models.CharField(max_length=20, unique=True, editable=False)
     title = models.CharField(max_length=255)
     description = models.TextField()
+    metadata = models.JSONField(default=dict, blank=True)
     
     # Relationships
     created_by = models.ForeignKey(
@@ -144,6 +145,8 @@ class Ticket(models.Model):
             models.Index(fields=['ticket_id']),
             models.Index(fields=['status', 'priority']),
             models.Index(fields=['created_by', '-created_at']),
+            models.Index(fields=['assigned_to', 'status']),
+            models.Index(fields=['created_at']),
         ]
     
     def __str__(self):

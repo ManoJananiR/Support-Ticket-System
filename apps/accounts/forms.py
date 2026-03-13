@@ -4,54 +4,54 @@ Forms for user authentication and profile management.
 
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django.contrib.auth import get_user_model
+from .models import User
 from django.core.exceptions import ValidationError
 import re
-from .models import User
-
-User = get_user_model()
 
 
-class UserRegistrationForm(UserCreationForm):
+class AdminCustomerCreationForm(forms.ModelForm):
     """
-    Form for registering new users.
+    Form for admin to create customer accounts with business details.
     """
-    email = forms.EmailField(
-        required=True,
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email address'})
-    )
-    first_name = forms.CharField(
-        required=True,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First name'})
-    )
-    last_name = forms.CharField(
-        required=True,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last name'})
-    )
-    phone_number = forms.CharField(
-        required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone number'})
-    )
-    password1 = forms.CharField(
+    password = forms.CharField(
         label='Password',
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+        help_text="Password will be hashed and stored securely"
     )
-    password2 = forms.CharField(
+    confirm_password = forms.CharField(
         label='Confirm Password',
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm password'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
-
+    
     class Meta:
         model = User
-        fields = ['email', 'first_name', 'last_name', 'phone_number', 'password1', 'password2']
-
+        fields = [
+            'email', 'first_name', 'last_name', 'phone_number',
+            'business_name', 'business_type', 'gst_number',
+            'address', 'city', 'state', 'country', 'pincode'
+        ]
+        widgets = {
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone number'}),
+            'business_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'business_type': forms.Select(attrs={'class': 'form-control'}),
+            'gst_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'city': forms.TextInput(attrs={'class': 'form-control'}),
+            'state': forms.TextInput(attrs={'class': 'form-control'}),
+            'country': forms.TextInput(attrs={'class': 'form-control'}),
+            'pincode': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+    
     def clean_email(self):
         """Validate email is unique."""
         email = self.cleaned_data.get('email')
         if User.objects.filter(email=email).exists():
             raise ValidationError('This email is already registered.')
         return email
-
+    
     def clean_phone_number(self):
         """Validate phone number format."""
         phone = self.cleaned_data.get('phone_number')
@@ -61,131 +61,40 @@ class UserRegistrationForm(UserCreationForm):
             if len(phone) < 10 or len(phone) > 15:
                 raise ValidationError('Phone number must be between 10 and 15 digits.')
         return phone
-
+    
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('password')
+        confirm_password = cleaned_data.get('confirm_password')
+        
+        if password and confirm_password and password != confirm_password:
+            raise ValidationError("Passwords do not match.")
+        
+        # Password strength validation
+        if password:
+            if len(password) < 8:
+                raise ValidationError('Password must be at least 8 characters long.')
+            if not any(char.isdigit() for char in password):
+                raise ValidationError('Password must contain at least one number.')
+            if not any(char.isupper() for char in password):
+                raise ValidationError('Password must contain at least one uppercase letter.')
+        
+        return cleaned_data
+    
     def save(self, commit=True):
-        """Save the user with customer role by default."""
         user = super().save(commit=False)
-        user.user_type = 'customer'  # Default to customer
-        user.email_verified = False
+        user.user_type = 'customer'
+        user.set_password(self.cleaned_data['password'])
+        user.is_active = True
         if commit:
             user.save()
         return user
 
-
-class UserProfileForm(UserChangeForm):
-    """
-    Form for editing user profile.
-    """
-    password = None  # Remove password field from the form
-
-    class Meta:
-        model = User
-        fields = ['first_name', 'last_name', 'phone_number', 'profile_picture', 
-                  'department', 'job_title', 'company', 'timezone', 'language']
-        widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'phone_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone number'}),
-            'profile_picture': forms.FileInput(attrs={'class': 'form-control'}),
-            'department': forms.TextInput(attrs={'class': 'form-control'}),
-            'job_title': forms.TextInput(attrs={'class': 'form-control'}),
-            'company': forms.TextInput(attrs={'class': 'form-control'}),
-            'timezone': forms.Select(attrs={'class': 'form-control'}),
-            'language': forms.Select(attrs={'class': 'form-control'}),
-        }
-
-
-class UserLoginForm(forms.Form):
-    """
-    Form for user login.
-    """
-    email = forms.EmailField(
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email address'})
-    )
-    password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'})
-    )
-    remember_me = forms.BooleanField(required=False, initial=False)
-
-
-class PasswordResetRequestForm(forms.Form):
-    """
-    Form for requesting password reset.
-    """
-    email = forms.EmailField(
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email'})
-    )
-
-    def clean_email(self):
-        """Validate email exists."""
-        email = self.cleaned_data.get('email')
-        if not User.objects.filter(email=email).exists():
-            raise ValidationError('No user found with this email address.')
-        return email
-
-
-class SetPasswordForm(forms.Form):
-    """
-    Form for setting new password.
-    """
-    password1 = forms.CharField(
-        label='New Password',
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'New password'})
-    )
-    password2 = forms.CharField(
-        label='Confirm New Password',
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm new password'})
-    )
-
-    def clean(self):
-        """Validate passwords match."""
-        cleaned_data = super().clean()
-        password1 = cleaned_data.get('password1')
-        password2 = cleaned_data.get('password2')
-
-        if password1 and password2 and password1 != password2:
-            raise ValidationError('Passwords do not match.')
-        
-        # Password strength validation
-        if password1:
-            if len(password1) < 8:
-                raise ValidationError('Password must be at least 8 characters long.')
-            if not any(char.isdigit() for char in password1):
-                raise ValidationError('Password must contain at least one number.')
-            if not any(char.isupper() for char in password1):
-                raise ValidationError('Password must contain at least one uppercase letter.')
-
-        return cleaned_data
-
-
-class UserNotificationSettingsForm(forms.ModelForm):
-    """
-    Form for managing notification preferences.
-    """
-    class Meta:
-        model = User
-        fields = ['email_notifications', 'ticket_assigned_notifications', 'ticket_updated_notifications']
-        widgets = {
-            'email_notifications': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-            'ticket_assigned_notifications': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-            'ticket_updated_notifications': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-        }
-
-
-class TwoFactorSetupForm(forms.Form):
-    """
-    Form for setting up two-factor authentication.
-    """
-    enable_2fa = forms.BooleanField(required=False, initial=False)
-    verification_code = forms.CharField(
-        required=False,
-        max_length=6,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter 6-digit code'})
-    )
-
+# ADD THESE MISSING FORMS
 class AgentCreateForm(UserCreationForm):
-    """Form for creating new agents."""
-    
+    """
+    Form for creating new agents.
+    """
     email = forms.EmailField(required=True)
     first_name = forms.CharField(required=True)
     last_name = forms.CharField(required=True)
@@ -208,10 +117,91 @@ class AgentCreateForm(UserCreationForm):
 
 
 class AgentEditForm(forms.ModelForm):
-    """Form for editing existing agents."""
-    
+    """
+    Form for editing existing agents.
+    """
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'phone_number', 'profile_picture',
                   'department', 'job_title', 'is_active', 'email_notifications',
                   'ticket_assigned_notifications', 'ticket_updated_notifications']
+
+
+class CustomerFilterForm(forms.Form):
+    """Form for filtering customers in admin panel."""
+    
+    business_type = forms.ChoiceField(
+        choices=[('', 'All')] + list(User.BUSINESS_TYPE_CHOICES),
+        required=False,
+        widget=forms.Select(attrs={'class': 'form-control'})
+    )
+    date_from = forms.DateField(
+        required=False,
+        widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'})
+    )
+    date_to = forms.DateField(
+        required=False,
+        widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'})
+    )
+    search = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Search by name, email, business...'})
+    )
+
+
+class UserProfileForm(UserChangeForm):
+    """
+    Form for editing user profile with better file handling.
+    """
+    password = None  # Remove password field from the form
+    
+    # Add a custom field to show current picture
+    current_picture = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
+        label="Current Picture"
+    )
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'phone_number', 'profile_picture', 
+                  'business_name', 'business_type', 'gst_number',
+                  'address', 'city', 'state', 'country', 'pincode']
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone number'}),
+            'profile_picture': forms.FileInput(attrs={
+                'class': 'form-control',
+                'accept': 'image/*'
+            }),
+            'business_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'business_type': forms.Select(attrs={'class': 'form-control'}),
+            'gst_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'city': forms.TextInput(attrs={'class': 'form-control'}),
+            'state': forms.TextInput(attrs={'class': 'form-control'}),
+            'country': forms.TextInput(attrs={'class': 'form-control'}),
+            'pincode': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Set the current picture value
+        if self.instance and self.instance.profile_picture:
+            self.fields['current_picture'].initial = self.instance.profile_picture.name.split('/')[-1]
+        else:
+            self.fields['current_picture'].initial = 'No picture uploaded'
+            
+class UserNotificationSettingsForm(forms.ModelForm):
+    """
+    Form for managing notification preferences.
+    """
+    class Meta:
+        model = User
+        fields = ['email_notifications', 'ticket_assigned_notifications', 'ticket_updated_notifications']
+        widgets = {
+            'email_notifications': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'ticket_assigned_notifications': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'ticket_updated_notifications': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+        }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Support Ticket System{% endblock %}</title>
+    <title>{% block title %}STS - Support Ticket System{% endblock %}</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,127 +11,109 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ticket.css' %}">
     
     {% block extra_css %}{% endblock %}
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .navbar-brand {
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-        .navbar-brand i {
-            margin-right: 8px;
-            font-size: 1.2rem;
-        }
-        .dropdown-menu {
-            border: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            padding: 8px;
-        }
-        .dropdown-item {
-            border-radius: 6px;
-            padding: 8px 16px;
-            font-size: 0.95rem;
-        }
-        .dropdown-item i {
-            width: 20px;
-            margin-right: 8px;
-            color: #6c757d;
-        }
-        .dropdown-item:hover {
-            background-color: #f0f7ff;
-        }
-        .dropdown-item:hover i {
-            color: #0d6efd;
-        }
-        .dropdown-divider {
-            margin: 8px 0;
-        }
-        .footer {
-            border-top: 1px solid #dee2e6;
-            margin-top: auto;
-        }
-        main {
-            min-height: calc(100vh - 160px);
-        }
-        @media (max-width: 768px) {
-            .navbar-brand {
-                font-size: 1.1rem;
-            }
-            .navbar-brand i {
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow">
+    <!-- Navigation for Authenticated Users -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top mb-3">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="{% url 'tickets:dashboard' %}">
                 <i class="fas fa-ticket-alt me-2"></i>
-                <span class="d-none d-sm-inline">Support Ticket System</span>
-                <span class="d-inline d-sm-none">STS</span>
+                <img src="{% static 'images/sam.png' %}" alt="STS Logo" class="img-fluid" style="width: 30px; height: 30px; object-fit: cover; border-radius: 60%; margin-right: 8px;">
+                <span>STS</span>
+                {% if user.is_admin %}
+                    <span class="role-badge role-admin">Admin</span>
+                {% elif user.is_agent %}
+                    <span class="role-badge role-agent">Agent</span>
+                {% else %}
+                    <span class="role-badge role-customer">Customer</span>
+                {% endif %}
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    {% if user.is_authenticated %}
-                        <!-- Main Navigation -->
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}" 
-                               href="{% url 'tickets:dashboard' %}">
-                                <i class="fas fa-chart-line me-1"></i>
-                                <span class="d-inline d-lg-none">Dashboard</span>
-                                <span class="d-none d-lg-inline">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.resolver_match.url_name == 'list' %}active{% endif %}" 
-                               href="{% url 'tickets:list' %}">
-                                <i class="fas fa-list me-1"></i>
-                                <span class="d-inline d-lg-none">Tickets</span>
-                                <span class="d-none d-lg-inline">Tickets</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.resolver_match.url_name == 'create' %}active{% endif %}" 
-                               href="{% url 'tickets:create' %}">
-                                <i class="fas fa-plus-circle me-1"></i>
-                                <span class="d-inline d-lg-none">New</span>
-                                <span class="d-none d-lg-inline">New Ticket</span>
-                            </a>
-                        </li>
-                        
-                        <!-- Admin Dropdown (for admins only) -->
+                    <!-- Common Navigation for All Users -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}" 
+                           href="{% url 'tickets:dashboard' %}">
+                            <i class="fas fa-chart-line me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    
+                    <!-- ALL USERS: Tickets List Link (but filtered by role in view) -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'list' %}active{% endif %}" 
+                           href="{% url 'tickets:list' %}">
+                            <i class="fas fa-list me-1"></i>
+                            {% if user.is_customer %}
+                                My Tickets
+                            {% elif user.is_agent %}
+                                Assigned Tickets
+                            {% else %}
+                                All Tickets
+                            {% endif %}
+                        </a>
+                    </li>
+                    
+                    <!-- CREATE TICKET - FOR CUSTOMERS AND ADMINS -->
+                    {% if user.is_customer or user.is_admin %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'create' %}active{% endif %}" 
+                           href="{% url 'tickets:create' %}">
+                            <i class="fas fa-plus-circle me-1"></i>
+                            {% if user.is_admin %}
+                                <span class="text-warning">New Ticket</span>
+                            {% else %}
+                                New Ticket
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endif %}
+                    
+                  <!-- Admin Dropdown (for admins only) -->
 {% if user.is_admin %}
 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="adminDropdown" 
-       role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-cog me-1"></i>
-        <span class="d-inline d-lg-none">Admin</span>
-        <span class="d-none d-lg-inline">Admin</span>
+    <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown">
+        <i class="fas fa-cog me-1"></i>Admin
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
+    <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+            <a class="dropdown-item" href="{% url 'customers:customer_list' %}">
+                <i class="fas fa-users"></i> Manage Customers
+            </a>
+        </li>
+         <li>
+            <a class="dropdown-item" href="{% url 'customers:customer_import' %}">
+                <i class="fas fa-file-import"></i> Import Customers
+            </a>
+        </li>
         <li>
             <a class="dropdown-item" href="{% url 'tickets:agent_list' %}">
-                <i class="fas fa-users"></i> Manage Agents
+                <i class="fas fa-user-tie"></i> Manage Agents
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="{% url 'tickets:create' %}">
+                <i class="fas fa-plus-circle text-danger"></i> Create Ticket
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="{% url 'tickets:list' %}?assigned_to__isnull=True">
+                <i class="fas fa-inbox"></i> Unassigned Tickets
             </a>
         </li>
         <li><hr class="dropdown-divider"></li>
@@ -143,67 +125,50 @@
     </ul>
 </li>
 {% endif %}
-                        <!-- User Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" 
-                               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {% if user.profile_picture %}
-                                    <img src="{{ user.profile_picture.url }}" alt="{{ user.get_full_name }}" 
-                                         class="rounded-circle me-1" style="width: 24px; height: 24px; object-fit: cover;">
-                                {% else %}
-                                    <i class="fas fa-user-circle fa-lg me-1"></i>
-                                {% endif %}
-                                <span class="d-none d-lg-inline">{{ user.get_full_name|truncatechars:15|default:user.email|truncatechars:15 }}</span>
-                                <span class="d-inline d-lg-none">Profile</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'accounts:profile' %}">
-                                        <i class="fas fa-id-card"></i> My Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'accounts:profile_edit' %}">
-                                        <i class="fas fa-user-edit"></i> Edit Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'accounts:change_password' %}">
-                                        <i class="fas fa-key"></i> Change Password
-                                    </a>
-                                </li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li>
-                                    <form method="post" action="{% url 'accounts:logout' %}" class="m-0">
-                                        {% csrf_token %}
-                                        <button type="submit" class="dropdown-item text-danger">
-                                            <i class="fas fa-sign-out-alt"></i> Logout
-                                        </button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    {% else %}
-                        <!-- Public Navigation -->
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.resolver_match.url_name == 'login' %}active{% endif %}" 
-                               href="{% url 'accounts:login' %}">
-                                <i class="fas fa-sign-in-alt me-1"></i>Login
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.resolver_match.url_name == 'register' %}active{% endif %}" 
-                               href="{% url 'accounts:register' %}">
-                                <i class="fas fa-user-plus me-1"></i>Register
-                            </a>
-                        </li>
-                    {% endif %}
+                    
+                    <!-- User Dropdown (same for all) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            {% if user.profile_picture %}
+                                <img src="{{ user.profile_picture.url }}" alt="Profile" class="rounded-circle me-1" style="width: 24px; height: 24px; object-fit: cover;">
+                            {% else %}
+                                <i class="fas fa-user-circle fa-lg me-1"></i>
+                            {% endif %}
+                            <span>{{ user.get_full_name|truncatechars:15|default:user.email|truncatechars:15 }}</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="{% url 'accounts:profile' %}">
+                                    <i class="fas fa-id-card"></i> Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'accounts:profile_edit' %}">
+                                    <i class="fas fa-user-edit"></i> Edit Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'accounts:change_password' %}">
+                                    <i class="fas fa-key"></i> Change Password
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form method="post" action="{% url 'accounts:logout' %}" class="m-0">
+                                    {% csrf_token %}
+                                    <button type="submit" class="dropdown-item text-danger">
+                                        <i class="fas fa-sign-out-alt"></i> Logout
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Messages/Alerts -->
+    <!-- Messages -->
     {% if messages %}
         <div class="container mt-3">
             {% for message in messages %}
@@ -220,7 +185,7 @@
                         {% endif %}
                         <span>{{ message }}</span>
                     </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
             {% endfor %}
         </div>
@@ -234,27 +199,12 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-4 bg-white">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <span class="text-muted">
-                        <i class="fas fa-ticket-alt me-2 text-primary"></i>
-                        &copy; {% now "Y" %} Support Ticket System. All rights reserved.
-                    </span>
-                </div>
-                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-                    <a href="#" class="text-muted me-3" data-bs-toggle="tooltip" title="Help">
-                        <i class="fas fa-question-circle"></i>
-                    </a>
-                    <a href="#" class="text-muted me-3" data-bs-toggle="tooltip" title="Documentation">
-                        <i class="fas fa-book"></i>
-                    </a>
-                    <a href="#" class="text-muted" data-bs-toggle="tooltip" title="Contact Support">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
+    <footer class="footer mt-auto py-3 bg-white">
+        <div class="container text-center">
+            <span class="text-muted">
+                <i class="fas fa-ticket-alt me-2 text-primary"></i>
+                &copy; {% now "Y" %} STS - Support Ticket System. All rights reserved.
+            </span>
         </div>
     </footer>
 
@@ -264,11 +214,8 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     
-    <!-- Chart.js (only if needed) -->
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    
-    <!-- Custom JavaScript -->
-    <script src="{% static 'js/main.js' %}"></script>
     
     <script>
         // Initialize tooltips
@@ -286,21 +233,10 @@
                 });
             }, 5000);
         });
-        
-        // Add active class to current nav item
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentLocation = window.location.pathname;
-            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-            
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href && currentLocation.startsWith(href) && href !== '/') {
-                    link.classList.add('active');
-                }
-            });
-        });
     </script>
     
     {% block extra_js %}{% endblock %}
+    <!-- Password Toggle Script -->
+    <script src="{% static 'js/password-toggle.js' %}"></script>
 </body>
 </html>

@@ -1,0 +1,4150 @@
+Folder PATH listing for volume OS
+Volume serial number is BCEA-6627
+C:.
++---apps
+¦   +---accounts
+¦   ¦   +---migrations
+¦   ¦   ¦   +---__pycache__
+¦   ¦   +---templatetags
+¦   ¦   +---__pycache__
+¦   +---api
+¦   ¦   +---__pycache__
+¦   +---core
+¦   ¦   +---__pycache__
+¦   +---tickets
+¦   ¦   +---migrations
+¦   ¦   ¦   +---__pycache__
+¦   ¦   +---__pycache__
+¦   +---__pycache__
++---env
+¦   +---Include
+¦   +---Lib
+¦   ¦   +---site-packages
+¦   ¦       +---allauth
+¦   ¦       ¦   +---account
+¦   ¦       ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---templatetags
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---tests
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---core
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---locale
+¦   ¦       ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt_PT
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_CN
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_TW
+¦   ¦       ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   +---mfa
+¦   ¦       ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---tests
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---socialaccount
+¦   ¦       ¦   ¦   +---internal
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---providers
+¦   ¦       ¦   ¦   ¦   +---agave
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---amazon
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---amazon_cognito
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---angellist
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---apple
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---asana
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---auth0
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---authentiq
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---azure
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---baidu
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---base
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---basecamp
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---battlenet
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---bitbucket
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---bitbucket_oauth2
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---bitly
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---box
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---cilogon
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---clever
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---coinbase
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---dataporten
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---daum
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---digitalocean
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---dingtalk
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---discord
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---disqus
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---douban
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---doximity
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---draugiem
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---drip
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---dropbox
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---dwolla
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---edmodo
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---edx
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---eventbrite
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---eveonline
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---evernote
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---exist
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---facebook
+¦   ¦       ¦   ¦   ¦   ¦   +---data
+¦   ¦       ¦   ¦   ¦   ¦   +---static
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---facebook
+¦   ¦       ¦   ¦   ¦   ¦   ¦       +---js
+¦   ¦       ¦   ¦   ¦   ¦   +---templates
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---facebook
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---feedly
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---feishu
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---figma
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---fivehundredpx
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---flickr
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---foursquare
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---frontier
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---fxa
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---gitea
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---github
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---gitlab
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---globus
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---google
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---gumroad
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---hubic
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---hubspot
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---instagram
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---jupyterhub
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---kakao
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---lemonldap
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---line
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---linkedin
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---linkedin_oauth2
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---mailchimp
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---mailru
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---mediawiki
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---meetup
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---microsoft
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---miro
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---naver
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---netiq
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---nextcloud
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---notion
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---oauth
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---oauth2
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---odnoklassniki
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---okta
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---openid
+¦   ¦       ¦   ¦   ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---openid_connect
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---openstreetmap
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---orcid
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---patreon
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---paypal
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---pinterest
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---pocket
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---questrade
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---quickbooks
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---reddit
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---robinhood
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---salesforce
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---saml
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sharefile
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---shopify
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---slack
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---snapchat
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---soundcloud
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---spotify
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---stackexchange
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---steam
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---stocktwits
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---strava
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---stripe
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---telegram
+¦   ¦       ¦   ¦   ¦   ¦   +---static
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---telegram
+¦   ¦       ¦   ¦   ¦   ¦   ¦       +---js
+¦   ¦       ¦   ¦   ¦   ¦   +---templates
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---telegram
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---trainingpeaks
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---trello
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---tumblr
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---twentythreeandme
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---twitch
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---twitter
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---twitter_oauth2
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---untappd
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---vimeo
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---vimeo_oauth2
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---vk
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---wahoo
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---weibo
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---weixin
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---windowslive
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---xing
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---yahoo
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---yandex
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ynab
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---zoho
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---zoom
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---templatetags
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---tests
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---templates
+¦   ¦       ¦   ¦   +---account
+¦   ¦       ¦   ¦   ¦   +---email
+¦   ¦       ¦   ¦   ¦   +---messages
+¦   ¦       ¦   ¦   ¦   +---snippets
+¦   ¦       ¦   ¦   +---mfa
+¦   ¦       ¦   ¦   ¦   +---messages
+¦   ¦       ¦   ¦   ¦   +---recovery_codes
+¦   ¦       ¦   ¦   ¦   +---totp
+¦   ¦       ¦   ¦   +---openid
+¦   ¦       ¦   ¦   +---socialaccount
+¦   ¦       ¦   ¦   ¦   +---messages
+¦   ¦       ¦   ¦   ¦   +---snippets
+¦   ¦       ¦   ¦   +---tests
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---amqp
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---amqp-5.3.1.dist-info
+¦   ¦       +---argon2
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---argon2_cffi-23.1.0.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---argon2_cffi_bindings-21.2.0.dist-info
+¦   ¦       +---asgiref
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---asgiref-3.8.1.dist-info
+¦   ¦       +---async_timeout
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---async_timeout-5.0.1.dist-info
+¦   ¦       +---backports
+¦   ¦       ¦   +---zoneinfo
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---backports.zoneinfo-0.2.1.dist-info
+¦   ¦       +---bcrypt
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---bcrypt-4.0.1.dist-info
+¦   ¦       +---billiard
+¦   ¦       ¦   +---dummy
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---billiard-4.2.4.dist-info
+¦   ¦       +---celery
+¦   ¦       ¦   +---app
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---apps
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---backends
+¦   ¦       ¦   ¦   +---database
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---bin
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---concurrency
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---contrib
+¦   ¦       ¦   ¦   +---testing
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---events
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---fixups
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---loaders
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---security
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---utils
+¦   ¦       ¦   ¦   +---dispatch
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---static
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---worker
+¦   ¦       ¦   ¦   +---consumer
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---celery-5.3.4.dist-info
+¦   ¦       +---certifi
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---certifi-2026.2.25.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---cffi
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---cffi-1.17.1.dist-info
+¦   ¦       +---charset_normalizer
+¦   ¦       ¦   +---cli
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---charset_normalizer-3.4.4.dist-info
+¦   ¦       +---click
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---click-8.1.8.dist-info
+¦   ¦       +---click_didyoumean
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---click_didyoumean-0.3.1.dist-info
+¦   ¦       +---click_plugins
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---click_plugins-1.1.1.2.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---click_repl
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---click_repl-0.3.0.dist-info
+¦   ¦       +---colorama
+¦   ¦       ¦   +---tests
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---colorama-0.4.6.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---corsheaders
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---crispy_bootstrap5
+¦   ¦       ¦   +---templates
+¦   ¦       ¦   ¦   +---bootstrap5
+¦   ¦       ¦   ¦       +---layout
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---crispy_bootstrap5-0.7.dist-info
+¦   ¦       +---crispy_forms
+¦   ¦       ¦   +---templatetags
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---cryptography
+¦   ¦       ¦   +---hazmat
+¦   ¦       ¦   ¦   +---asn1
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---backends
+¦   ¦       ¦   ¦   ¦   +---openssl
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---bindings
+¦   ¦       ¦   ¦   ¦   +---openssl
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---_rust
+¦   ¦       ¦   ¦   ¦   ¦   +---openssl
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---decrepit
+¦   ¦       ¦   ¦   ¦   +---ciphers
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---primitives
+¦   ¦       ¦   ¦   ¦   +---asymmetric
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ciphers
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---kdf
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---serialization
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---twofactor
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---x509
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---cryptography-46.0.5.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---csp
+¦   ¦       ¦   +---contrib
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---extensions
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---templatetags
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---tests
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---dateutil
+¦   ¦       ¦   +---parser
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---tz
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---zoneinfo
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---debug_toolbar
+¦   ¦       ¦   +---locale
+¦   ¦       ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sv_SE
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_CN
+¦   ¦       ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   +---management
+¦   ¦       ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---panels
+¦   ¦       ¦   ¦   +---history
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---sql
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---templates
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---static
+¦   ¦       ¦   ¦   +---debug_toolbar
+¦   ¦       ¦   ¦       +---css
+¦   ¦       ¦   ¦       +---js
+¦   ¦       ¦   +---templates
+¦   ¦       ¦   ¦   +---debug_toolbar
+¦   ¦       ¦   ¦       +---includes
+¦   ¦       ¦   ¦       +---panels
+¦   ¦       ¦   +---templatetags
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---defusedxml
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---defusedxml-0.7.1.dist-info
+¦   ¦       +---django
+¦   ¦       ¦   +---apps
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---conf
+¦   ¦       ¦   ¦   +---app_template
+¦   ¦       ¦   ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---de_CH
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---es_NI
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---es_PR
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ig
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---kab
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---tk
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---uz
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---project_template
+¦   ¦       ¦   ¦   ¦   +---project_name
+¦   ¦       ¦   ¦   +---urls
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---contrib
+¦   ¦       ¦   ¦   +---admin
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---am
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kab
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uz
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---static
+¦   ¦       ¦   ¦   ¦   ¦   +---admin
+¦   ¦       ¦   ¦   ¦   ¦       +---css
+¦   ¦       ¦   ¦   ¦   ¦       ¦   +---vendor
+¦   ¦       ¦   ¦   ¦   ¦       ¦       +---select2
+¦   ¦       ¦   ¦   ¦   ¦       +---img
+¦   ¦       ¦   ¦   ¦   ¦       ¦   +---gis
+¦   ¦       ¦   ¦   ¦   ¦       +---js
+¦   ¦       ¦   ¦   ¦   ¦           +---admin
+¦   ¦       ¦   ¦   ¦   ¦           +---vendor
+¦   ¦       ¦   ¦   ¦   ¦               +---jquery
+¦   ¦       ¦   ¦   ¦   ¦               +---select2
+¦   ¦       ¦   ¦   ¦   ¦               ¦   +---i18n
+¦   ¦       ¦   ¦   ¦   ¦               +---xregexp
+¦   ¦       ¦   ¦   ¦   +---templates
+¦   ¦       ¦   ¦   ¦   ¦   +---admin
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---auth
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   +---user
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---edit_inline
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---includes
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---widgets
+¦   ¦       ¦   ¦   ¦   ¦   +---registration
+¦   ¦       ¦   ¦   ¦   +---templatetags
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---views
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---admindocs
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kab
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---templates
+¦   ¦       ¦   ¦   ¦   ¦   +---admin_doc
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---auth
+¦   ¦       ¦   ¦   ¦   +---handlers
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kab
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uz
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---templates
+¦   ¦       ¦   ¦   ¦   ¦   +---auth
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---widgets
+¦   ¦       ¦   ¦   ¦   ¦   +---registration
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---contenttypes
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---flatpages
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---templatetags
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---gis
+¦   ¦       ¦   ¦   ¦   +---admin
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---db
+¦   ¦       ¦   ¦   ¦   ¦   +---backends
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---base
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---mysql
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---oracle
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---postgis
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---spatialite
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---models
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---sql
+¦   ¦       ¦   ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---forms
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---gdal
+¦   ¦       ¦   ¦   ¦   ¦   +---prototypes
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---raster
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---geoip2
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---geos
+¦   ¦       ¦   ¦   ¦   ¦   +---prototypes
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---serializers
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sitemaps
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---static
+¦   ¦       ¦   ¦   ¦   ¦   +---gis
+¦   ¦       ¦   ¦   ¦   ¦       +---css
+¦   ¦       ¦   ¦   ¦   ¦       +---img
+¦   ¦       ¦   ¦   ¦   ¦       +---js
+¦   ¦       ¦   ¦   ¦   +---templates
+¦   ¦       ¦   ¦   ¦   ¦   +---gis
+¦   ¦       ¦   ¦   ¦   ¦       +---admin
+¦   ¦       ¦   ¦   ¦   ¦       +---kml
+¦   ¦       ¦   ¦   ¦   +---utils
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---humanize
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uz
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---templatetags
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---messages
+¦   ¦       ¦   ¦   ¦   +---storage
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---postgres
+¦   ¦       ¦   ¦   ¦   +---aggregates
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---fields
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---forms
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---jinja2
+¦   ¦       ¦   ¦   ¦   ¦   +---postgres
+¦   ¦       ¦   ¦   ¦   ¦       +---widgets
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uz
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---templates
+¦   ¦       ¦   ¦   ¦   ¦   +---postgres
+¦   ¦       ¦   ¦   ¦   ¦       +---widgets
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---redirects
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kab
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uz
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---sessions
+¦   ¦       ¦   ¦   ¦   +---backends
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kab
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uz
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---sitemaps
+¦   ¦       ¦   ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---templates
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---sites
+¦   ¦       ¦   ¦   ¦   +---locale
+¦   ¦       ¦   ¦   ¦   ¦   +---af
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ar_DZ
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ast
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---br
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---bs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ckb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---cy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---dsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---en_GB
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_CO
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_MX
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---es_VE
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---eu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---fy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ga
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gd
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hsb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ia
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---io
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---is
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ka
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kab
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---km
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---kn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ko
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ky
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ml
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---mr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ms
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---my
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ne
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---os
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pa
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sq
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sr_Latn
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---sw
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ta
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---te
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tg
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---tt
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---udm
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---ur
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---uz
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---staticfiles
+¦   ¦       ¦   ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---syndication
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---core
+¦   ¦       ¦   ¦   +---cache
+¦   ¦       ¦   ¦   ¦   +---backends
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---checks
+¦   ¦       ¦   ¦   ¦   +---compatibility
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---security
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---files
+¦   ¦       ¦   ¦   ¦   +---storage
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---handlers
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---mail
+¦   ¦       ¦   ¦   ¦   +---backends
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---serializers
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---servers
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---db
+¦   ¦       ¦   ¦   +---backends
+¦   ¦       ¦   ¦   ¦   +---base
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---dummy
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---mysql
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---oracle
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---postgresql
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sqlite3
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   +---operations
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---models
+¦   ¦       ¦   ¦   ¦   +---fields
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---functions
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---sql
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---dispatch
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---forms
+¦   ¦       ¦   ¦   +---jinja2
+¦   ¦       ¦   ¦   ¦   +---django
+¦   ¦       ¦   ¦   ¦       +---forms
+¦   ¦       ¦   ¦   ¦           +---errors
+¦   ¦       ¦   ¦   ¦           ¦   +---dict
+¦   ¦       ¦   ¦   ¦           ¦   +---list
+¦   ¦       ¦   ¦   ¦           +---formsets
+¦   ¦       ¦   ¦   ¦           +---widgets
+¦   ¦       ¦   ¦   +---templates
+¦   ¦       ¦   ¦   ¦   +---django
+¦   ¦       ¦   ¦   ¦       +---forms
+¦   ¦       ¦   ¦   ¦           +---errors
+¦   ¦       ¦   ¦   ¦           ¦   +---dict
+¦   ¦       ¦   ¦   ¦           ¦   +---list
+¦   ¦       ¦   ¦   ¦           +---formsets
+¦   ¦       ¦   ¦   ¦           +---widgets
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---http
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---middleware
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---template
+¦   ¦       ¦   ¦   +---backends
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---loaders
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---templatetags
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---test
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---urls
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---utils
+¦   ¦       ¦   ¦   +---translation
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---views
+¦   ¦       ¦   ¦   +---decorators
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---generic
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---templates
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---Django-4.2.7.dist-info
+¦   ¦       +---djangorestframework-3.14.0.dist-info
+¦   ¦       +---djangorestframework_simplejwt-5.3.0.dist-info
+¦   ¦       +---django_allauth-0.57.2.dist-info
+¦   ¦       +---django_cors_headers-4.3.1.dist-info
+¦   ¦       +---django_crispy_forms-2.1.dist-info
+¦   ¦       +---django_csp-3.7.dist-info
+¦   ¦       +---django_debug_toolbar-4.2.0.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---django_extensions
+¦   ¦       ¦   +---admin
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---auth
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---conf
+¦   ¦       ¦   ¦   +---app_template
+¦   ¦       ¦   ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   +---command_template
+¦   ¦       ¦   ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦       +---commands
+¦   ¦       ¦   ¦   +---jobs_template
+¦   ¦       ¦   ¦   ¦   +---jobs
+¦   ¦       ¦   ¦   ¦       +---daily
+¦   ¦       ¦   ¦   ¦       +---hourly
+¦   ¦       ¦   ¦   ¦       +---monthly
+¦   ¦       ¦   ¦   ¦       +---weekly
+¦   ¦       ¦   ¦   ¦       +---yearly
+¦   ¦       ¦   ¦   +---template_tags_template
+¦   ¦       ¦   ¦       +---templatetags
+¦   ¦       ¦   +---db
+¦   ¦       ¦   ¦   +---fields
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---jobs
+¦   ¦       ¦   ¦   +---daily
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---hourly
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---minutely
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---monthly
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---weekly
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---yearly
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---locale
+¦   ¦       ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ru
+¦   ¦       ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   +---logging
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---management
+¦   ¦       ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---mongodb
+¦   ¦       ¦   ¦   +---fields
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---static
+¦   ¦       ¦   ¦   +---django_extensions
+¦   ¦       ¦   ¦       +---css
+¦   ¦       ¦   ¦       +---img
+¦   ¦       ¦   ¦       +---js
+¦   ¦       ¦   +---templates
+¦   ¦       ¦   ¦   +---django_extensions
+¦   ¦       ¦   ¦       +---graph_models
+¦   ¦       ¦   ¦       ¦   +---django2018
+¦   ¦       ¦   ¦       ¦   +---original
+¦   ¦       ¦   ¦       +---widgets
+¦   ¦       ¦   +---templatetags
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---utils
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---django_extensions-3.2.3.dist-info
+¦   ¦       +---django_filter-23.5.dist-info
+¦   ¦       +---django_filters
+¦   ¦       ¦   +---locale
+¦   ¦       ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_CN
+¦   ¦       ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   +---rest_framework
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---templates
+¦   ¦       ¦   ¦   +---django_filters
+¦   ¦       ¦   ¦       +---rest_framework
+¦   ¦       ¦   ¦       +---widgets
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---django_ratelimit
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---django_ratelimit-4.1.0.dist-info
+¦   ¦       +---django_taggit-4.0.0.dist-info
+¦   ¦       +---dotenv
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---gunicorn
+¦   ¦       ¦   +---app
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---http
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---instrument
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---workers
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---gunicorn-21.2.0.dist-info
+¦   ¦       +---idna
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---idna-3.11.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---jwt
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---kombu
+¦   ¦       ¦   +---asynchronous
+¦   ¦       ¦   ¦   +---aws
+¦   ¦       ¦   ¦   ¦   +---sqs
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---http
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---transport
+¦   ¦       ¦   ¦   +---sqlalchemy
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---virtual
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---utils
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---kombu-5.5.4.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---mysqlclient-2.2.0.dist-info
+¦   ¦       +---MySQLdb
+¦   ¦       ¦   +---constants
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---oauthlib
+¦   ¦       ¦   +---oauth1
+¦   ¦       ¦   ¦   +---rfc5849
+¦   ¦       ¦   ¦   ¦   +---endpoints
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---oauth2
+¦   ¦       ¦   ¦   +---rfc6749
+¦   ¦       ¦   ¦   ¦   +---clients
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---endpoints
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---grant_types
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---rfc8628
+¦   ¦       ¦   ¦   ¦   +---clients
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---endpoints
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---grant_types
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---openid
+¦   ¦       ¦   ¦   +---connect
+¦   ¦       ¦   ¦   ¦   +---core
+¦   ¦       ¦   ¦   ¦   ¦   +---endpoints
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---grant_types
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---oauthlib-3.3.1.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---openid
+¦   ¦       ¦   +---consumer
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---extensions
+¦   ¦       ¦   ¦   +---draft
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---server
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---store
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---yadis
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---packaging
+¦   ¦       ¦   +---licenses
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---packaging-26.0.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---PIL
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---Pillow-10.1.0.dist-info
+¦   ¦       +---pip
+¦   ¦       ¦   +---_internal
+¦   ¦       ¦   ¦   +---cli
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---distributions
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---index
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---locations
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---metadata
+¦   ¦       ¦   ¦   ¦   +---importlib
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---models
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---network
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---operations
+¦   ¦       ¦   ¦   ¦   +---build
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---install
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---req
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---resolution
+¦   ¦       ¦   ¦   ¦   +---legacy
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---resolvelib
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---utils
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---vcs
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---_vendor
+¦   ¦       ¦   ¦   +---cachecontrol
+¦   ¦       ¦   ¦   ¦   +---caches
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---certifi
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---distlib
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---distro
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---idna
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---msgpack
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---packaging
+¦   ¦       ¦   ¦   ¦   +---licenses
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---pkg_resources
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---platformdirs
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---pygments
+¦   ¦       ¦   ¦   ¦   +---filters
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---formatters
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---lexers
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---styles
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---pyproject_hooks
+¦   ¦       ¦   ¦   ¦   +---_in_process
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---requests
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---resolvelib
+¦   ¦       ¦   ¦   ¦   +---compat
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---rich
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---tomli
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---truststore
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---urllib3
+¦   ¦       ¦   ¦   ¦   +---contrib
+¦   ¦       ¦   ¦   ¦   ¦   +---_securetransport
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---packages
+¦   ¦       ¦   ¦   ¦   ¦   +---backports
+¦   ¦       ¦   ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---util
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---pip-25.0.1.dist-info
+¦   ¦       +---pkg_resources
+¦   ¦       ¦   +---extern
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---_vendor
+¦   ¦       ¦   ¦   +---packaging
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---prompt_toolkit
+¦   ¦       ¦   +---application
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---clipboard
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---completion
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---contrib
+¦   ¦       ¦   ¦   +---completers
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---regular_languages
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---ssh
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---telnet
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---eventloop
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---filters
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---formatted_text
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---input
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---key_binding
+¦   ¦       ¦   ¦   +---bindings
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---layout
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---lexers
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---output
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---shortcuts
+¦   ¦       ¦   ¦   +---progress_bar
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---styles
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---widgets
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---prompt_toolkit-3.0.52.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---psycopg2
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---psycopg2_binary-2.9.9.dist-info
+¦   ¦       +---pycparser
+¦   ¦       ¦   +---ply
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---pycparser-2.23.dist-info
+¦   ¦       +---PyJWT-2.9.0.dist-info
+¦   ¦       +---pymysql
+¦   ¦       ¦   +---constants
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---pymysql-1.1.2.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---python3_openid-3.2.0.dist-info
+¦   ¦       +---python_dateutil-2.9.0.post0.dist-info
+¦   ¦       +---python_dotenv-1.0.0.dist-info
+¦   ¦       +---pytz
+¦   ¦       ¦   +---zoneinfo
+¦   ¦       ¦   ¦   +---Africa
+¦   ¦       ¦   ¦   +---America
+¦   ¦       ¦   ¦   ¦   +---Argentina
+¦   ¦       ¦   ¦   ¦   +---Indiana
+¦   ¦       ¦   ¦   ¦   +---Kentucky
+¦   ¦       ¦   ¦   ¦   +---North_Dakota
+¦   ¦       ¦   ¦   +---Antarctica
+¦   ¦       ¦   ¦   +---Arctic
+¦   ¦       ¦   ¦   +---Asia
+¦   ¦       ¦   ¦   +---Atlantic
+¦   ¦       ¦   ¦   +---Australia
+¦   ¦       ¦   ¦   +---Brazil
+¦   ¦       ¦   ¦   +---Canada
+¦   ¦       ¦   ¦   +---Chile
+¦   ¦       ¦   ¦   +---Etc
+¦   ¦       ¦   ¦   +---Europe
+¦   ¦       ¦   ¦   +---Indian
+¦   ¦       ¦   ¦   +---Mexico
+¦   ¦       ¦   ¦   +---Pacific
+¦   ¦       ¦   ¦   +---US
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---pytz-2025.2.dist-info
+¦   ¦       +---redis
+¦   ¦       ¦   +---asyncio
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---commands
+¦   ¦       ¦   ¦   +---bf
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---graph
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---json
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---search
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---timeseries
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---_parsers
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---redis-5.0.1.dist-info
+¦   ¦       +---requests
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---requests-2.32.4.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---requests_oauthlib
+¦   ¦       ¦   +---compliance_fixes
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---requests_oauthlib-2.0.0.dist-info
+¦   ¦       +---rest_framework
+¦   ¦       ¦   +---authtoken
+¦   ¦       ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---locale
+¦   ¦       ¦   ¦   +---ach
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---az
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---be
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---bg
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ca
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ca_ES
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---el_GR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---en_AU
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---en_CA
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---en_US
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---et
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fa_IR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fr_CA
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---gl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---gl_ES
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---he_IL
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---hu
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---hy
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---id
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ko_KR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---lt
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---lv
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---mk
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ne_NP
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---nn
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---no
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt_PT
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ru_RU
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sk
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---th
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---tr_TR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---vi
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_CN
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_Hant
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_TW
+¦   ¦       ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   +---management
+¦   ¦       ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---schemas
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---static
+¦   ¦       ¦   ¦   +---rest_framework
+¦   ¦       ¦   ¦       +---css
+¦   ¦       ¦   ¦       +---docs
+¦   ¦       ¦   ¦       ¦   +---css
+¦   ¦       ¦   ¦       ¦   +---img
+¦   ¦       ¦   ¦       ¦   +---js
+¦   ¦       ¦   ¦       +---fonts
+¦   ¦       ¦   ¦       +---img
+¦   ¦       ¦   ¦       +---js
+¦   ¦       ¦   +---templates
+¦   ¦       ¦   ¦   +---rest_framework
+¦   ¦       ¦   ¦       +---admin
+¦   ¦       ¦   ¦       +---docs
+¦   ¦       ¦   ¦       ¦   +---auth
+¦   ¦       ¦   ¦       ¦   +---langs
+¦   ¦       ¦   ¦       +---filters
+¦   ¦       ¦   ¦       +---horizontal
+¦   ¦       ¦   ¦       +---inline
+¦   ¦       ¦   ¦       +---pagination
+¦   ¦       ¦   ¦       +---vertical
+¦   ¦       ¦   +---templatetags
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---utils
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---rest_framework_simplejwt
+¦   ¦       ¦   +---locale
+¦   ¦       ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---es_AR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---es_CL
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fa_IR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---he_IL
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---id_ID
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---it_IT
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ko_KR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---nl_NL
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pl_PL
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ro
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ru_RU
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---sv
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---uk_UA
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   +---token_blacklist
+¦   ¦       ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---migrations
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---setuptools
+¦   ¦       ¦   +---command
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---extern
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---_distutils
+¦   ¦       ¦   ¦   +---command
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---_vendor
+¦   ¦       ¦   ¦   +---packaging
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---setuptools-49.2.1.dist-info
+¦   ¦       +---six-1.17.0.dist-info
+¦   ¦       +---sqlparse
+¦   ¦       ¦   +---engine
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---filters
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---sqlparse-0.5.5.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---taggit
+¦   ¦       ¦   +---locale
+¦   ¦       ¦   ¦   +---ar
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---cs
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---da
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---de
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---el
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---en
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---eo
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---es
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fa
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fi
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---fr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---he
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---it
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ja
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---nb
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---nl
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---pt_BR
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---ru
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---tr
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---uk
+¦   ¦       ¦   ¦   ¦   +---LC_MESSAGES
+¦   ¦       ¦   ¦   +---zh_Hans
+¦   ¦       ¦   ¦       +---LC_MESSAGES
+¦   ¦       ¦   +---migrations
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---typing_extensions-4.13.2.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---tzdata
+¦   ¦       ¦   +---zoneinfo
+¦   ¦       ¦   ¦   +---Africa
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---America
+¦   ¦       ¦   ¦   ¦   +---Argentina
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---Indiana
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---Kentucky
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---North_Dakota
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Antarctica
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Arctic
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Asia
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Atlantic
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Australia
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Brazil
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Canada
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Chile
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Etc
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Europe
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Indian
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Mexico
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---Pacific
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---US
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---tzdata-2025.3.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       ¦       +---licenses
+¦   ¦       +---urllib3
+¦   ¦       ¦   +---contrib
+¦   ¦       ¦   ¦   +---emscripten
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---http2
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---util
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---urllib3-2.2.3.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---vine
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---vine-5.1.0.dist-info
+¦   ¦       +---wcwidth
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---wcwidth-0.6.0.dist-info
+¦   ¦       ¦   +---licenses
+¦   ¦       +---whitenoise
+¦   ¦       ¦   +---runserver_nostatic
+¦   ¦       ¦   ¦   +---management
+¦   ¦       ¦   ¦   ¦   +---commands
+¦   ¦       ¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   ¦   +---__pycache__
+¦   ¦       ¦   ¦   +---__pycache__
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---whitenoise-6.6.0.dist-info
+¦   ¦       +---_argon2_cffi_bindings
+¦   ¦       ¦   +---__pycache__
+¦   ¦       +---__pycache__
+¦   +---Scripts
++---fixtures
++---logs
++---media
+¦   +---attachments
+¦   +---profile_pictures
++---static
+¦   +---css
+¦   +---images
+¦   +---js
++---sts
+¦   +---__pycache__
++---templates
+¦   +---accounts
+¦   +---admin
+¦   +---dashboard
+¦   +---includes
+¦   +---tickets
++---tests

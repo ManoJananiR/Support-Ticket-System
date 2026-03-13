@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ title }} - STS Support Ticket System{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-user-plus me-2"></i>{{ title }}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        
+                        {% if not customer %}
+                            <!-- Creation form has email and password fields -->
+                            {{ form|crispy }}
+                        {% else %}
+                            <!-- Edit form doesn't have email field -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.first_name|as_crispy_field }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form.last_name|as_crispy_field }}
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.phone_number|as_crispy_field }}
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" value="{{ customer.email }}" readonly disabled>
+                                        <small class="text-muted">Email cannot be changed</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {{ form.business_name|as_crispy_field }}
+                            {{ form.business_type|as_crispy_field }}
+                            {{ form.gst_number|as_crispy_field }}
+                            {{ form.address|as_crispy_field }}
+                            
+                            <div class="row">
+                                <div class="col-md-4">
+                                    {{ form.city|as_crispy_field }}
+                                </div>
+                                <div class="col-md-4">
+                                    {{ form.state|as_crispy_field }}
+                                </div>
+                                <div class="col-md-4">
+                                    {{ form.pincode|as_crispy_field }}
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.country|as_crispy_field }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form.is_active|as_crispy_field }}
+                                </div>
+                            </div>
+                        {% endif %}
+                        
+                        <hr>
+                        
+                        <div class="d-flex justify-content-end gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>Save Customer
+                            </button>
+                            <a href="{% url 'customers:customer_list' %}" class="btn btn-secondary">
+                                <i class="fas fa-times me-2"></i>Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

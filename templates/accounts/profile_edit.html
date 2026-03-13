@@ -1,27 +1,172 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}Edit Profile - Support Ticket System{% endblock %}
+{% block title %}Edit Profile - STS Support Ticket System{% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title mb-0">Edit Profile</h5>
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-user-edit me-2"></i>Edit Profile
+                    </h5>
                 </div>
                 <div class="card-body">
-                    <form method="post" enctype="multipart/form-data" novalidate>
+                    <!-- Current Profile Picture Display -->
+                    <div class="text-center mb-4">
+                        {% if user.profile_picture %}
+                            <div class="mb-3">
+                                <img src="{{ user.profile_picture.url }}" 
+                                     alt="Profile Picture" 
+                                     class="rounded-circle img-thumbnail"
+                                     style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #0d6efd;">
+                            </div>
+                        {% else %}
+                            <div class="mb-3">
+                                <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center" 
+                                     style="width: 150px; height: 150px;">
+                                    <i class="fas fa-user-circle fa-5x text-muted"></i>
+                                </div>
+                                <p class="text-muted mt-2">
+                                    <i class="fas fa-exclamation-circle me-1"></i>
+                                    No profile picture uploaded
+                                </p>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <hr>
+
+                    <form method="post" enctype="multipart/form-data" id="profileForm">
                         {% csrf_token %}
-                        {{ form|crispy }}
                         
-                        <div class="mt-4">
+                        <!-- Custom File Upload Field -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">
+                                <i class="fas fa-camera me-2"></i>Change Profile Picture
+                            </label>
+                            
+                            <div class="border rounded p-3 bg-light">
+                                <!-- Current file info -->
+                                <div class="mb-3">
+                                    <small class="text-muted d-block mb-1">Current file:</small>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-file-image me-2 text-primary"></i>
+                                        <span id="currentFileName" class="fw-bold">
+                                            {% if user.profile_picture %}
+                                                {{ user.profile_picture.name|slice:"17:" }}
+                                            {% else %}
+                                                No file chosen
+                                            {% endif %}
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <!-- File input with custom styling -->
+                                <div class="mb-3">
+                                    <label for="{{ form.profile_picture.id_for_label }}" class="btn btn-outline-primary">
+                                        <i class="fas fa-upload me-2"></i>Choose New Picture
+                                    </label>
+                                    <input type="file" 
+                                           name="{{ form.profile_picture.name }}" 
+                                           id="{{ form.profile_picture.id_for_label }}"
+                                           class="d-none" 
+                                           accept="image/*"
+                                           onchange="updateFileName(this)">
+                                    <small class="text-muted ms-2">Max size: 5MB. Leave empty to keep current.</small>
+                                </div>
+                                
+                                <!-- Selected file preview -->
+                                <div id="selectedFileInfo" class="alert alert-info py-2 mb-0" style="display: none;">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle me-2 text-success"></i>
+                                        <span id="selectedFileName"></span>
+                                        <button type="button" class="btn btn-sm btn-link ms-auto" onclick="clearFileInput()">
+                                            <i class="fas fa-times"></i> Clear
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Image preview -->
+                                <div id="imagePreviewContainer" class="text-center mt-3" style="display: none;">
+                                    <img id="imagePreview" src="#" alt="Preview" 
+                                         class="rounded-circle img-thumbnail"
+                                         style="width: 100px; height: 100px; object-fit: cover;">
+                                    <p class="text-muted small mt-1">New image preview</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other form fields -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.first_name|as_crispy_field }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.last_name|as_crispy_field }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.phone_number|as_crispy_field }}
+                        </div>
+
+                        <!-- Business fields -->
+                        <div class="card mb-3">
+                            <div class="card-header bg-light">
+                                <h6 class="mb-0"><i class="fas fa-building me-2"></i>Business Information</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        {{ form.business_name|as_crispy_field }}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        {{ form.business_type|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.gst_number|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Address fields -->
+                        <div class="card mb-3">
+                            <div class="card-header bg-light">
+                                <h6 class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Address Information</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    {{ form.address|as_crispy_field }}
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        {{ form.city|as_crispy_field }}
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        {{ form.state|as_crispy_field }}
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        {{ form.pincode|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.country|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="d-flex justify-content-end gap-2">
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-save me-2"></i>Save Changes
                             </button>
                             <a href="{% url 'accounts:profile' %}" class="btn btn-secondary">
-                                Cancel
+                                <i class="fas fa-times me-2"></i>Cancel
                             </a>
                         </div>
                     </form>
@@ -30,4 +175,107 @@
         </div>
     </div>
 </div>
+
+<script>
+function updateFileName(input) {
+    const selectedFileInfo = document.getElementById('selectedFileInfo');
+    const selectedFileName = document.getElementById('selectedFileName');
+    const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+    const imagePreview = document.getElementById('imagePreview');
+    const currentFileName = document.getElementById('currentFileName');
+    
+    if (input.files && input.files[0]) {
+        const file = input.files[0];
+        
+        // Update file name display
+        selectedFileName.textContent = file.name;
+        selectedFileInfo.style.display = 'block';
+        
+        // Update current file name display (optional)
+        if (currentFileName) {
+            currentFileName.innerHTML = `<span class="text-warning">${file.name} (new)</span>`;
+        }
+        
+        // Show image preview
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            imagePreview.src = e.target.result;
+            imagePreviewContainer.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+        
+        // Validate file size (5MB max)
+        if (file.size > 5 * 1024 * 1024) {
+            alert('File size exceeds 5MB. Please choose a smaller file.');
+            clearFileInput();
+        }
+        
+        // Validate file type
+        if (!file.type.startsWith('image/')) {
+            alert('Please select an image file (JPEG, PNG, GIF, etc.)');
+            clearFileInput();
+        }
+    }
+}
+
+function clearFileInput() {
+    const input = document.getElementById('{{ form.profile_picture.id_for_label }}');
+    const selectedFileInfo = document.getElementById('selectedFileInfo');
+    const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+    const currentFileName = document.getElementById('currentFileName');
+    
+    input.value = '';
+    selectedFileInfo.style.display = 'none';
+    imagePreviewContainer.style.display = 'none';
+    
+    // Restore original file name display
+    {% if user.profile_picture %}
+        currentFileName.innerHTML = '{{ user.profile_picture.name|slice:"17:" }}';
+    {% else %}
+        currentFileName.innerHTML = 'No file chosen';
+    {% endif %}
+}
+
+// Optional: Add drag and drop functionality
+const dropZone = document.querySelector('.border.rounded.p-3.bg-light');
+
+if (dropZone) {
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, preventDefaults, false);
+    });
+
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    dropZone.addEventListener('drop', function(e) {
+        const dt = e.dataTransfer;
+        const file = dt.files[0];
+        const input = document.getElementById('{{ form.profile_picture.id_for_label }}');
+        
+        // Set the file to the input
+        input.files = dt.files;
+        
+        // Trigger change event
+        const event = new Event('change', { bubbles: true });
+        input.dispatchEvent(event);
+    });
+}
+</script>
+
+<style>
+.img-thumbnail {
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.border.rounded.p-3.bg-light {
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.border.rounded.p-3.bg-light:hover {
+    border-color: #0d6efd !important;
+}
+</style>
 {% endblock %}

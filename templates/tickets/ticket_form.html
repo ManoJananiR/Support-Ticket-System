@@ -3,7 +3,15 @@
 {% load static %}
 
 {% block title %}
-    {% if is_create %}Create Ticket{% else %}Edit Ticket {{ ticket.ticket_id }}{% endif %} - Support Ticket System
+    {% if is_create %}
+        Create Ticket - STS Support Ticket System
+    {% else %}
+        {% if user.is_agent %}
+            Update Status - Ticket {{ ticket.ticket_id }}
+        {% else %}
+            Edit Ticket {{ ticket.ticket_id }} - STS Support Ticket System
+        {% endif %}
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -18,7 +26,9 @@
                         <li class="breadcrumb-item active">Create Ticket</li>
                     {% else %}
                         <li class="breadcrumb-item"><a href="{% url 'tickets:detail' ticket.ticket_id %}">{{ ticket.ticket_id }}</a></li>
-                        <li class="breadcrumb-item active">Edit</li>
+                        <li class="breadcrumb-item active">
+                            {% if user.is_agent %}Update Status{% else %}Edit{% endif %}
+                        </li>
                     {% endif %}
                 </ol>
             </nav>
@@ -26,32 +36,236 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 offset-md-2">
             <div class="card">
-                <div class="card-header bg-primary text-white">
+                <div class="card-header 
+                    {% if is_create and user.is_admin %}bg-danger
+                    {% elif is_create %}bg-primary
+                    {% elif user.is_agent %}bg-warning
+                    {% else %}bg-primary{% endif %} text-white">
                     <h5 class="card-title mb-0">
-                        {% if is_create %}
+                        {% if is_create and user.is_admin %}
+                            <i class="fas fa-plus-circle me-2"></i>Admin: Create New Ticket
+                        {% elif is_create %}
                             <i class="fas fa-plus-circle me-2"></i>Create New Ticket
+                        {% elif user.is_agent %}
+                            <i class="fas fa-clock me-2"></i>Update Status & Due Date - Ticket {{ ticket.ticket_id }}
                         {% else %}
                             <i class="fas fa-edit me-2"></i>Edit Ticket {{ ticket.ticket_id }}
                         {% endif %}
                     </h5>
                 </div>
                 <div class="card-body">
-                    <form method="post" enctype="multipart/form-data" id="ticketForm" novalidate>
+                    <form method="post" id="ticketForm" novalidate>
                         {% csrf_token %}
-                        {{ form|crispy }}
                         
-                        <div class="mb-3">
-                            <label for="attachments" class="form-label">Attachments</label>
+                        {% if user.is_agent and not is_create %}
+                            <!-- Agent-only form - only status and due date -->
+                            <div class="alert alert-info mb-4">
+                                <i class="fas fa-info-circle me-2"></i>
+                                As an agent, you can only update the status and due date of this ticket.
+                            </div>
+                            
+                            <div class="card mb-4 border-warning">
+                                <div class="card-header bg-warning text-dark">
+                                    <h6 class="mb-0"><i class="fas fa-clock me-2"></i>Update Ticket Status</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="{{ form.status.id_for_label }}" class="form-label fw-bold">
+                                                <i class="fas fa-tag me-2"></i>Status <span class="text-danger">*</span>
+                                            </label>
+                                            {{ form.status }}
+                                            {% if form.status.errors %}
+                                                <div class="text-danger small">{{ form.status.errors }}</div>
+                                            {% endif %}
+                                            <small class="text-muted">{{ form.status.help_text }}</small>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="{{ form.due_by.id_for_label }}" class="form-label fw-bold">
+                                                <i class="fas fa-calendar me-2"></i>Due Date
+                                            </label>
+                                            {{ form.due_by }}
+                                            {% if form.due_by.errors %}
+                                                <div class="text-danger small">{{ form.due_by.errors }}</div>
+                                            {% endif %}
+                                            <small class="text-muted">{{ form.due_by.help_text }}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Ticket Summary (read-only) -->
+                            <div class="card mb-4 bg-light">
+                                <div class="card-header">
+                                    <h6 class="mb-0"><i class="fas fa-info-circle me-2"></i>Ticket Summary</h6>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <th width="30%">Title:</th>
+                                            <td>{{ ticket.title }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Category:</th>
+                                            <td>{{ ticket.category.name|default:"Uncategorized" }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Priority:</th>
+                                            <td>{{ ticket.get_priority_display }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Created:</th>
+                                            <td>{{ ticket.created_at|date:"Y-m-d H:i" }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Customer:</th>
+                                            <td>{{ ticket.created_by.get_full_name|default:ticket.created_by.email }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        {% else %}
+                          <!-- Customer Contact Information Section - For ALL ticket creation -->
+{% if is_create %}
+<div class="card mb-4 border-primary">
+    <div class="card-header bg-primary text-white">
+        <h6 class="mb-0"><i class="fas fa-address-card me-2"></i>Customer Contact Information</h6>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-info mb-3">
+            <i class="fas fa-info-circle me-2"></i>
+            Please provide the customer's contact details.
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="{{ form.customer_name.id_for_label }}" class="form-label fw-bold">
+                    <i class="fas fa-user me-2"></i>Customer Name <span class="text-danger">*</span>
+                </label>
+                {{ form.customer_name }}
+                {% if form.customer_name.errors %}
+                    <div class="text-danger small">{{ form.customer_name.errors }}</div>
+                {% endif %}
+                <small class="text-muted">Full name of the customer</small>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="{{ form.customer_email.id_for_label }}" class="form-label fw-bold">
+                    <i class="fas fa-envelope me-2"></i>Customer Email <span class="text-danger">*</span>
+                </label>
+                {{ form.customer_email }}
+                {% if form.customer_email.errors %}
+                    <div class="text-danger small">{{ form.customer_email.errors }}</div>
+                {% endif %}
+                <small class="text-muted">Primary contact email</small>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="{{ form.customer_phone.id_for_label }}" class="form-label fw-bold">
+                    <i class="fas fa-phone me-2"></i>Customer Phone
+                </label>
+                {{ form.customer_phone }}
+                {% if form.customer_phone.errors %}
+                    <div class="text-danger small">{{ form.customer_phone.errors }}</div>
+                {% endif %}
+                <small class="text-muted">Optional, but helps contact faster</small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}                 
+                            <!-- Ticket Information -->
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h6 class="mb-0"><i class="fas fa-ticket-alt me-2"></i>Ticket Details</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold">Title <span class="text-danger">*</span></label>
+                                        {{ form.title }}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold">Description <span class="text-danger">*</span></label>
+                                        {{ form.description }}
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-bold">Category <span class="text-danger">*</span></label>
+                                            {{ form.category }}
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-bold">Priority <span class="text-danger">*</span></label>
+                                            {{ form.priority }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Additional Information -->
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h6 class="mb-0"><i class="fas fa-paperclip me-2"></i>Additional Information</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold">Tags</label>
+                                        {{ form.tags }}
+                                        <small class="text-muted">Comma-separated tags</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold">CC Emails</label>
+                                        {{ form.cc_emails }}
+                                        <small class="text-muted">Notify additional people</small>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        
+                        <!-- Admin-specific assignment option -->
+                        {% if is_create and user.is_admin %}
+                        <div class="card mb-4 border-danger">
+                            <div class="card-header bg-danger text-white">
+                                <h6 class="mb-0"><i class="fas fa-user-tie me-2"></i>Admin Options</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <label class="form-label fw-bold">Assign to Agent (Optional)</label>
+                                        <select name="assign_to" class="form-control">
+                                            <option value="">-- Don't assign yet --</option>
+                                            {% for agent in agents %}
+                                            <option value="{{ agent.id }}">{{ agent.get_full_name|default:agent.email }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        <!-- Attachments section -->
+                        {% if is_create %}
+                        <div class="mb-4">
+                            <label for="attachments" class="form-label fw-bold">Attachments</label>
                             <input type="file" class="form-control" id="attachments" name="attachments" multiple>
                             <small class="text-muted">Allowed: PDF, DOC, DOCX, JPG, PNG, TXT, ZIP (Max 10MB each)</small>
                         </div>
+                        {% endif %}
                         
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn 
+                                {% if is_create and user.is_admin %}btn-danger
+                                {% elif is_create %}btn-primary
+                                {% elif user.is_agent %}btn-warning
+                                {% else %}btn-primary{% endif %}">
                                 <i class="fas fa-save me-2"></i>
-                                {% if is_create %}Create Ticket{% else %}Update Ticket{% endif %}
+                                {% if is_create %}
+                                    Create Ticket
+                                {% elif user.is_agent %}
+                                    Update Status
+                                {% else %}
+                                    Update Ticket
+                                {% endif %}
                             </button>
                             <a href="{% if is_create %}{% url 'tickets:list' %}{% else %}{% url 'tickets:detail' ticket.ticket_id %}{% endif %}" class="btn btn-secondary">
                                 <i class="fas fa-times me-2"></i>Cancel
@@ -61,87 +275,26 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-md-4">
-            <!-- Quick Tips Card -->
-            <div class="card mb-3">
-                <div class="card-header bg-info text-white">
-                    <h6 class="card-title mb-0"><i class="fas fa-lightbulb me-2"></i>Quick Tips</h6>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Be specific in your title</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Provide detailed description</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Select appropriate category</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Attach relevant files</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Add CC for additional recipients</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Templates Card -->
-            {% if templates %}
-            <div class="card">
-                <div class="card-header bg-success text-white">
-                    <h6 class="card-title mb-0"><i class="fas fa-file-alt me-2"></i>Quick Templates</h6>
-                </div>
-                <div class="card-body">
-                    <p class="small text-muted">Select a template to pre-fill the form:</p>
-                    <div class="list-group">
-                        {% for template in templates %}
-                        <button type="button" class="list-group-item list-group-item-action" onclick="applyTemplate('{{ template.id }}')">
-                            <i class="fas fa-file me-2"></i>{{ template.name }}
-                        </button>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-        </div>
     </div>
 </div>
-{% endblock %}
 
-{% block extra_js %}
 <script>
-// Template application function
-function applyTemplate(templateId) {
-    // This would need an API endpoint to fetch template details
-    // For now, we'll just show a message
-    alert('Template feature coming soon!');
-}
-
 // File size validation
-document.getElementById('attachments').addEventListener('change', function(e) {
-    const files = e.target.files;
-    const maxSize = 10 * 1024 * 1024; // 10MB
-    
-    for (let i = 0; i < files.length; i++) {
-        if (files[i].size > maxSize) {
-            alert(`File ${files[i].name} is too large. Maximum size is 10MB.`);
-            e.target.value = '';
-            return;
-        }
-    }
-});
-
-// Form validation
-document.getElementById('ticketForm').addEventListener('submit', function(e) {
-    const title = document.getElementById('id_title');
-    const description = document.getElementById('id_description');
-    
-    if (title && title.value.trim() === '') {
-        e.preventDefault();
-        alert('Please enter a title for your ticket.');
-        title.focus();
-        return false;
-    }
-    
-    if (description && description.value.trim() === '') {
-        e.preventDefault();
-        alert('Please enter a description for your ticket.');
-        description.focus();
-        return false;
+document.addEventListener('DOMContentLoaded', function() {
+    const attachmentsInput = document.getElementById('attachments');
+    if (attachmentsInput) {
+        attachmentsInput.addEventListener('change', function(e) {
+            const files = e.target.files;
+            const maxSize = 10 * 1024 * 1024; // 10MB
+            
+            for (let i = 0; i < files.length; i++) {
+                if (files[i].size > maxSize) {
+                    alert(`File ${files[i].name} is too large. Maximum size is 10MB.`);
+                    e.target.value = '';
+                    return;
+                }
+            }
+        });
     }
 });
 </script>

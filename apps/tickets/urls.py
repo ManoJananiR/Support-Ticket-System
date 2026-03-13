@@ -21,9 +21,10 @@ urlpatterns = [
     path('', views.TicketListView.as_view(), name='list'),
     path('create/', views.TicketCreateView.as_view(), name='create'),
     
-    # Ticket detail and edit - THESE MUST BE LAST
+    # Ticket actions
     path('<str:ticket_id>/', views.TicketDetailView.as_view(), name='detail'),
     path('<str:ticket_id>/edit/', views.TicketUpdateView.as_view(), name='edit'),
     path('<str:ticket_id>/assign/', views.ticket_assign, name='assign'),
     path('<str:ticket_id>/status/', views.ticket_status_change, name='status_change'),
+    path('<str:ticket_id>/delete/', views.ticket_delete, name='delete'),  # New delete URL
 ]

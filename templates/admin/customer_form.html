@@ -1,0 +1,110 @@
+{% extends 'admin/base_site.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>{% if is_create %}Add New Customer{% else %}Edit Customer{% endif %}</h1>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Email *</label>
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                            <div class="text-danger">{{ form.email.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Phone Number</label>
+                        {{ form.phone_number }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>First Name *</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Last Name *</label>
+                        {{ form.last_name }}
+                    </div>
+                </div>
+
+                {% if is_create %}
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Password *</label>
+                        {{ form.password }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Confirm Password *</label>
+                        {{ form.confirm_password }}
+                    </div>
+                </div>
+                {% endif %}
+
+                <hr>
+                <h4>Business Information</h4>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Business Name</label>
+                        {{ form.business_name }}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Business Type</label>
+                        {{ form.business_type }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>GST Number</label>
+                        {{ form.gst_number }}
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Address</label>
+                    {{ form.address }}
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label>City</label>
+                        {{ form.city }}
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label>State</label>
+                        {{ form.state }}
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label>Country</label>
+                        {{ form.country }}
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label>Pincode</label>
+                        {{ form.pincode }}
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        {% if is_create %}Create Customer{% else %}Update Customer{% endif %}
+                    </button>
+                    <a href="{% url 'admin_customer_list' %}" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

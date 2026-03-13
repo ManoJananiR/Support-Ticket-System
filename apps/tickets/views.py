@@ -24,14 +24,13 @@ import logging
 from .models import Ticket, TicketComment, TicketAttachment, Category, TicketHistory, TicketTemplate
 from .forms import (
     TicketCreateForm, TicketUpdateForm, TicketCommentForm, 
-    TicketBulkActionForm, TicketTemplateForm
+    TicketBulkActionForm, TicketTemplateForm, AgentTicketUpdateForm
 )
-from apps.accounts.forms import AgentCreateForm, AgentEditForm
 from apps.accounts.models import User
-from apps.core.utils import send_ticket_notification, log_activity
+from apps.accounts.forms import AgentCreateForm, AgentEditForm
+from apps.core.utils import log_activity
 
 logger = logging.getLogger(__name__)
-
 
 class TicketListView(LoginRequiredMixin, ListView):
     """
@@ -56,11 +55,15 @@ class TicketListView(LoginRequiredMixin, ListView):
             # Customers see only their own tickets
             queryset = queryset.filter(created_by=user)
         elif user.is_agent():
-            # Agents see tickets assigned to them or unassigned
-            queryset = queryset.filter(
-                Q(assigned_to=user) | Q(assigned_to__isnull=True)
-            )
-        # Admins see all tickets
+            # Agents see tickets assigned to them
+            queryset = queryset.filter(assigned_to=user)
+        elif user.is_admin():
+            # Admins see all tickets (with optional filters)
+            queryset = queryset
+        
+        # Check for unassigned filter in URL
+        if self.request.GET.get('assigned_to__isnull') == 'True':
+            queryset = queryset.filter(assigned_to__isnull=True)
         
         return queryset
     
@@ -81,18 +84,31 @@ class TicketListView(LoginRequiredMixin, ListView):
             ).count(),
         }
         
-        # Add available actions based on user role
-        context['can_bulk_edit'] = self.request.user.can_manage_tickets()
+        # Add page title based on role and filters
+        user = self.request.user
+        if self.request.GET.get('assigned_to__isnull') == 'True':
+            context['page_title'] = 'Unassigned Tickets'
+        elif user.is_customer():
+            context['page_title'] = 'My Tickets'
+        elif user.is_agent():
+            context['page_title'] = 'Assigned Tickets'
+        elif user.is_admin():
+            context['page_title'] = 'All Tickets'
         
-        from apps.accounts.models import User
-        context['agents'] = User.objects.filter(
-            user_type__in=['agent', 'admin'], 
-            is_active=True
-        ).order_by('first_name', 'last_name')
+        # Add available actions based on user role
+        context['can_bulk_edit'] = self.request.user.is_admin()
+        
+        # Add empty state message
+        if not context['tickets']:
+            if self.request.GET.get('assigned_to__isnull') == 'True':
+                context['empty_message'] = 'No unassigned tickets found.'
+                context['empty_icon'] = 'fa-inbox'
+            else:
+                context['empty_message'] = 'No tickets found.'
+                context['empty_icon'] = 'fa-ticket-alt'
         
         return context
-
-
+    
 class TicketDetailView(LoginRequiredMixin, DetailView):
     """
     View for displaying ticket details with comments and attachments.
@@ -114,6 +130,10 @@ class TicketDetailView(LoginRequiredMixin, DetailView):
         if user.is_customer() and ticket.created_by != user:
             raise PermissionDenied("You don't have permission to view this ticket.")
         
+        if user.is_agent() and ticket.assigned_to and ticket.assigned_to != user:
+            # Agents can view but with warning
+            messages.warning(self.request, "You are viewing a ticket assigned to another agent.")
+        
         return ticket
     
     def get_context_data(self, **kwargs):
@@ -133,14 +153,22 @@ class TicketDetailView(LoginRequiredMixin, DetailView):
         context['comment_form'] = TicketCommentForm(user=self.request.user, ticket=ticket)
         
         # Check if user can edit ticket
-        context['can_edit'] = (
-            self.request.user.is_admin() or 
-            self.request.user == ticket.assigned_to or
-            (self.request.user.is_agent() and not ticket.assigned_to)
-        )
+        if self.request.user.is_admin():
+            context['can_edit'] = True
+        elif self.request.user.is_agent() and ticket.assigned_to == self.request.user:
+            context['can_edit'] = True
+        else:
+            context['can_edit'] = False
         
         # Get ticket history
         context['history'] = ticket.history.select_related('user').order_by('-timestamp')[:10]
+        
+        # Add agents list for assignment dropdown (for admins)
+        if self.request.user.is_admin():
+            context['agents'] = User.objects.filter(
+                user_type__in=['agent', 'admin'], 
+                is_active=True
+            ).order_by('first_name', 'last_name')
         
         return context
     
@@ -155,7 +183,8 @@ class TicketDetailView(LoginRequiredMixin, DetailView):
             request.POST, 
             request.FILES, 
             user=request.user, 
-            ticket=ticket
+            ticket=ticket,
+            request=request
         )
         
         if form.is_valid():
@@ -172,9 +201,6 @@ class TicketDetailView(LoginRequiredMixin, DetailView):
                 )
                 attachment.save()
             
-            # Send notifications
-            send_ticket_notification(ticket, 'comment_added', comment)
-            
             messages.success(request, 'Your comment has been added.')
             return redirect('tickets:detail', ticket_id=ticket.ticket_id)
         else:
@@ -183,18 +209,27 @@ class TicketDetailView(LoginRequiredMixin, DetailView):
             context['comment_form'] = form
             return self.render_to_response(context)
 
-
-class TicketCreateView(LoginRequiredMixin, CreateView):
+class TicketCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     """
-    View for creating new tickets.
+    View for creating new tickets - FOR CUSTOMERS AND ADMINS
     """
     model = Ticket
     form_class = TicketCreateForm
     template_name = 'tickets/ticket_form.html'
     
+    def test_func(self):
+        """Customers AND ADMINS can create tickets"""
+        user = self.request.user
+        return user.is_customer() or user.is_admin()
+    
+    def handle_no_permission(self):
+        """Redirect if not authorized"""
+        messages.error(self.request, "Only customers and admins can create new tickets.")
+        return redirect('tickets:dashboard')
+    
     def get_form_kwargs(self):
         """
-        Pass user to form.
+        Pass user and request to form.
         """
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user
@@ -208,26 +243,43 @@ class TicketCreateView(LoginRequiredMixin, CreateView):
         context = super().get_context_data(**kwargs)
         context['templates'] = TicketTemplate.objects.filter(is_active=True)
         context['is_create'] = True
+        context['is_admin'] = self.request.user.is_admin()
+        
+        # Add agents list for admin assignment
+        if self.request.user.is_admin():
+            from apps.accounts.models import User
+            context['agents'] = User.objects.filter(
+                user_type__in=['agent', 'admin'], 
+                is_active=True
+            ).order_by('first_name', 'last_name')
+        
         return context
     
     def form_valid(self, form):
-        """
-        Handle successful form submission.
-        """
         with transaction.atomic():
             ticket = form.save()
             
+            # Admin can optionally assign immediately
+            if self.request.user.is_admin():
+                agent_id = self.request.POST.get('assign_to')
+                if agent_id:
+                    try:
+                        from apps.accounts.models import User
+                        agent = User.objects.get(id=agent_id, user_type__in=['agent', 'admin'])
+                        ticket.assigned_to = agent
+                        ticket.save()
+                    except User.DoesNotExist:
+                        pass
+            
             # Create history entry
+            action = 'created_by_admin' if self.request.user.is_admin() else 'created'
             TicketHistory.objects.create(
                 ticket=ticket,
                 user=self.request.user,
-                action='created',
-                changes={'title': ticket.title, 'description': ticket.description[:100]},
+                action=action,
+                changes={'title': ticket.title},
                 ip_address=self.get_client_ip()
             )
-            
-            # Send notifications
-            send_ticket_notification(ticket, 'created')
             
             messages.success(self.request, f'Ticket {ticket.ticket_id} has been created successfully.')
             
@@ -241,17 +293,23 @@ class TicketCreateView(LoginRequiredMixin, CreateView):
         else:
             ip = self.request.META.get('REMOTE_ADDR')
         return ip
-
-
+    
 class TicketUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
-    View for updating tickets.
+    View for updating tickets - different forms for different roles
     """
     model = Ticket
-    form_class = TicketUpdateForm
-    template_name = 'tickets/ticket_form.html'
+    template_name = 'tickets/ticket_edit.html'  # Changed from 'tickets/ticket_form.html'
     slug_field = 'ticket_id'
     slug_url_kwarg = 'ticket_id'
+    
+    def get_form_class(self):
+        """Return different form based on user role"""
+        user = self.request.user
+        if user.is_agent():
+            return AgentTicketUpdateForm  # Agents get restricted form
+        else:
+            return TicketUpdateForm  # Admins get full form
     
     def test_func(self):
         """
@@ -260,87 +318,80 @@ class TicketUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         ticket = self.get_object()
         user = self.request.user
         
-        return (
-            user.is_admin() or 
-            user == ticket.assigned_to or
-            (user.is_agent() and not ticket.assigned_to)
-        )
+        # Agents can only edit tickets assigned to them
+        if user.is_agent():
+            return ticket.assigned_to == user
+        
+        # Admins can edit any ticket
+        return user.is_admin()
+    
+    def handle_no_permission(self):
+        """Handle users without permission"""
+        messages.error(self.request, "You don't have permission to edit this ticket.")
+        return redirect('tickets:dashboard')  # Redirect to dashboard
     
     def get_form_kwargs(self):
-        """
-        Pass user to form.
-        """
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user
         return kwargs
     
     def get_context_data(self, **kwargs):
-        """
-        Add context data.
-        """
         context = super().get_context_data(**kwargs)
-        context['is_create'] = False
+        context['is_agent'] = self.request.user.is_agent()
+        context['is_admin'] = self.request.user.is_admin()
         return context
     
     def form_valid(self, form):
-        """
-        Handle successful form submission.
-        """
         with transaction.atomic():
-            old_ticket = Ticket.objects.get(pk=self.object.pk)
             ticket = form.save()
             
-            # Track changes
+            # Track changes for history
             changes = {}
-            for field in ['status', 'priority', 'assigned_to', 'category']:
-                old_value = getattr(old_ticket, field)
-                new_value = getattr(ticket, field)
-                if old_value != new_value:
-                    changes[field] = {'old': str(old_value), 'new': str(new_value)}
+            if hasattr(form, 'changed_data'):
+                changed_fields = []
+                for field in form.changed_data:
+                    changed_fields.append(field)
+                if changed_fields:
+                    changes['fields_updated'] = changed_fields
             
-            if changes:
-                TicketHistory.objects.create(
-                    ticket=ticket,
-                    user=self.request.user,
-                    action='updated',
-                    changes=changes,
-                    ip_address=self.get_client_ip()
-                )
-            
-            # Handle assignment change
-            if old_ticket.assigned_to != ticket.assigned_to:
-                if ticket.assigned_to:
-                    send_ticket_notification(ticket, 'assigned')
-                    messages.info(
-                        self.request, 
-                        f'Ticket assigned to {ticket.assigned_to.get_full_name()}'
-                    )
+            # Create history entry
+            TicketHistory.objects.create(
+                ticket=ticket,
+                user=self.request.user,
+                action='updated',
+                changes=changes,
+                ip_address=self.get_client_ip()
+            )
             
             messages.success(self.request, f'Ticket {ticket.ticket_id} has been updated.')
-            
-        return redirect('tickets:detail', ticket_id=ticket.ticket_id)
+        
+        # Redirect to dashboard after successful update
+        return redirect('tickets:dashboard')
+    
+    def form_invalid(self, form):
+        """Handle invalid form submission"""
+        messages.error(self.request, "Please correct the errors below.")
+        return super().form_invalid(form)
     
     def get_client_ip(self):
-        """Get client IP address."""
         x_forwarded_for = self.request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
             ip = x_forwarded_for.split(',')[0]
         else:
             ip = self.request.META.get('REMOTE_ADDR')
         return ip
-
-
+    
 @login_required
 @require_POST
 def ticket_assign(request, ticket_id):
     """
-    Assign ticket to an agent.
+    Assign ticket to an agent and send email notification.
     """
     ticket = get_object_or_404(Ticket, ticket_id=ticket_id)
     
     # Check permissions
-    if not request.user.can_manage_tickets():
-        return HttpResponseForbidden("You don't have permission to assign tickets.")
+    if not request.user.is_admin():
+        return HttpResponseForbidden("Only admins can assign tickets.")
     
     agent_id = request.POST.get('agent_id')
     if not agent_id:
@@ -349,6 +400,7 @@ def ticket_assign(request, ticket_id):
     
     try:
         agent = User.objects.get(id=agent_id, user_type__in=['agent', 'admin'])
+        old_agent = ticket.assigned_to
         ticket.assign_to_agent(agent)
         
         # Create history entry
@@ -360,23 +412,21 @@ def ticket_assign(request, ticket_id):
             ip_address=request.META.get('REMOTE_ADDR')
         )
         
-        # Send notification
-        send_ticket_notification(ticket, 'assigned')
-        
         messages.success(request, f'Ticket assigned to {agent.get_full_name()}')
+        
     except User.DoesNotExist:
         messages.error(request, "Invalid agent selected.")
     
     return redirect('tickets:detail', ticket_id=ticket_id)
 
-
 @login_required
 @require_POST
 def ticket_status_change(request, ticket_id):
     """
-    Change ticket status.
+    Change ticket status - with transaction optimization
     """
-    ticket = get_object_or_404(Ticket, ticket_id=ticket_id)
+    # Get the ticket with select_for_update to lock it
+    ticket = get_object_or_404(Ticket.objects.select_for_update(skip_locked=True), ticket_id=ticket_id)
     
     # Check permissions
     if not request.user.can_manage_tickets() and request.user != ticket.created_by:
@@ -387,35 +437,39 @@ def ticket_status_change(request, ticket_id):
         messages.error(request, "Invalid status.")
         return redirect('tickets:detail', ticket_id=ticket_id)
     
-    old_status = ticket.status
-    ticket.status = new_status
+    try:
+        # Use atomic transaction but keep it short
+        with transaction.atomic():
+            old_status = ticket.status
+            ticket.status = new_status
+            
+            # Handle special status changes
+            if new_status == 'resolved' and not ticket.resolved_at:
+                ticket.resolved_at = timezone.now()
+            elif new_status == 'closed' and not ticket.closed_at:
+                ticket.closed_at = timezone.now()
+            elif new_status == 'reopened':
+                ticket.reopened_at = timezone.now()
+                ticket.reopen_count += 1
+            
+            ticket.save()
+            
+            # Create history entry (do this quickly)
+            TicketHistory.objects.create(
+                ticket=ticket,
+                user=request.user,
+                action='status_changed',
+                changes={'old_status': old_status, 'new_status': new_status},
+                ip_address=request.META.get('REMOTE_ADDR')
+            )
+        
+        messages.success(request, f'Ticket status changed to {ticket.get_status_display()}')
+        
+    except Exception as e:
+        logger.error(f"Error changing ticket status: {str(e)}")
+        messages.error(request, "An error occurred. Please try again.")
     
-    # Handle special status changes
-    if new_status == 'resolved' and not ticket.resolved_at:
-        ticket.resolved_at = timezone.now()
-    elif new_status == 'closed' and not ticket.closed_at:
-        ticket.closed_at = timezone.now()
-    elif new_status == 'reopened':
-        ticket.reopened_at = timezone.now()
-        ticket.reopen_count += 1
-    
-    ticket.save()
-    
-    # Create history entry
-    TicketHistory.objects.create(
-        ticket=ticket,
-        user=request.user,
-        action='status_changed',
-        changes={'old_status': old_status, 'new_status': new_status},
-        ip_address=request.META.get('REMOTE_ADDR')
-    )
-    
-    # Send notification
-    send_ticket_notification(ticket, 'status_changed')
-    
-    messages.success(request, f'Ticket status changed to {ticket.get_status_display()}')
     return redirect('tickets:detail', ticket_id=ticket_id)
-
 
 @login_required
 def ticket_export(request):
@@ -532,24 +586,15 @@ def dashboard(request):
         }
     }
     
-    # Add agent stats if admin - USING MANUAL COUNTING TO AVOID ANNOTATION CONFLICTS
+    # Add agent stats if admin
     if user.is_admin():
-        # Get all active agents
         agents = User.objects.filter(user_type='agent', is_active=True)
         
-        # Manual calculation to avoid annotation conflicts
         agent_stats_list = []
         for agent in agents:
-            # Count assigned tickets manually
             assigned_count = Ticket.objects.filter(assigned_to=agent).count()
+            resolved_count = Ticket.objects.filter(assigned_to=agent, status='resolved').count()
             
-            # Count resolved tickets manually
-            resolved_count = Ticket.objects.filter(
-                assigned_to=agent, 
-                status='resolved'
-            ).count()
-            
-            # Calculate average response time
             avg_response = Ticket.objects.filter(
                 assigned_to=agent,
                 response_time__isnull=False
@@ -568,141 +613,28 @@ def dashboard(request):
                 'avg_response_time': avg_response,
             })
         
-        # Sort by resolved tickets (most resolved first)
         agent_stats_list.sort(key=lambda x: x['resolved_tickets'], reverse=True)
         context['agent_stats'] = agent_stats_list
     
     return render(request, 'dashboard/dashboard.html', context)
 
-@login_required
-def template_list(request):
-    """
-    List all ticket templates.
-    """
-    if not request.user.can_manage_tickets():
-        return HttpResponseForbidden("You don't have permission to view templates.")
-    
-    templates = TicketTemplate.objects.all().order_by('name')
-    
-    context = {
-        'templates': templates,
-    }
-    return render(request, 'tickets/template_list.html', context)
-
 
 @login_required
-def template_create(request):
-    """
-    Create a new ticket template.
-    """
-    if not request.user.can_manage_tickets():
-        return HttpResponseForbidden("You don't have permission to create templates.")
-    
-    if request.method == 'POST':
-        form = TicketTemplateForm(request.POST, user=request.user)
-        if form.is_valid():
-            template = form.save()
-            messages.success(request, f'Template "{template.name}" created successfully.')
-            return redirect('tickets:template_list')
-    else:
-        form = TicketTemplateForm(user=request.user)
-    
-    return render(request, 'tickets/template_form.html', {'form': form, 'is_create': True})
-
-
-@login_required
-def template_edit(request, pk):
-    """
-    Edit an existing ticket template.
-    """
-    if not request.user.can_manage_tickets():
-        return HttpResponseForbidden("You don't have permission to edit templates.")
-    
-    template = get_object_or_404(TicketTemplate, pk=pk)
-    
-    if request.method == 'POST':
-        form = TicketTemplateForm(request.POST, instance=template, user=request.user)
-        if form.is_valid():
-            template = form.save()
-            messages.success(request, f'Template "{template.name}" updated successfully.')
-            return redirect('tickets:template_list')
-    else:
-        form = TicketTemplateForm(instance=template, user=request.user)
-    
-    return render(request, 'tickets/template_form.html', {'form': form, 'is_create': False})
-
-
-@login_required
-def template_delete(request, pk):
-    """
-    Delete a ticket template.
-    """
+def ticket_delete(request, ticket_id):
+    """Allow admins to delete tickets"""
     if not request.user.is_admin():
-        return HttpResponseForbidden("Only admins can delete templates.")
+        raise PermissionDenied("Only admins can delete tickets.")
     
-    template = get_object_or_404(TicketTemplate, pk=pk)
+    ticket = get_object_or_404(Ticket, ticket_id=ticket_id)
     
     if request.method == 'POST':
-        name = template.name
-        template.delete()
-        messages.success(request, f'Template "{name}" deleted successfully.')
-        return redirect('tickets:template_list')
+        ticket_id_str = ticket.ticket_id
+        ticket.delete()
+        messages.success(request, f'Ticket {ticket_id_str} has been deleted successfully.')
+        return redirect('tickets:list')
     
-    return render(request, 'tickets/template_confirm_delete.html', {'template': template})
+    return render(request, 'tickets/ticket_confirm_delete.html', {'ticket': ticket})
 
-@login_required
-def download_attachment(request, attachment_id):
-    """
-    Download a ticket attachment.
-    """
-    attachment = get_object_or_404(TicketAttachment, id=attachment_id)
-    ticket = attachment.ticket
-    
-    # Check permissions
-    user = request.user
-    if user.is_customer() and ticket.created_by != user:
-        return HttpResponseForbidden("You don't have permission to download this attachment.")
-    
-    response = FileResponse(attachment.file, as_attachment=True, filename=attachment.filename)
-    return response
-
-
-@login_required
-def search_tickets_api(request):
-    """
-    API endpoint for searching tickets (used for AJAX autocomplete).
-    """
-    query = request.GET.get('q', '')
-    if len(query) < 3:
-        return JsonResponse({'results': []})
-    
-    user = request.user
-    tickets = Ticket.objects.filter(
-        Q(ticket_id__icontains=query) | Q(title__icontains=query)
-    )
-    
-    # Apply role-based filtering
-    if user.is_customer():
-        tickets = tickets.filter(created_by=user)
-    elif user.is_agent():
-        tickets = tickets.filter(
-            Q(assigned_to=user) | Q(assigned_to__isnull=True)
-        )
-    
-    tickets = tickets.select_related('created_by')[:10]
-    
-    results = [
-        {
-            'id': ticket.id,
-            'ticket_id': ticket.ticket_id,
-            'title': ticket.title,
-            'status': ticket.get_status_display(),
-            'created_by': ticket.created_by.get_full_name(),
-        }
-        for ticket in tickets
-    ]
-    
-    return JsonResponse({'results': results})
 
 @login_required
 def agent_list(request):
@@ -712,15 +644,14 @@ def agent_list(request):
     
     agents = User.objects.filter(user_type='agent', is_active=True)
     
-    # Create a list of agent stats dictionaries instead of modifying the User objects
+    # Create a list of agent stats dictionaries
     agent_stats = []
     for agent in agents:
-        # Calculate statistics without modifying the User object
         assigned_count = Ticket.objects.filter(assigned_to=agent).count()
         resolved_count = Ticket.objects.filter(assigned_to=agent, status='resolved').count()
         
         agent_stats.append({
-            'agent': agent,  # Pass the actual agent object
+            'agent': agent,
             'assigned_tickets': assigned_count,
             'resolved_tickets': resolved_count,
             'full_name': agent.get_full_name() or agent.email,
@@ -732,10 +663,11 @@ def agent_list(request):
     )[:10]
     
     return render(request, 'tickets/agent_list.html', {
-        'agent_stats': agent_stats,  # Pass the stats list instead of agents
-        'agents': agents,  # Keep this if needed elsewhere
+        'agent_stats': agent_stats,
+        'agents': agents,
         'unassigned_tickets': unassigned_tickets
     })
+
 
 @login_required
 def agent_create(request):
@@ -755,7 +687,7 @@ def agent_create(request):
     else:
         form = AgentCreateForm()
     
-    return render(request, 'tickets/agent_form.html', {'form': form})
+    return render(request, 'tickets/agent_form.html', {'form': form, 'is_create': True})
 
 
 @login_required
@@ -775,7 +707,7 @@ def agent_edit(request, pk):
     else:
         form = AgentEditForm(instance=agent)
     
-    return render(request, 'tickets/agent_form.html', {'form': form})
+    return render(request, 'tickets/agent_form.html', {'form': form, 'is_create': False})
 
 
 @login_required
@@ -787,9 +719,17 @@ def agent_tickets(request, pk):
     agent = get_object_or_404(User, pk=pk, user_type='agent')
     tickets = Ticket.objects.filter(assigned_to=agent).order_by('-created_at')
     
+    # Calculate statistics
+    tickets_open = tickets.filter(status__in=['new', 'open', 'in_progress', 'pending']).count()
+    tickets_resolved = tickets.filter(status='resolved').count()
+    tickets_closed = tickets.filter(status='closed').count()
+    
     return render(request, 'tickets/agent_tickets.html', {
         'agent': agent,
-        'tickets': tickets
+        'tickets': tickets,
+        'tickets_open': tickets_open,
+        'tickets_resolved': tickets_resolved,
+        'tickets_closed': tickets_closed,
     })
 
 
@@ -820,24 +760,19 @@ def bulk_assign(request):
     
     return redirect('tickets:agent_list')
 
+
 @login_required
-def agent_tickets(request, pk):
-    """View tickets assigned to a specific agent."""
-    if not request.user.is_admin():
-        raise PermissionDenied("Only admins can view agent tickets.")
+def download_attachment(request, attachment_id):
+    """
+    Download a ticket attachment.
+    """
+    attachment = get_object_or_404(TicketAttachment, id=attachment_id)
+    ticket = attachment.ticket
     
-    agent = get_object_or_404(User, pk=pk, user_type='agent')
-    tickets = Ticket.objects.filter(assigned_to=agent).order_by('-created_at')
+    # Check permissions
+    user = request.user
+    if user.is_customer() and ticket.created_by != user:
+        return HttpResponseForbidden("You don't have permission to download this attachment.")
     
-    # Calculate statistics
-    tickets_open = tickets.filter(status__in=['new', 'open', 'in_progress', 'pending']).count()
-    tickets_resolved = tickets.filter(status='resolved').count()
-    tickets_closed = tickets.filter(status='closed').count()
-    
-    return render(request, 'tickets/agent_tickets.html', {
-        'agent': agent,
-        'tickets': tickets,
-        'tickets_open': tickets_open,
-        'tickets_resolved': tickets_resolved,
-        'tickets_closed': tickets_closed,
-    })
+    response = FileResponse(attachment.file, as_attachment=True, filename=attachment.filename)
+    return response

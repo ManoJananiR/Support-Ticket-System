@@ -1,23 +1,57 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
-from .forms import UserRegistrationForm, UserProfileForm,UserNotificationSettingsForm
+from .forms import UserProfileForm, UserNotificationSettingsForm  # Removed UserRegistrationForm
+from django.urls import reverse_lazy
+from .models import User
+from django.contrib.auth.views import LoginView
+from django.contrib import messages
+from .models import User
+from django.contrib.auth import authenticate, login
 
-def register(request):
-    """User registration view."""
-    if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Registration successful. Please log in.')
-            return redirect('accounts:login')
-    else:
-        form = UserRegistrationForm()
-    return render(request, 'accounts/register.html', {'form': form})
-
-
+class CustomLoginView(LoginView):
+    template_name = 'accounts/login.html'
+    
+    def form_valid(self, form):
+        """Security check complete. Log the user in."""
+        user = form.get_user()
+        
+        # Check if user exists in database and is active
+        if not user or not user.pk:
+            messages.error(self.request, "Invalid login credentials. Please check your email and password.")
+            return self.form_invalid(form)
+        
+        # Check if user is active
+        if not user.is_active:
+            messages.error(self.request, "This account is inactive. Please contact administrator.")
+            return self.form_invalid(form)
+        
+        # Log the user in
+        login(self.request, user)
+        
+        # Redirect based on user type
+        if user.is_admin():
+            return redirect('tickets:dashboard')
+        elif user.is_agent():
+            return redirect('tickets:dashboard')
+        else:  # customer
+            return redirect('tickets:dashboard')
+    
+    def form_invalid(self, form):
+        """Handle invalid form (wrong credentials)"""
+        messages.error(self.request, "Invalid email or password. Please try again.")
+        return super().form_invalid(form)
+    
+    def get_success_url(self):
+        user = self.request.user
+        if user.is_admin():
+            return reverse_lazy('tickets:dashboard')
+        elif user.is_agent():
+            return reverse_lazy('tickets:dashboard')
+        else:
+            return reverse_lazy('tickets:dashboard')
+            
 @login_required
 def profile(request):
     """User profile view."""

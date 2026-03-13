@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Upload Customers - STS{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-upload me-2"></i>Upload Customer Data
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Instructions:</strong>
+                        <ul class="mb-0 mt-2">
+                            <li>Upload the <code>customers_master.xlsx</code> file exported from the system</li>
+                            <li>File should have the same format as the exported file</li>
+                            <li>First row must contain headers (will be validated)</li>
+                            <li>Existing customers will be updated based on email</li>
+                            <li>Maximum file size: 10MB</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Note:</strong> If you manually edit the Excel file, ensure:
+                        <ul class="mb-0 mt-2">
+                            <li>Don't change the header row</li>
+                            <li>Keep the date format consistent (YYYY-MM-DD HH:MM)</li>
+                            <li>Status must be either "Active" or "Inactive"</li>
+                            <li>Email addresses must be unique</li>
+                        </ul>
+                    </div>
+
+                    <form method="post" enctype="multipart/form-data" class="mt-4">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-cloud-upload-alt me-2"></i>Upload & Import
+                            </button>
+                            <a href="{% url 'customers:customer_list' %}" class="btn btn-secondary">
+                                <i class="fas fa-times me-2"></i>Cancel
+                            </a>
+                        </div>
+                    </form>
+
+                    <hr class="my-4">
+
+                    <h6>Expected File Format:</h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Example</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Customer ID</td><td>CUST-202503-0001</td><td>Yes (auto-generated)</td></tr>
+                                <tr><td>Name</td><td>John Doe</td><td>Yes</td></tr>
+                                <tr><td>Email</td><td>john@example.com</td><td>Yes (unique)</td></tr>
+                                <tr><td>Phone</td><td>+1234567890</td><td>No</td></tr>
+                                <tr><td>Alternate Phone</td><td>+0987654321</td><td>No</td></tr>
+                                <tr><td>Business Name</td><td>ABC Corp</td><td>Yes</td></tr>
+                                <tr><td>Business Type</td><td>Private Limited</td><td>Yes</td></tr>
+                                <tr><td>GST Number</td><td>22AAAAA0000A1Z5</td><td>No</td></tr>
+                                <tr><td>PAN Number</td><td>ABCDE1234F</td><td>No</td></tr>
+                                <tr><td>Address Line 1</td><td>123 Main St</td><td>Yes</td></tr>
+                                <tr><td>Address Line 2</td><td>Suite 100</td><td>No</td></tr>
+                                <tr><td>City</td><td>Mumbai</td><td>Yes</td></tr>
+                                <tr><td>State</td><td>Maharashtra</td><td>Yes</td></tr>
+                                <tr><td>Country</td><td>India</td><td>Yes</td></tr>
+                                <tr><td>Pincode</td><td>400001</td><td>Yes</td></tr>
+                                <tr><td>Website</td><td>https://example.com</td><td>No</td></tr>
+                                <tr><td>Notes</td><td>Additional info</td><td>No</td></tr>
+                                <tr><td>Created At</td><td>2025-03-10 10:30</td><td>Auto-generated</td></tr>
+                                <tr><td>Created By</td><td>admin@example.com</td><td>Auto-filled</td></tr>
+                                <tr><td>Status</td><td>Active</td><td>Yes (Active/Inactive)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

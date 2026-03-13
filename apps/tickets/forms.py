@@ -18,10 +18,10 @@ import logging
 logger = logging.getLogger(__name__)
 User = get_user_model()
 
-
 class TicketCreateForm(forms.ModelForm):
     """
-    Form for creating new tickets.
+    Form for creating new tickets with customer contact fields.
+    Used by both customers and admins when creating tickets.
     """
     tags = TagField(required=False, help_text="Comma-separated tags")
     cc_emails = forms.CharField(
@@ -30,12 +30,40 @@ class TicketCreateForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'placeholder': 'email1@example.com, email2@example.com', 'class': 'form-control'})
     )
     
+    # Customer contact fields (editable - NO AUTO-FILL)
+    customer_name = forms.CharField(
+        required=True,
+        max_length=255,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Enter customer full name'
+        }),
+        label="Customer Name"
+    )
+    customer_email = forms.EmailField(
+        required=True,
+        widget=forms.EmailInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Enter customer email address'
+        }),
+        label="Customer Email"
+    )
+    customer_phone = forms.CharField(
+        required=False,
+        max_length=20,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Enter customer phone number (optional)'
+        }),
+        label="Customer Phone"
+    )
+    
     class Meta:
         model = Ticket
         fields = ['title', 'description', 'category', 'priority', 'tags', 'cc_emails']
         widgets = {
-            'description': forms.Textarea(attrs={'rows': 8, 'class': 'form-control'}),
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'rows': 8, 'class': 'form-control', 'placeholder': 'Describe the issue in detail...'}),
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter a descriptive title'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
             'priority': forms.Select(attrs={'class': 'form-control'}),
         }
@@ -49,6 +77,19 @@ class TicketCreateForm(forms.ModelForm):
         self.fields['category'].queryset = Category.objects.filter(is_active=True)
         self.fields['category'].empty_label = "Select a category"
         
+        # If user is admin and a customer_id is provided, try to pre-fill
+        if self.user and self.user.is_admin() and self.request:
+            customer_id = self.request.GET.get('customer')
+            if customer_id:
+                try:
+                    from apps.accounts.models import User
+                    customer = User.objects.get(id=customer_id, user_type='customer')
+                    self.fields['customer_name'].initial = customer.get_full_name() or customer.email
+                    self.fields['customer_email'].initial = customer.email
+                    self.fields['customer_phone'].initial = customer.phone_number
+                except User.DoesNotExist:
+                    pass
+        
         # Set up crispy forms helper
         self.helper = FormHelper()
         self.helper.form_method = 'post'
@@ -56,7 +97,16 @@ class TicketCreateForm(forms.ModelForm):
         self.helper.attrs = {'novalidate': ''}
         self.helper.layout = Layout(
             Fieldset(
-                'Basic Information',
+                'Customer Contact Information',
+                Row(
+                    Column('customer_name', css_class='form-group col-md-4 mb-0'),
+                    Column('customer_email', css_class='form-group col-md-4 mb-0'),
+                    Column('customer_phone', css_class='form-group col-md-4 mb-0'),
+                    css_class='form-row'
+                ),
+            ),
+            Fieldset(
+                'Ticket Information',
                 'title',
                 'description',
                 Row(
@@ -74,19 +124,28 @@ class TicketCreateForm(forms.ModelForm):
             HTML("""<a href="{% url 'tickets:list' %}" class="btn btn-secondary">Cancel</a>""")
         )
     
+    def clean_customer_email(self):
+        """Validate email format."""
+        email = self.cleaned_data.get('customer_email')
+        if email:
+            try:
+                from django.core.validators import validate_email
+                validate_email(email)
+            except ValidationError:
+                raise forms.ValidationError("Please enter a valid email address.")
+        return email
+    
     def clean_cc_emails(self):
         """Validate and parse CC emails."""
         cc_emails = self.cleaned_data.get('cc_emails', '')
         if not cc_emails:
             return []
         
-        # Split by comma and clean
         emails = [email.strip() for email in cc_emails.split(',') if email.strip()]
-        
-        # Validate each email
         valid_emails = []
         for email in emails:
             try:
+                from django.core.validators import validate_email
                 validate_email(email)
                 valid_emails.append(email)
             except ValidationError:
@@ -112,8 +171,17 @@ class TicketCreateForm(forms.ModelForm):
         return ''
     
     def save(self, commit=True):
-        """Save the ticket with user information."""
+        """Save the ticket with customer contact information."""
         ticket = super().save(commit=False)
+        
+        # Store customer contact info in metadata
+        customer_info = {
+            'name': self.cleaned_data.get('customer_name'),
+            'email': self.cleaned_data.get('customer_email'),
+            'phone': self.cleaned_data.get('customer_phone'),
+        }
+        ticket.metadata = customer_info  # Store in JSON field
+        
         ticket.created_by = self.user
         ticket.source = 'web'
         ticket.ip_address = self.get_client_ip()
@@ -121,10 +189,8 @@ class TicketCreateForm(forms.ModelForm):
         
         if commit:
             ticket.save()
-            # Save tags
             self.save_m2m()
             
-            # Save CC emails
             cc_emails = self.cleaned_data.get('cc_emails', [])
             if cc_emails:
                 ticket.cc_emails = cc_emails
@@ -133,17 +199,45 @@ class TicketCreateForm(forms.ModelForm):
             logger.info(f"Ticket created via form: {ticket.ticket_id}")
         
         return ticket
-
-
+    
 class TicketUpdateForm(forms.ModelForm):
     """
-    Form for updating existing tickets.
+    Form for updating existing tickets (admin use) - INCLUDES CONTACT FIELDS
     """
     tags = TagField(required=False)
     
+    # Customer contact fields (editable)
+    customer_name = forms.CharField(
+        required=True,
+        max_length=255,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Customer full name'
+        }),
+        label="Customer Name"
+    )
+    customer_email = forms.EmailField(
+        required=True,
+        widget=forms.EmailInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Customer email address'
+        }),
+        label="Customer Email"
+    )
+    customer_phone = forms.CharField(
+        required=False,
+        max_length=20,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Customer phone number'
+        }),
+        label="Customer Phone"
+    )
+    
     class Meta:
         model = Ticket
-        fields = ['title', 'description', 'category', 'priority', 'status', 
+        fields = ['customer_name', 'customer_email', 'customer_phone',
+                 'title', 'description', 'category', 'priority', 'status', 
                  'assigned_to', 'tags', 'internal_notes', 'due_by']
         widgets = {
             'description': forms.Textarea(attrs={'rows': 6, 'class': 'form-control'}),
@@ -160,84 +254,44 @@ class TicketUpdateForm(forms.ModelForm):
         self.user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
         
-        # Filter querysets - FIXED: Use User.objects instead of settings.AUTH_USER_MODEL.objects
+        # Filter querysets
         self.fields['category'].queryset = Category.objects.filter(is_active=True)
         self.fields['assigned_to'].queryset = User.objects.filter(
             user_type__in=['agent', 'admin'], is_active=True
         )
         
-        # Set up crispy forms helper
-        self.helper = FormHelper()
-        self.helper.form_method = 'post'
-        self.helper.layout = Layout(
-            TabHolder(
-                Tab(
-                    'Basic Info',
-                    'title',
-                    'description',
-                    Row(
-                        Column('category', css_class='form-group col-md-6 mb-0'),
-                        Column('priority', css_class='form-group col-md-6 mb-0'),
-                        css_class='form-row'
-                    ),
-                    Row(
-                        Column('status', css_class='form-group col-md-6 mb-0'),
-                        Column('assigned_to', css_class='form-group col-md-6 mb-0'),
-                        css_class='form-row'
-                    ),
-                    'tags',
-                ),
-                Tab(
-                    'Internal Notes',
-                    'internal_notes',
-                    'due_by',
-                ),
-            ),
-            Submit('submit', 'Update Ticket', css_class='btn btn-primary'),
-            HTML("""<a href="{% url 'tickets:detail' ticket.ticket_id %}" class="btn btn-secondary">Cancel</a>""")
-        )
-        
-        # Restrict status changes based on user role
-        if self.user and not self.user.is_admin():
-            # Non-admins can't change certain statuses
-            restricted_statuses = ['closed', 'escalated']
-            choices = [(k, v) for k, v in self.fields['status'].choices if k not in restricted_statuses]
-            self.fields['status'].choices = choices
-    
-    def clean(self):
-        """Validate the form data."""
-        cleaned_data = super().clean()
-        status = cleaned_data.get('status')
-        
-        # Additional validation based on status changes
-        if status == 'resolved' and not cleaned_data.get('internal_notes'):
-            # This is a warning, not an error
-            pass
-        
-        return cleaned_data
+        # IMPORTANT: Load existing metadata into form fields
+        if self.instance and self.instance.pk:
+            metadata = self.instance.metadata or {}
+            self.fields['customer_name'].initial = metadata.get('name', '')
+            self.fields['customer_email'].initial = metadata.get('email', '')
+            self.fields['customer_phone'].initial = metadata.get('phone', '')
     
     def save(self, commit=True):
-        """Save the ticket with change tracking."""
+        """Save the ticket with updated contact information."""
         ticket = super().save(commit=False)
-        old_status = Ticket.objects.get(pk=ticket.pk).status if ticket.pk else None
+        
+        # Ensure metadata is a dictionary
+        if not ticket.metadata:
+            ticket.metadata = {}
+        elif isinstance(ticket.metadata, str):
+            import json
+            try:
+                ticket.metadata = json.loads(ticket.metadata)
+            except:
+                ticket.metadata = {}
+        
+        # Update metadata with contact information
+        ticket.metadata['name'] = self.cleaned_data.get('customer_name', '')
+        ticket.metadata['email'] = self.cleaned_data.get('customer_email', '')
+        ticket.metadata['phone'] = self.cleaned_data.get('customer_phone', '')
         
         if commit:
             ticket.save()
             self.save_m2m()
-            
-            # Handle resolution
-            if ticket.status == 'resolved' and not ticket.resolved_at:
-                ticket.resolved_at = timezone.now()
-                ticket.save(update_fields=['resolved_at'])
-            
-            # Handle closure
-            if ticket.status == 'closed' and not ticket.closed_at:
-                ticket.closed_at = timezone.now()
-                ticket.save(update_fields=['closed_at'])
         
         return ticket
-
-
+    
 class TicketCommentForm(forms.ModelForm):
     """
     Form for adding comments to tickets.
@@ -496,3 +550,43 @@ class TicketTemplateForm(forms.ModelForm):
             logger.info(f"Ticket template '{template.name}' saved by {self.user.email}")
         
         return template
+    
+class AgentTicketUpdateForm(forms.ModelForm):
+    """
+    Form for agents to update tickets - only status and due date
+    """
+    class Meta:
+        model = Ticket
+        fields = ['status', 'due_by']  # Only these two fields for agents
+        widgets = {
+            'due_by': forms.DateTimeInput(attrs={
+                'type': 'datetime-local', 
+                'class': 'form-control',
+                'placeholder': 'Select due date and time'
+            }),
+            'status': forms.Select(attrs={'class': 'form-control'}),
+        }
+        labels = {
+            'status': 'Update Status',
+            'due_by': 'Due Date (Optional)'
+        }
+        help_texts = {
+            'status': 'Change the current status of this ticket',
+            'due_by': 'Set expected resolution date (optional)'
+        }
+    
+    def __init__(self, *args, **kwargs):
+        # Pop the 'user' keyword argument if it exists (to avoid errors)
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+        
+        # Restrict status choices for agents
+        self.fields['status'].choices = [
+            ('open', 'Open'),
+            ('in_progress', 'In Progress'),
+            ('pending', 'Pending'),
+            ('resolved', 'Resolved'),
+        ]
+        # Make status required, due_date optional
+        self.fields['status'].required = True
+        self.fields['due_by'].required = False

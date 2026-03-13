@@ -5,7 +5,6 @@ Accounts app models for user management with role-based access control.
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.utils import timezone
-from django.core.mail import send_mail
 from django.utils.translation import gettext_lazy as _
 import uuid
 import logging
@@ -48,17 +47,26 @@ class CustomUserManager(BaseUserManager):
         
         return self.create_user(email, password, **extra_fields)
 
-
 class User(AbstractUser):
     """
-    Custom User model with role-based access control.
-    Extends Django's AbstractUser to add custom fields.
+    Custom User model with role-based access control and business fields.
     """
     
     USER_TYPE_CHOICES = (
         ('customer', 'Customer'),
         ('agent', 'Agent'),
         ('admin', 'Administrator'),
+    )
+    
+    BUSINESS_TYPE_CHOICES = (
+        ('finance', 'Finance'),
+        ('service', 'Service'),
+        ('retail', 'Retail'),
+        ('manufacturing', 'Manufacturing'),
+        ('technology', 'Technology'),
+        ('healthcare', 'Healthcare'),
+        ('education', 'Education'),
+        ('other', 'Other'),
     )
     
     username = None  # Remove username field
@@ -76,15 +84,33 @@ class User(AbstractUser):
     )
     email_verified = models.BooleanField(default=False)
     email_verification_token = models.UUIDField(default=uuid.uuid4, editable=False)
-    two_factor_enabled = models.BooleanField(default=False)
+    
+    # NEW: Customer password field for email authentication
+    customer_password = models.CharField(
+        max_length=128, 
+        blank=True, 
+        null=True,
+        help_text="Password for customer email authentication"
+    )
+    
+    # NEW BUSINESS FIELDS
+    business_name = models.CharField(max_length=200, blank=True, null=True)
+    business_type = models.CharField(
+        max_length=50, 
+        choices=BUSINESS_TYPE_CHOICES,
+        blank=True, 
+        null=True
+    )
+    gst_number = models.CharField(max_length=50, blank=True, null=True)
+    address = models.TextField(blank=True, null=True)
+    city = models.CharField(max_length=100, blank=True, null=True)
+    state = models.CharField(max_length=100, blank=True, null=True)
+    country = models.CharField(max_length=100, blank=True, null=True)
+    pincode = models.CharField(max_length=20, blank=True, null=True)
+    
+    # Agent fields
     department = models.CharField(max_length=100, blank=True, null=True)
     job_title = models.CharField(max_length=100, blank=True, null=True)
-    company = models.CharField(max_length=200, blank=True, null=True)
-    timezone = models.CharField(max_length=50, default='UTC')
-    language = models.CharField(max_length=10, default='en')
-    last_activity = models.DateTimeField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
     
     # Security fields
     failed_login_attempts = models.IntegerField(default=0)
@@ -96,6 +122,13 @@ class User(AbstractUser):
     email_notifications = models.BooleanField(default=True)
     ticket_assigned_notifications = models.BooleanField(default=True)
     ticket_updated_notifications = models.BooleanField(default=True)
+    
+    # Timestamps
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    last_activity = models.DateTimeField(null=True, blank=True)
+    timezone = models.CharField(max_length=50, default='UTC')
+    language = models.CharField(max_length=10, default='en')
     
     objects = CustomUserManager()
     
@@ -110,6 +143,8 @@ class User(AbstractUser):
             models.Index(fields=['email']),
             models.Index(fields=['user_type']),
             models.Index(fields=['is_active']),
+            models.Index(fields=['business_type']),
+            models.Index(fields=['business_name']),
         ]
     
     def __str__(self):
@@ -131,8 +166,47 @@ class User(AbstractUser):
     
     def can_manage_tickets(self):
         return self.is_agent() or self.is_admin()
-
-
+    
+    def get_business_display(self):
+        """Return business info for display"""
+        if self.business_name:
+            business_type = self.get_business_type_display() if self.business_type else ''
+            return f"{self.business_name} ({business_type})"
+        return "Not specified"
+    
+    def set_customer_password(self, raw_password):
+        """Set the customer password (using Django's password hashing)"""
+        from django.contrib.auth.hashers import make_password
+        self.customer_password = make_password(raw_password)
+        self.save(update_fields=['customer_password'])
+    
+    def check_customer_password(self, raw_password):
+        """Check if the provided password matches the stored hash"""
+        from django.contrib.auth.hashers import check_password
+        if self.customer_password:
+            return check_password(raw_password, self.customer_password)
+        return False
+    
+    def increment_failed_attempts(self):
+        """Increment failed login attempts and lock account if needed"""
+        self.failed_login_attempts += 1
+        self.last_failed_login = timezone.now()
+        
+        # Lock account after 5 failed attempts
+        if self.failed_login_attempts >= 5:
+            self.account_locked = True
+        self.save(update_fields=['failed_login_attempts', 'last_failed_login', 'account_locked'])
+    
+    def reset_failed_attempts(self):
+        """Reset failed login attempts on successful login"""
+        self.failed_login_attempts = 0
+        self.account_locked = False
+        self.save(update_fields=['failed_login_attempts', 'account_locked'])
+    
+    def can_login(self):
+        """Check if user is allowed to login (exists in DB and is active)"""
+        return self.is_active and self.pk is not None
+        
 class LoginHistory(models.Model):
     """
     Track user login history for security monitoring.

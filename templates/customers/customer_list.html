@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Customers - STS Support Ticket System{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col">
+            <h1 class="h2">Customers</h1>
+            <p class="text-muted">Manage all customer information</p>
+        </div>
+        <div class="col-auto">
+            <div class="btn-group">
+                <a href="{% url 'customers:customer_add' %}" class="btn btn-primary">
+                    <i class="fas fa-user-plus me-2"></i>Add Customer
+                </a>
+                <a href="{% url 'customers:customer_export' %}?{{ request.GET.urlencode }}" class="btn btn-success">
+                    <i class="fas fa-file-excel me-2"></i>Export to Excel
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="get" class="row g-3">
+                <div class="col-md-4">
+                    <input type="text" name="search" class="form-control" 
+                           placeholder="Search by name, email, phone, business..." 
+                           value="{{ search_query }}">
+                </div>
+                <div class="col-md-3">
+                    <select name="business_type" class="form-select">
+                        <option value="">All Business Types</option>
+                        {% for value, label in business_type_choices %}
+                        <option value="{{ value }}" {% if business_type == value %}selected{% endif %}>
+                            {{ label }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select name="status" class="form-select">
+                        <option value="">All Status</option>
+                        <option value="active" {% if status == 'active' %}selected{% endif %}>Active</option>
+                        <option value="inactive" {% if status == 'inactive' %}selected{% endif %}>Inactive</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-search me-2"></i>Filter
+                    </button>
+                </div>
+                <div class="col-md-1">
+                    <a href="{% url 'customers:customer_list' %}" class="btn btn-secondary w-100">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Customers Table -->
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Business Name</th>
+                            <th>Business Type</th>
+                            <th>Tickets</th>
+                            <th>Open</th>
+                            <th>Resolved</th>
+                            <th>Status</th>
+                            <th>Joined</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for customer in customers %}
+                        <tr>
+                            <td>
+                                <span class="badge bg-light text-dark">#{{ customer.id }}</span>
+                            </td>
+                            <td>
+                                <strong>{{ customer.get_full_name|default:customer.email }}</strong>
+                            </td>
+                            <td>
+                                <a href="mailto:{{ customer.email }}">{{ customer.email }}</a>
+                            </td>
+                            <td>
+                                {% if customer.phone_number %}
+                                <a href="tel:{{ customer.phone_number }}">{{ customer.phone_number }}</a>
+                                {% else %}
+                                <span class="text-muted">—</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ customer.business_name|default:"—" }}</td>
+                            <td>
+                                {% if customer.business_type %}
+                                    {{ customer.get_business_type_display }}
+                                {% else %}
+                                    <span class="text-muted">—</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <span class="badge bg-primary">{{ customer.ticket_count|default:"0" }}</span>
+                            </td>
+                            <td>
+                                <span class="badge bg-warning">{{ customer.open_tickets|default:"0" }}</span>
+                            </td>
+                            <td>
+                                <span class="badge bg-success">{{ customer.resolved_tickets|default:"0" }}</span>
+                            </td>
+                            <td>
+                                {% if customer.is_active %}
+                                    <span class="badge bg-success">Active</span>
+                                {% else %}
+                                    <span class="badge bg-secondary">Inactive</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ customer.date_joined|date:"Y-m-d" }}</td>
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <a href="{% url 'customers:customer_detail' customer.id %}" 
+                                       class="btn btn-outline-primary" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="{% url 'customers:customer_edit' customer.id %}" 
+                                       class="btn btn-outline-secondary" title="Edit">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="{% url 'tickets:create' %}?customer={{ customer.id }}" 
+                                       class="btn btn-outline-success" title="Create Ticket">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </a>
+                                    <button type="button" 
+                                            class="btn btn-outline-warning" 
+                                            title="Toggle Status"
+                                            onclick="toggleStatus({{ customer.id }});">
+                                        <i class="fas fa-power-off"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="12" class="text-center py-5">
+                                <i class="fas fa-users fa-3x text-muted mb-3"></i>
+                                <h5 class="text-muted">No customers found</h5>
+                                <a href="{% url 'customers:customer_add' %}" class="btn btn-primary mt-3">
+                                    <i class="fas fa-user-plus me-2"></i>Add Your First Customer
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            {% if is_paginated %}
+            <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1{% if search_query %}&search={{ search_query }}{% endif %}{% if business_type %}&business_type={{ business_type }}{% endif %}{% if status %}&status={{ status }}{% endif %}">
+                            <i class="fas fa-angle-double-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}{% if business_type %}&business_type={{ business_type }}{% endif %}{% if status %}&status={{ status }}{% endif %}">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ num }}{% if search_query %}&search={{ search_query }}{% endif %}{% if business_type %}&business_type={{ business_type }}{% endif %}{% if status %}&status={{ status }}{% endif %}">
+                                    {{ num }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}{% if business_type %}&business_type={{ business_type }}{% endif %}{% if status %}&status={{ status }}{% endif %}">
+                            <i class="fas fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if search_query %}&search={{ search_query }}{% endif %}{% if business_type %}&business_type={{ business_type }}{% endif %}{% if status %}&status={{ status }}{% endif %}">
+                            <i class="fas fa-angle-double-right"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<script>
+function toggleStatus(customerId) {
+    if (confirm('Are you sure you want to toggle this customer\'s status?')) {
+        fetch(`/customers/${customerId}/toggle-status/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                location.reload();
+            }
+        });
+    }
+}
+</script>
+{% endblock %}

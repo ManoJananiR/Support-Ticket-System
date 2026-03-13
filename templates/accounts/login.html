@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% extends 'base_public.html' %}
+{% load static %}
 
-{% block title %}Login - Support Ticket System{% endblock %}
+{% block title %}Login - STS Support Ticket System{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -9,18 +9,44 @@
         <div class="col-md-6">
             <div class="card shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-header bg-primary text-white text-center py-4">
-                    <h3 class="mb-0">Support Ticket System</h3>
+                    <h3 class="mb-0">Welcome Back to STS</h3>
                 </div>
                 <div class="card-body p-4">
-                    <h4 class="text-center mb-4">Login to Your Account</h4>
+                    <h4 class="text-center mb-4">Sign In to Your Account</h4>
+                    
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                     
                     <form method="post" novalidate>
                         {% csrf_token %}
-                        {{ form|crispy }}
+                        
+                        <div class="mb-3">
+                            <label for="id_username" class="form-label">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" name="username" class="form-control" id="id_username" 
+                                       placeholder="Enter your email" required autofocus>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="id_password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                <input type="password" name="password" class="form-control" id="id_password" 
+                                       placeholder="Enter your password" required>
+                            </div>
+                        </div>
                         
                         <div class="d-grid gap-2 mt-4">
                             <button type="submit" class="btn btn-primary btn-lg">
-                                <i class="fas fa-sign-in-alt me-2"></i>Login
+                                <i class="fas fa-sign-in-alt me-2"></i>Sign In
                             </button>
                         </div>
                         
@@ -30,19 +56,30 @@
                     <hr class="my-4">
                     
                     <div class="text-center">
-                        <p class="mb-2">Don't have an account? 
-                            <a href="{% url 'accounts:register' %}" class="text-primary">Register here</a>
-                        </p>
-                        <p class="mb-0">
-                            <a href="{% url 'accounts:password_reset' %}" class="text-muted">Forgot Password?</a>
+                        <p class="mb-0 text-muted">
+                            <i class="fas fa-shield-alt me-1"></i>
+                            Only authorized personnel can access this system.
                         </p>
                     </div>
-                </div>
-                <div class="card-footer text-center py-3 bg-light">
-                    <small class="text-muted">© {% now "Y" %} Support Ticket System. All rights reserved.</small>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+// Manual test to see if icons appear
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Font Awesome loaded:', typeof fontawesome !== 'undefined');
+    
+    // Check if icons are available
+    const testIcon = document.createElement('i');
+    testIcon.className = 'fas fa-eye';
+    document.body.appendChild(testIcon);
+    
+    setTimeout(() => {
+        console.log('Icon style:', window.getComputedStyle(testIcon).fontFamily);
+        testIcon.remove();
+    }, 100);
+});
+</script>
 {% endblock %}
